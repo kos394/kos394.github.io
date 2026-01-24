@@ -1,2129 +1,713 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выход из долгов: калькулятор и пошаговый план на 2026 | ДОМЕНЗАДОЛЖЕН.РФ</title>
-    <meta name="description" content="Бесплатный онлайн-калькулятор освобождения от долгов 2026. Рассчитай свой пошаговый план погашения, следи за прогрессом, получи стратегию выхода из долговой ямы. Персональный мастер-план за 2 минуты!">
-    <meta name="keywords" content="выход из долгов, калькулятор долгов 2026, пошаговый план погашения, реструктуризация кредитов, финансовая свобода, освобождение от долгов, кредитный калькулятор, долговая яма, план выплат, 2026">
-    <meta name="author" content="ДОМЕНЗАДОЛЖЕН.РФ">
-    <style>
-        :root {
-            --midnight-blue: #1A237E;
-            --dawn-purple: #7B1FA2;
-            --sunrise-orange: #FF6F00;
-            --sun-yellow: #FFD600;
-            --sky-blue: #2979FF;
-            --grass-green: #388E3C;
-            --flower-pink: #D81B60;
-            --cloud-white: #FFFFFF;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Arial Rounded MT Bold', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0D47A1 0%, #1A237E 50%, #311B92 100%);
-            color: #E3F2FD;
-            line-height: 1.7;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        .side-pattern-left, .side-pattern-right {
-            position: fixed;
-            top: 0;
-            width: 120px;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.3;
-            pointer-events: none;
-        }
-        
-        .side-pattern-left {
-            left: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 214, 0, 0.2) 0%, transparent 70%),
-                        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 214, 0, 0.1) 10px, rgba(255, 214, 0, 0.1) 20px);
-        }
-        
-        .side-pattern-right {
-            right: 0;
-            background: radial-gradient(circle at 70% 50%, rgba(41, 121, 255, 0.2) 0%, transparent 70%),
-                        repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(41, 121, 255, 0.1) 10px, rgba(41, 121, 255, 0.1) 20px);
-        }
-        
-        .main-header {
-            position: relative;
-            text-align: center;
-            padding: 30px 0;
-            margin-bottom: 40px;
-            background: rgba(26, 35, 126, 0.3);
-            border-radius: 0 0 30px 30px;
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--sun-yellow);
-            overflow: hidden;
-        }
-        
-        .header-pattern {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 214, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(41, 121, 255, 0.15) 0%, transparent 50%),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0.05) 4px);
-            z-index: -1;
-        }
-        
-        .site-main-title {
-            font-size: 2.8rem;
-            background: linear-gradient(45deg, #FFD600, #FFAB00, #FF6F00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 20px 0 10px;
-            text-align: center;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            display: inline-block;
-            padding: 0 20px;
-            line-height: 1.2;
-            max-width: 90%;
-        }
-        
-        .site-main-title::before, .site-main-title::after {
-            content: '✨';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--sun-yellow);
-            font-size: 1.8rem;
-            opacity: 0.7;
-            animation: twinkle 2s infinite;
-        }
-        
-        .site-main-title::before {
-            left: -5px;
-        }
-        
-        .site-main-title::after {
-            right: -5px;
-        }
-        
-        .site-subtitle {
-            font-size: 1.4rem;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #90CAF9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-        
-        .domain-name {
-            display: block;
-            font-size: 1.8rem;
-            color: #FFD600;
-            font-weight: 700;
-            margin-top: 10px;
-            text-shadow: 0 0 10px rgba(255, 214, 0, 0.5);
-            letter-spacing: 1px;
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
-            50% { opacity: 1; transform: translateY(-50%) scale(1.1); }
-        }
-        
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -3;
-        }
-        
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkleStar 3s infinite;
-        }
-        
-        @keyframes twinkleStar {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-        
-        .moon {
-            position: fixed;
-            top: 50px;
-            right: 50px;
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle at 30% 30%, #FFF9C4, #FFEB3B);
-            border-radius: 50%;
-            box-shadow: 0 0 60px rgba(255, 235, 59, 0.5);
-            z-index: -2;
-            animation: moonFloat 8s infinite ease-in-out;
-        }
-        
-        @keyframes moonFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-        
-        .master-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .compass-nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .compass-point {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.4s;
-            border: 2px solid transparent;
-            color: #E3F2FD;
-            text-decoration: none;
-            display: block;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .compass-point::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: 0.5s;
-        }
-        
-        .compass-point:hover::before {
-            left: 100%;
-        }
-        
-        .compass-point:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: var(--sun-yellow);
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 214, 0, 0.3);
-            color: #FFFFFF;
-        }
-        
-        .compass-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .compass-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .compass-desc {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, #FFD600, #FFAB00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 50px 0 20px;
-            text-align: center;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            display: inline-block;
-            padding: 0 20px;
-        }
-        
-        .section-title::before, .section-title::after {
-            content: '➤';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--sun-yellow);
-            font-size: 1.5rem;
-            opacity: 0.7;
-        }
-        
-        .section-title::before {
-            left: -10px;
-        }
-        
-        .section-title::after {
-            right: -10px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.3rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #90CAF9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-        
-        .calculator-panel {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            padding: 40px;
-            margin: 30px 0;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border: 3px solid var(--sun-yellow);
-            color: #1A237E;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .calculator-panel::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 214, 0, 0.1), transparent);
-            animation: rotate 20s linear infinite;
-            z-index: 0;
-        }
-        
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
-        }
-        
-        .calculator-panel > * {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .calc-title {
-            color: #1A237E;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .input-group {
-            margin-bottom: 25px;
-        }
-        
-        .input-label {
-            display: block;
-            color: #1A237E;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .range-container {
-            position: relative;
-            margin: 20px 0 30px;
-        }
-        
-        .range-value {
-            position: absolute;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--sun-yellow);
-            color: #1A237E;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            min-width: 100px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(255, 214, 0, 0.3);
-        }
-        
-        input[type="range"] {
-            width: 100%;
-            height: 12px;
-            -webkit-appearance: none;
-            background: linear-gradient(to right, #E3F2FD, var(--sky-blue));
-            border-radius: 10px;
-            outline: none;
-        }
-        
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--sun-yellow);
-            cursor: pointer;
-            border: 4px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        
-        .range-labels {
-            display: flex;
-            justify-content: space-between;
-            color: #5C6BC0;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-        
-        .progress-section {
-            margin: 40px 0;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-        
-        .progress-bar {
-            height: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #FFD600, #4CAF50);
-            width: 0%;
-            transition: width 1s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .progress-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-image: linear-gradient(
-                -45deg,
-                rgba(255, 255, 255, 0.2) 25%,
-                transparent 25%,
-                transparent 50%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(255, 255, 255, 0.2) 75%,
-                transparent 75%,
-                transparent
-            );
-            z-index: 1;
-            background-size: 50px 50px;
-            animation: move 2s linear infinite;
-        }
-        
-        @keyframes move {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
-        }
-        
-        .progress-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #90CAF9;
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-        
-        .result-card {
-            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            border: 3px solid transparent;
-            transition: all 0.3s;
-            color: #1A237E;
-        }
-        
-        .result-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--sun-yellow);
-        }
-        
-        .result-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .result-value {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #1A237E;
-            margin: 10px 0;
-        }
-        
-        .result-label {
-            color: #5C6BC0;
-            font-size: 1rem;
-        }
-        
-        .countdown-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .countdown-item {
-            background: rgba(255, 214, 0, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid rgba(255, 214, 0, 0.3);
-            backdrop-filter: blur(5px);
-        }
-        
-        .countdown-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #FFD600;
-            text-shadow: 0 0 10px rgba(255, 214, 0, 0.5);
-        }
-        
-        .countdown-label {
-            font-size: 0.9rem;
-            color: #90CAF9;
-            margin-top: 5px;
-        }
-        
-        .payment-table {
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .table-header {
-            background: linear-gradient(45deg, #1A237E, #311B92);
-            color: white;
-            padding: 20px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            text-align: center;
-        }
-        
-        .table-row {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
-            padding: 15px 20px;
-            border-bottom: 1px solid #E3F2FD;
-            align-items: center;
-        }
-        
-        .table-row:nth-child(even) {
-            background: #F5F5F5;
-        }
-        
-        .table-cell {
-            color: #1A237E;
-            text-align: center;
-            padding: 10px;
-        }
-        
-        .paid-cell {
-            color: #4CAF50 !important;
-            font-weight: bold;
-        }
-        
-        .current-cell {
-            background: #FFF8E1 !important;
-            border-left: 5px solid #FFD600;
-        }
-        
-        .plan-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-        
-        .plan-option {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            padding: 30px;
-            text-align: center;
-            border: 3px solid;
-            transition: all 0.4s;
-            color: #1A237E;
-        }
-        
-        .plan-option:hover {
-            transform: scale(1.03);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        
-        .plan-1 { border-color: #4CAF50; }
-        .plan-2 { border-color: #2196F3; }
-        .plan-3 { border-color: #9C27B0; }
-        
-        .plan-title {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #1A237E;
-        }
-        
-        .plan-desc {
-            color: #5C6BC0;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        
-        .support-section {
-            background: linear-gradient(135deg, rgba(255, 214, 0, 0.1), rgba(255, 171, 0, 0.1));
-            border-radius: 25px;
-            padding: 40px;
-            margin: 50px 0;
-            text-align: center;
-            border: 3px dashed var(--sun-yellow);
-        }
-        
-        .support-title {
-            font-size: 2rem;
-            color: #FFD600;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .wallet-card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin: 30px auto;
-            max-width: 500px;
-            box-shadow: 0 15px 35px rgba(255, 214, 0, 0.2);
-            border: 3px solid var(--sun-yellow);
-            cursor: pointer;
-            transition: all 0.3s;
-            color: #1A237E;
-        }
-        
-        .wallet-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(255, 214, 0, 0.3);
-        }
-        
-        .wallet-number {
-            font-family: 'Courier New', monospace;
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            color: #1A237E;
-            margin: 15px 0;
-            font-weight: bold;
-        }
-        
-        .support-note {
-            color: #90CAF9;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 20px auto;
-            line-height: 1.6;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 20px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .action-btn {
-            padding: 18px 35px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: 250px;
-            justify-content: center;
-        }
-        
-        .btn-gold {
-            background: linear-gradient(45deg, #FFD600, #FFAB00);
-            color: #1A237E;
-            box-shadow: 0 10px 30px rgba(255, 214, 0, 0.3);
-        }
-        
-        .btn-blue {
-            background: linear-gradient(45deg, #2979FF, #2962FF);
-            color: white;
-            box-shadow: 0 10px 30px rgba(41, 121, 255, 0.3);
-        }
-        
-        .btn-green {
-            background: linear-gradient(45deg, #00C853, #64DD17);
-            color: white;
-            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.3);
-        }
-        
-        .btn-orange {
-            background: linear-gradient(45deg, #FF5722, #FF9800);
-            color: white;
-            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3);
-        }
-        
-        .btn-purple {
-            background: linear-gradient(45deg, #9C27B0, #673AB7);
-            color: white;
-            box-shadow: 0 10px 30px rgba(156, 39, 176, 0.3);
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        
-        .site-footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 2px solid rgba(255, 214, 0, 0.3);
-            color: #90CAF9;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .footer-pattern {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: 
-                radial-gradient(circle at 50% 0%, rgba(255, 214, 0, 0.05) 0%, transparent 70%),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
-            z-index: -1;
-        }
-        
-        .footer-logo {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #FFD600, #FFAB00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            display: block;
-            letter-spacing: 1px;
-        }
-        
-        .footer-domain {
-            font-size: 1.8rem;
-            color: #FFD600;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255, 214, 0, 0.5);
-        }
-        
-        @media (max-width: 768px) {
-            .master-container {
-                padding: 15px;
-            }
-            
-            .site-main-title {
-                font-size: 2rem;
-                padding: 0 15px;
-            }
-            
-            .site-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .domain-name {
-                font-size: 1.4rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .table-row {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 10px;
-            }
-            
-            .action-btn {
-                min-width: 100%;
-            }
-            
-            .compass-nav {
-                grid-template-columns: 1fr;
-            }
-            
-            .countdown-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .moon {
-                width: 60px;
-                height: 60px;
-                top: 20px;
-                right: 20px;
-            }
-            
-            .side-pattern-left, .side-pattern-right {
-                width: 60px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .site-main-title {
-                font-size: 1.6rem;
-            }
-            
-            .site-main-title::before, 
-            .site-main-title::after {
-                display: none;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .section-title::before, 
-            .section-title::after {
-                display: none;
-            }
-        }
-        
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-in {
-            animation: slideUp 0.8s ease-out;
-        }
-        
-        .motivation-toast {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 214, 0, 0.95);
-            color: #1A237E;
-            padding: 15px 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(255,214,0,0.3);
-            z-index: 10000;
-            font-weight: bold;
-            animation: slideInRight 0.5s ease-out;
-            max-width: 300px;
-            border-left: 5px solid #1A237E;
-            backdrop-filter: blur(5px);
-        }
-        
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes slideOutRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-        
-        .auto-save-indicator {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(76, 175, 80, 0.9);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            z-index: 9999;
-            animation: fadeInOut 2s ease-out;
-            backdrop-filter: blur(5px);
-        }
-        
-        @keyframes fadeInOut {
-            0%, 100% { opacity: 0; transform: translateY(20px); }
-            10%, 90% { opacity: 1; transform: translateY(0); }
-        }
-        
-        .tooltip {
-            position: relative;
-            cursor: help;
-        }
-        
-        .tooltip:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(26, 35, 126, 0.95);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            z-index: 1000;
-            border: 2px solid #FFD600;
-            backdrop-filter: blur(5px);
-        }
-        
-        /* Модальное окно для отзывов */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 25px;
-            padding: 40px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            border: 3px solid var(--sun-yellow);
-            color: #1A237E;
-            position: relative;
-            animation: modalSlideUp 0.5s ease-out;
-        }
-        
-        @keyframes modalSlideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: #1A237E;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .modal-close:hover {
-            transform: rotate(90deg);
-        }
-        
-        .modal-title {
-            color: #1A237E;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-label {
-            display: block;
-            color: #1A237E;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-input, .form-textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #E3F2FD;
-            border-radius: 15px;
-            font-size: 1rem;
-            color: #1A237E;
-            background: white;
-            transition: border-color 0.3s;
-        }
-        
-        .form-input:focus, .form-textarea:focus {
-            outline: none;
-            border-color: var(--sun-yellow);
-        }
-        
-        .form-textarea {
-            min-height: 150px;
-            resize: vertical;
-            font-family: inherit;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(45deg, #FFD600, #FFAB00);
-            color: #1A237E;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 10px;
-        }
-        
-        .form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 214, 0, 0.3);
-        }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
-<body>
-    <div class="side-pattern-left"></div>
-    <div class="side-pattern-right"></div>
+<script>
+    // ============================================
+    // ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ
+    // ============================================
     
-    <div class="stars" id="stars"></div>
-    <div class="moon"></div>
+    const STORAGE_KEY = 'debt_freedom_plan_2026';
+    const motivationMessages = [
+        "Каждый платеж — шаг к солнцу! ☀️",
+        "Ты сильнее, чем эти цифры! 💪",
+        "Свобода ближе, чем кажется! 🕊️",
+        "Твоё терпение превращается в свободу! ✨",
+        "Каждый рубль — кирпичик в стене твоей независимости! 🧱",
+        "У тебя есть план — значит, ты уже победил! 🎯",
+        "Долги временны, свобода вечна! 🌅",
+        "Сегодняшний платеж — завтрашняя свобода! 🎉",
+        "Ты контролируешь цифры, а не они тебя! 📊",
+        "Каждый закрытый кредит — это победа! 🏆"
+    ];
     
-    <!-- Модальное окно для отзывов -->
-    <div class="modal-overlay" id="feedbackModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <h2 class="modal-title">📝 Поделиться своей историей</h2>
-            <p style="color: #5C6BC0; text-align: center; margin-bottom: 25px;">
-                Расскажи, как ты шел к финансовой свободе. Твой опыт вдохновит других!
-            </p>
-            
-            <form id="feedbackForm">
-                <div class="form-group">
-                    <label class="form-label">Ваше имя (можно анонимно)</label>
-                    <input type="text" class="form-input" id="feedbackName" placeholder="Как к вам обращаться?">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Сколько было долгов?</label>
-                    <input type="text" class="form-input" id="feedbackDebt" placeholder="Например: 500 000 ₽">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Какую стратегию использовали?</label>
-                    <select class="form-input" id="feedbackStrategy">
-                        <option value="">Выберите стратегию</option>
-                        <option value="standard">Стандартный план</option>
-                        <option value="accelerated">Ускоренный план</option>
-                        <option value="restructuring">Реструктуризация</option>
-                        <option value="other">Другая стратегия</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Ваша история успеха</label>
-                    <textarea class="form-textarea" id="feedbackStory" placeholder="Расскажите подробно о своем пути: как начали, какие трудности были, как справлялись, какой результат достигли..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Ваш совет другим</label>
-                    <textarea class="form-textarea" id="feedbackAdvice" placeholder="Что бы вы посоветовали тем, кто только начинает свой путь к финансовой свободе?"></textarea>
-                </div>
-                
-                <div class="form-group" style="text-align: center;">
-                    <label style="color: #5C6BC0; font-size: 0.9rem;">
-                        <input type="checkbox" id="feedbackAnonymous" checked>
-                        Опубликовать анонимно
-                    </label>
-                </div>
-                
-                <button type="submit" class="form-submit">
-                    📤 Отправить историю
-                </button>
-            </form>
-            
-            <p style="color: #90CAF9; font-size: 0.9rem; text-align: center; margin-top: 20px;">
-                Спасибо за ваш вклад! История будет проверена и добавлена на сайт.
-            </p>
-        </div>
-    </div>
+    let userData = {
+        debt: 500000,
+        payment: 25000,
+        interest: 15,
+        startDate: null,
+        completedMonths: 0,
+        totalMonths: 0,
+        freedomDate: null,
+        lastSaved: null,
+        achievements: [],
+        paymentHistory: [],
+        monthlyDetails: [] // ХРАНИМ ВСЕ МЕСЯЦЫ
+    };
     
-    <div class="main-header">
-        <div class="header-pattern"></div>
-        <div class="master-container">
-            <h1 class="site-main-title animate-in">
-                Выход из долгов: калькулятор и пошаговый план на 2026
-                <span class="domain-name">ДОМЕНЗАДОЛЖЕН.РФ</span>
-            </h1>
-            
-            <p class="site-subtitle animate-in">
-                Каждый долг — это всего лишь цифры. Цифры можно посчитать, спланировать и победить. 
-                Ты не один на этом пути — у тебя есть точный расчет и проверенная стратегия!
-            </p>
-            
-            <div class="compass-nav">
-                <a href="#calculator" class="compass-point">
-                    <span class="compass-icon">🧮</span>
-                    <div class="compass-title">КАЛЬКУЛЯТОР СВОБОДЫ</div>
-                    <div class="compass-desc">Рассчитай свой путь к рассвету</div>
-                </a>
-                
-                <a href="#progress" class="compass-point">
-                    <span class="compass-icon">📊</span>
-                    <div class="compass-title">МОЙ ПРОГРЕСС</div>
-                    <div class="compass-desc">Следи за движением к цели</div>
-                </a>
-                
-                <a href="#plan" class="compass-point">
-                    <span class="compass-icon">🗺️</span>
-                    <div class="compass-title">ГОТОВЫЕ ПЛАНЫ</div>
-                    <div class="compass-desc">Выбери стратегию освобождения</div>
-                </a>
-                
-                <a href="#support" class="compass-point">
-                    <span class="compass-icon">💖</span>
-                    <div class="compass-title">ПОДДЕРЖАТЬ ПРОЕКТ</div>
-                    <div class="compass-desc">Помоги другим увидеть рассвет</div>
-                </a>
-            </div>
-        </div>
-    </div>
+    // Элементы DOM
+    const debtSlider = document.getElementById('debtSlider');
+    const paymentSlider = document.getElementById('paymentSlider');
+    const interestSlider = document.getElementById('interestSlider');
+    const debtValue = document.getElementById('debtValue');
+    const paymentValue = document.getElementById('paymentValue');
+    const interestValue = document.getElementById('interestValue');
+    const resultsContainer = document.getElementById('resultsContainer');
+    const paymentTableContainer = document.getElementById('paymentTableContainer');
+    const paymentTable = document.getElementById('paymentTable');
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const monthsLeft = document.getElementById('monthsLeft');
+    const countdownContainer = document.getElementById('countdownContainer');
+    const achievementsContainer = document.getElementById('achievementsContainer');
+    const feedbackModal = document.getElementById('feedbackModal');
+    const feedbackForm = document.getElementById('feedbackForm');
     
-    <div class="master-container">
-        <section id="calculator" class="animate-in">
-            <h2 class="section-title">🧮 КАЛЬКУЛЯТОР ТВОЕГО РАССВЕТА</h2>
-            <p class="section-subtitle">Подвинь ползунки — и увидишь точную дату своей финансовой свободы!</p>
-            
-            <div class="calculator-panel">
-                <h2 class="calc-title">🧮 КАЛЬКУЛЯТОР ТВОЕГО РАССВЕТА</h2>
-                <p style="text-align: center; color: #5C6BC0; margin-bottom: 30px;">
-                    Подвинь ползунки — и увидишь точную дату своей свободы!
-                </p>
-                
-                <div class="input-group">
-                    <label class="input-label tooltip" data-tooltip="Включает все кредиты, займы и долги">
-                        ☁️ ОБЩАЯ СУММА ДОЛГА
-                    </label>
-                    <div class="range-container">
-                        <div class="range-value" id="debtValue">500 000 ₽</div>
-                        <input type="range" min="10000" max="3000000" step="10000" value="500000" 
-                               class="debt-slider" id="debtSlider" oninput="updateDebt()">
-                    </div>
-                    <div class="range-labels">
-                        <span>10 000 ₽</span>
-                        <span>3 000 000 ₽</span>
-                    </div>
-                </div>
-                
-                <div class="input-group">
-                    <label class="input-label tooltip" data-tooltip="Реальная сумма, которую можешь платить ежемесячно">
-                        💧 СКОЛЬКО МОЖЕШЬ ПЛАТИТЬ В МЕСЯЦ
-                    </label>
-                    <div class="range-container">
-                        <div class="range-value" id="paymentValue">25 000 ₽</div>
-                        <input type="range" min="1000" max="200000" step="1000" value="25000" 
-                               class="payment-slider" id="paymentSlider" oninput="updatePayment()">
-                    </div>
-                    <div class="range-labels">
-                        <span>1 000 ₽</span>
-                        <span>200 000 ₽</span>
-                    </div>
-                </div>
-                
-                <div class="input-group">
-                    <label class="input-label tooltip" data-tooltip="Средняя ставка по всем твоим кредитам">
-                        🌪️ ПРОЦЕНТНАЯ СТАВКА ПО КРЕДИТУ
-                    </label>
-                    <div class="range-container">
-                        <div class="range-value" id="interestValue">15%</div>
-                        <input type="range" min="5" max="30" step="0.5" value="15" 
-                               class="interest-slider" id="interestSlider" oninput="updateInterest()">
-                    </div>
-                    <div class="range-labels">
-                        <span>5%</span>
-                        <span>30%</span>
-                    </div>
-                </div>
-                
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span style="color: #FFD600;">📍 ТЫ ЗДЕСЬ</span>
-                        <span style="color: #4CAF50;">🌅 СВОБОДА</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    <div class="progress-stats">
-                        <span id="progressText">Прогресс: 0%</span>
-                        <span id="monthsLeft">Осталось: 0 месяцев</span>
-                    </div>
-                </div>
-                
-                <div class="countdown-container" id="countdownContainer" style="display: none;">
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="cdMonths">0</div>
-                        <div class="countdown-label">месяцев</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="cdDays">0</div>
-                        <div class="countdown-label">дней</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="cdWeeks">0</div>
-                        <div class="countdown-label">недель</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="cdPayments">0</div>
-                        <div class="countdown-label">платежей</div>
-                    </div>
-                </div>
-                
-                <div class="results-grid" id="resultsContainer"></div>
-                
-                <div id="paymentTableContainer" style="display: none;">
-                    <div class="table-header">📅 ПОМЕСЯЧНЫЙ ПЛАН ПОГАШЕНИЯ</div>
-                    <div id="paymentTable" class="payment-table"></div>
-                </div>
-                
-                <div class="action-buttons">
-                    <button class="action-btn btn-gold" onclick="calculateFullPlan()">
-                        📊 РАССЧИТАТЬ ПОЛНЫЙ ПЛАН
-                    </button>
-                    <button class="action-btn btn-blue" onclick="savePersonalPlan()">
-                        💾 СОХРАНИТЬ МОЙ ПЛАН
-                    </button>
-                    <button class="action-btn btn-green" onclick="markPaymentDone()">
-                        ✅ ОТМЕТИТЬ ПЛАТЕЖ
-                    </button>
-                    <button class="action-btn btn-orange" onclick="exportToPDF()">
-                        📄 СОХРАНИТЬ В PDF
-                    </button>
-                    <button class="action-btn" style="background: #9E9E9E; color: white;" onclick="resetCalculator()">
-                        🔄 НАЧАТЬ С НАЧАЛА
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <section id="progress" class="animate-in">
-            <h2 class="section-title">📊 ВАШ ПЕРСОНАЛЬНЫЙ ПУТЬ К СВОБОДЕ</h2>
-            <p class="section-subtitle">Здесь сохраняется твой прогресс. Возвращайся в любое время!</p>
-            
-            <div class="calculator-panel">
-                <h3 class="calc-title">🎯 МОИ ДОСТИЖЕНИЯ</h3>
-                
-                <div id="achievementsContainer" style="text-align: center; padding: 20px; color: #5C6BC0;">
-                    <p>Здесь будут отображаться твои успехи в погашении долгов!</p>
-                    <p>Начни с расчета плана и отмечай выполненные платежи.</p>
-                </div>
-                
-                <div class="action-buttons">
-                    <button class="action-btn btn-purple" onclick="showSuccessStories()">
-                        📖 ИСТОРИИ УСПЕХА
-                    </button>
-                    <button class="action-btn" style="background: #607D8B; color: white;" onclick="clearAllData()">
-                        🗑️ ОЧИСТИТЬ ВСЕ ДАННЫЕ
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <section id="plan" class="animate-in">
-            <h2 class="section-title">🗺️ 3 ПРОВЕРЕННЫХ СТРАТЕГИИ ОСВОБОЖДЕНИЯ</h2>
-            <p class="section-subtitle">Выбери ту, что подходит именно твоей ситуации</p>
-            
-            <div class="plan-options">
-                <div class="plan-option plan-1">
-                    <div class="plan-title">🎯 СТАНДАРТНЫЙ ПЛАН</div>
-                    <div class="plan-desc">
-                        Идеально, если у тебя стабильный доход. Просто следуй графику, 
-                        который создал калькулятор. Каждый месяц — одинаковый платеж, 
-                        никаких сюрпризов!
-                    </div>
-                    <div style="margin: 20px 0; padding: 15px; background: #E8F5E9; border-radius: 15px;">
-                        <strong>Плюсы:</strong><br>
-                        • Предсказуемость 📅<br>
-                        • Легко планировать бюджет 💰<br>
-                        • Минимум стресса 😌
-                    </div>
-                    <button class="action-btn btn-green" style="width: 100%;" onclick="applyPlan(1)">
-                        ВЫБРАТЬ ЭТОТ ПЛАН
-                    </button>
-                </div>
-                
-                <div class="plan-option plan-2">
-                    <div class="plan-title">⚡ УСКОРЕННЫЙ ПЛАН</div>
-                    <div class="plan-desc">
-                        Если можешь платить больше в хорошие месяцы. Основной платеж + 
-                        дополнительные взносы при возможности. Сократишь срок в 1.5-2 раза!
-                    </div>
-                    <div style="margin: 20px 0; padding: 15px; background: #E3F2FD; border-radius: 15px;">
-                        <strong>Плюсы:</strong><br>
-                        • Быстрее к свободе 🚀<br>
-                        • Меньше процентов 💸<br>
-                        • Гибкость под доход 📈
-                    </div>
-                    <button class="action-btn btn-blue" style="width: 100%;" onclick="applyPlan(2)">
-                        ВЫБРАТЬ ЭТОТ ПЛАН
-                    </button>
-                </div>
-                
-                <div class="plan-option plan-3">
-                    <div class="plan-title">🔄 ПЛАН РЕСТРУКТУРИЗАЦИИ</div>
-                    <div class="plan-desc">
-                        Для сложных ситуаций. Уменьшаем платеж, увеличиваем срок. 
-                        Сначала договариваемся с банком, потом действуем по плану.
-                    </div>
-                    <div style="margin: 20px 0; padding: 15px; background: #F3E5F5; border-radius: 15px;">
-                        <strong>Плюсы:</strong><br>
-                        • Дышим полной грудью 🌬️<br>
-                        • Не голодаем 🍽️<br>
-                        • Сохраняем спокойствие 🧘
-                    </div>
-                    <button class="action-btn" style="width: 100%; background: #9C27B0; color: white;" onclick="applyPlan(3)">
-                        ВЫБРАТЬ ЭТОТ ПЛАН
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <section id="stories" class="animate-in" style="display: none;">
-            <h2 class="section-title">📖 ИСТОРИИ ТЕХ, КТО УЖЕ УВИДЕЛ РАССВЕТ</h2>
-            <div class="plan-options">
-                <div class="plan-option" style="border-color: #FF9800;">
-                    <div class="plan-title">Мария, 32 года</div>
-                    <div class="plan-desc">
-                        "Было 850 тыс. рублей долга. Следила за каждым платежом через этот калькулятор. 
-                        Через 2 года и 3 месяца закрыла последний платеж. Сейчас коплю на первый взнос за квартиру!"
-                    </div>
-                    <div style="margin-top: 20px; color: #FF9800; font-weight: bold;">
-                        ✅ СВОБОДНА С 15.08.2025
-                    </div>
-                </div>
-                
-                <div class="plan-option" style="border-color: #2196F3;">
-                    <div class="plan-title">Алексей, 41 год</div>
-                    <div class="plan-desc">
-                        "Реструктурировал 1,5 млн через банк + этот план. Платил меньше, но дольше. 
-                        Главное — перестал паниковать. Последний платеж сделал вчера!"
-                    </div>
-                    <div style="margin-top: 20px; color: #2196F3; font-weight: bold;">
-                        ⏳ ЗАКРЫВАЕТ В ДЕКАБРЕ 2025
-                    </div>
-                </div>
-                
-                <div class="plan-option" style="border-color: #4CAF50;">
-                    <div class="plan-title">Ольга и Дмитрий</div>
-                    <div class="plan-desc">
-                        "Долги по ипотеке после потери работы. Взяли ускоренный план, подрабатывали. 
-                        Сократили срок на 8 месяцев! Сейчас помогаем друзьям составить их планы."
-                    </div>
-                    <div style="margin-top: 20px; color: #4CAF50; font-weight: bold;">
-                        ✨ ОСВОБОДИЛИСЬ ВМЕСТЕ В 2025
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin: 40px 0;">
-                <button class="action-btn btn-purple" onclick="openFeedbackModal()">
-                    📢 ПОДЕЛИТЬСЯ СВОЕЙ ИСТОРИЕЙ
-                </button>
-                <p style="color: #90CAF9; margin-top: 15px; font-size: 0.9rem;">
-                    Твой опыт вдохновит других! Мы с радостью опубликуем твою историю.
-                </p>
-            </div>
-        </section>
-        
-        <section id="support" class="animate-in">
-            <div class="support-section">
-                <h2 class="support-title">💖 ПОДДЕРЖАТЬ ПРОЕКТ "РАССВЕТ"</h2>
-                <p class="support-note">
-                    Если этот калькулятор и план стали для тебя лучом надежды в трудную минуту — 
-                    ты можешь отблагодарить создателя. Каждый рубль поможет:
-                </p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
-                    <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 15px;">
-                        <div style="font-size: 2rem;">🌍</div>
-                        <div style="color: #1A237E; font-weight: bold;">Сайт живет</div>
-                        <div style="color: #5C6BC0; font-size: 0.9rem;">Оплата хостинга и домена</div>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 15px;">
-                        <div style="font-size: 2rem;">✨</div>
-                        <div style="color: #1A237E; font-weight: bold;">Новые фичи</div>
-                        <div style="color: #5C6BC0; font-size: 0.9rem;">Разработка полезных инструментов</div>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 15px;">
-                        <div style="font-size: 2rem;">💪</div>
-                        <div style="color: #1A237E; font-weight: bold;">Поддержка других</div>
-                        <div style="color: #5C6BC0; font-size: 0.9rem;">Консультации для тех, кто в начале пути</div>
-                    </div>
-                </div>
-                
-                <div class="wallet-card" onclick="copyWallet()">
-                    <div style="font-size: 1.5rem; color: #1A237E; margin-bottom: 10px;">
-                        ЮMoney кошелек проекта
-                    </div>
-                    <div class="wallet-number" id="walletNumber">
-                        4100 1189 8622 3649
-                    </div>
-                    <div style="color: #5C6BC0; font-size: 0.9rem; margin-top: 15px;">
-                        Нажми, чтобы скопировать номер
-                    </div>
-                    <div style="color: #FFD600; margin-top: 10px; font-size: 1.2rem;">
-                        💫 Спасибо за твою поддержку!
-                    </div>
-                </div>
-                
-                <p class="support-note">
-                    Даже 100 рублей — это важный вклад. Как капля воды, которая точит камень долгов. 
-                    Вместе мы сделаем этот мир светлее для тех, кто ищет путь к финансовой свободе.
-                </p>
-            </div>
-        </section>
-        
-        <div class="site-footer">
-            <div class="footer-pattern"></div>
-            <div class="footer-logo">Выход из долгов 2026</div>
-            <div class="footer-domain">ДОМЕНЗАДОЛЖЕН.РФ</div>
-            <p style="margin-bottom: 20px; font-size: 1.1rem;">
-                Проект создан с верой в каждого, кто решил взять свою финансовую жизнь под контроль
-            </p>
-            <p style="color: #BBDEFB; font-size: 0.9rem;">
-                © 2025-2026 Выход из долгов: калькулятор и пошаговый план. Все расчеты примерные,<br>
-                рекомендуем консультацию с финансовым советником.
-            </p>
-            <p style="margin-top: 20px; color: #90CAF9; font-size: 0.8rem;">
-                🔄 Данные сохраняются автоматически в вашем браузере<br>
-                📅 Сегодня: <span id="currentDate">23 января 2026</span>
-            </p>
-        </div>
-    </div>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Выход из долгов: калькулятор и пошаговый план на 2026",
-        "description": "Бесплатный онлайн-калькулятор для создания персонализированного плана погашения долгов с пошаговой инструкцией на 2026 год",
-        "url": "https://domenzadolzhen.rf",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "RUB"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "ДОМЕНЗАДОЛЖЕН.РФ",
-            "url": "https://domenzadolzhen.rf"
-        },
-        "datePublished": "2026-01-23",
-        "keywords": "выход из долгов, калькулятор долгов 2026, пошаговый план погашения, реструктуризация кредитов"
+    // ============================================
+    // МОДАЛЬНОЕ ОКНО ДЛЯ ОТЗЫВОВ
+    // ============================================
+    
+    function openFeedbackModal() {
+        feedbackModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
-    </script>
-
-    <script>
-        // ============================================
-        // ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ
-        // ============================================
+    
+    function closeModal() {
+        feedbackModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    feedbackModal.addEventListener('click', function(e) {
+        if (e.target === feedbackModal) {
+            closeModal();
+        }
+    });
+    
+    feedbackForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        const STORAGE_KEY = 'debt_freedom_plan';
-        const motivationMessages = [
-            "Каждый платеж — шаг к солнцу! ☀️",
-            "Ты сильнее, чем эти цифры! 💪",
-            "Свобода ближе, чем кажется! 🕊️",
-            "Твоё терпение превращается в свободу! ✨",
-            "Каждый рубль — кирпичик в стене твоей независимости! 🧱",
-            "У тебя есть план — значит, ты уже победил! 🎯",
-            "Долги временны, свобода вечна! 🌅",
-            "Сегодняшний платеж — завтрашняя свобода! 🎉",
-            "Ты контролируешь цифры, а не они тебя! 📊",
-            "Каждый закрытый кредит — это победа! 🏆"
-        ];
+        const name = document.getElementById('feedbackName').value || 'Аноним';
+        const debt = document.getElementById('feedbackDebt').value;
+        const strategy = document.getElementById('feedbackStrategy').value;
+        const story = document.getElementById('feedbackStory').value;
+        const advice = document.getElementById('feedbackAdvice').value;
+        const isAnonymous = document.getElementById('feedbackAnonymous').checked;
         
-        let userData = {
-            debt: 500000,
-            payment: 25000,
-            interest: 15,
-            startDate: null,
-            completedMonths: 0,
-            totalMonths: 0,
-            freedomDate: null,
-            lastSaved: null,
-            achievements: [],
-            paymentHistory: []
+        if (!story.trim()) {
+            showMotivation('📝 Пожалуйста, расскажи свою историю!');
+            return;
+        }
+        
+        const feedback = {
+            id: Date.now(),
+            name: isAnonymous ? 'Аноним' : (name || 'Пользователь'),
+            debt: debt || 'Не указано',
+            strategy: getStrategyName(strategy),
+            story: story,
+            advice: advice || 'Будьте настойчивы!',
+            date: new Date().toISOString(),
+            status: 'pending'
         };
         
-        // Элементы DOM
-        const debtSlider = document.getElementById('debtSlider');
-        const paymentSlider = document.getElementById('paymentSlider');
-        const interestSlider = document.getElementById('interestSlider');
-        const debtValue = document.getElementById('debtValue');
-        const paymentValue = document.getElementById('paymentValue');
-        const interestValue = document.getElementById('interestValue');
-        const resultsContainer = document.getElementById('resultsContainer');
-        const paymentTableContainer = document.getElementById('paymentTableContainer');
-        const paymentTable = document.getElementById('paymentTable');
-        const progressFill = document.getElementById('progressFill');
-        const progressText = document.getElementById('progressText');
-        const monthsLeft = document.getElementById('monthsLeft');
-        const countdownContainer = document.getElementById('countdownContainer');
-        const achievementsContainer = document.getElementById('achievementsContainer');
-        const feedbackModal = document.getElementById('feedbackModal');
-        const feedbackForm = document.getElementById('feedbackForm');
+        saveFeedback(feedback);
         
-        // ============================================
-        // МОДАЛЬНОЕ ОКНО ДЛЯ ОТЗЫВОВ (ИСПРАВЛЕНО)
-        // ============================================
+        feedbackForm.reset();
+        closeModal();
         
-        function openFeedbackModal() {
-            feedbackModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+        showMotivation('✨ Спасибо за твою историю! Мы проверим и добавим её на сайт.');
+        console.log('Отзыв получен:', feedback);
+    });
+    
+    function getStrategyName(strategy) {
+        switch(strategy) {
+            case 'standard': return 'Стандартный план';
+            case 'accelerated': return 'Ускоренный план';
+            case 'restructuring': return 'Реструктуризация';
+            case 'other': return 'Другая стратегия';
+            default: return 'Не указано';
         }
-        
-        function closeModal() {
-            feedbackModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+    }
+    
+    function saveFeedback(feedback) {
+        try {
+            let feedbacks = JSON.parse(localStorage.getItem('debt_feedbacks') || '[]');
+            feedbacks.push(feedback);
+            localStorage.setItem('debt_feedbacks', JSON.stringify(feedbacks));
+        } catch (e) {
+            console.warn('Не удалось сохранить отзыв:', e);
         }
-        
-        // Закрытие модального окна при клике вне его
-        feedbackModal.addEventListener('click', function(e) {
-            if (e.target === feedbackModal) {
-                closeModal();
-            }
-        });
-        
-        // Обработка отправки формы отзыва
-        feedbackForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('feedbackName').value || 'Аноним';
-            const debt = document.getElementById('feedbackDebt').value;
-            const strategy = document.getElementById('feedbackStrategy').value;
-            const story = document.getElementById('feedbackStory').value;
-            const advice = document.getElementById('feedbackAdvice').value;
-            const isAnonymous = document.getElementById('feedbackAnonymous').checked;
-            
-            if (!story.trim()) {
-                showMotivation('📝 Пожалуйста, расскажи свою историю!');
-                return;
-            }
-            
-            // Сохраняем отзыв в localStorage
-            const feedback = {
-                id: Date.now(),
-                name: isAnonymous ? 'Аноним' : (name || 'Пользователь'),
-                debt: debt || 'Не указано',
-                strategy: getStrategyName(strategy),
-                story: story,
-                advice: advice || 'Будьте настойчивы!',
-                date: new Date().toISOString(),
-                status: 'pending'
-            };
-            
-            saveFeedback(feedback);
-            
-            // Очищаем форму
-            feedbackForm.reset();
-            closeModal();
-            
-            // Показываем подтверждение
-            showMotivation('✨ Спасибо за твою историю! Мы проверим и добавим её на сайт.');
-            
-            // В реальном проекте здесь был бы AJAX запрос на сервер
-            console.log('Отзыв получен:', feedback);
-        });
-        
-        function getStrategyName(strategy) {
-            switch(strategy) {
-                case 'standard': return 'Стандартный план';
-                case 'accelerated': return 'Ускоренный план';
-                case 'restructuring': return 'Реструктуризация';
-                case 'other': return 'Другая стратегия';
-                default: return 'Не указано';
-            }
+    }
+    
+    // ============================================
+    // ОСНОВНОЙ КАЛЬКУЛЯТОР - ИСПРАВЛЕННЫЙ
+    // ============================================
+    
+    function saveToLocalStorage() {
+        try {
+            userData.lastSaved = new Date().toISOString();
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
+            showAutoSaveIndicator();
+        } catch (e) {
+            console.warn('Не удалось сохранить данные:', e);
+            showMotivation('⚠️ Не удалось сохранить. Проверь память браузера.');
         }
-        
-        function saveFeedback(feedback) {
-            try {
-                let feedbacks = JSON.parse(localStorage.getItem('debt_feedbacks') || '[]');
-                feedbacks.push(feedback);
-                localStorage.setItem('debt_feedbacks', JSON.stringify(feedbacks));
-            } catch (e) {
-                console.warn('Не удалось сохранить отзыв:', e);
-            }
-        }
-        
-        // ============================================
-        // ОСТАЛЬНЫЕ ФУНКЦИИ (БЕЗ ИЗМЕНЕНИЙ)
-        // ============================================
-        
-        function saveToLocalStorage() {
-            try {
-                userData.lastSaved = new Date().toISOString();
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
-                showAutoSaveIndicator();
-            } catch (e) {
-                console.warn('Не удалось сохранить данные:', e);
-            }
-        }
-        
-        function loadFromLocalStorage() {
-            try {
-                const saved = localStorage.getItem(STORAGE_KEY);
-                if (saved) {
-                    const parsed = JSON.parse(saved);
-                    userData = { ...userData, ...parsed };
-                    
-                    debtSlider.value = userData.debt;
-                    paymentSlider.value = userData.payment;
-                    interestSlider.value = userData.interest;
-                    
-                    updateDebt();
-                    updatePayment();
-                    updateInterest();
-                    
-                    if (userData.startDate && userData.totalMonths > 0) {
-                        updateProgressBar(userData.completedMonths, userData.totalMonths);
-                        updateCountdown();
-                        showAchievements();
-                    }
-                }
-            } catch (e) {
-                console.warn('Не удалось загрузить данные:', e);
-            }
-        }
-        
-        function clearAllData() {
-            if (confirm('Точно удалить все сохраненные данные? Это действие нельзя отменить.')) {
-                localStorage.removeItem(STORAGE_KEY);
-                userData = {
-                    debt: 500000,
-                    payment: 25000,
-                    interest: 15,
-                    startDate: null,
-                    completedMonths: 0,
-                    totalMonths: 0,
-                    freedomDate: null,
-                    lastSaved: null,
-                    achievements: [],
-                    paymentHistory: []
-                };
+    }
+    
+    function loadFromLocalStorage() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                userData = { ...userData, ...parsed };
                 
-                debtSlider.value = 500000;
-                paymentSlider.value = 25000;
-                interestSlider.value = 15;
+                // Обновляем слайдеры
+                debtSlider.value = userData.debt || 500000;
+                paymentSlider.value = userData.payment || 25000;
+                interestSlider.value = userData.interest || 15;
                 
                 updateDebt();
                 updatePayment();
                 updateInterest();
                 
-                progressFill.style.width = '0%';
-                progressText.textContent = 'Прогресс: 0%';
-                monthsLeft.textContent = 'Осталось: 0 месяцев';
-                countdownContainer.style.display = 'none';
-                achievementsContainer.innerHTML = `
-                    <p>Здесь будут отображаться твои успехи в погашении долгов!</p>
-                    <p>Начни с расчета плана и отмечай выполненные платежи.</p>
-                `;
-                
-                showMotivation('🎯 Начни свой путь к свободе заново!');
-            }
-        }
-        
-        function formatNumber(num) {
-            return new Intl.NumberFormat('ru-RU').format(Math.round(num));
-        }
-        
-        function updateDebt() {
-            const value = parseInt(debtSlider.value);
-            debtValue.textContent = formatNumber(value) + ' ₽';
-            userData.debt = value;
-            calculate();
-            saveToLocalStorage();
-        }
-        
-        function updatePayment() {
-            const value = parseInt(paymentSlider.value);
-            paymentValue.textContent = formatNumber(value) + ' ₽';
-            userData.payment = value;
-            calculate();
-            saveToLocalStorage();
-        }
-        
-        function updateInterest() {
-            const value = parseFloat(interestSlider.value);
-            interestValue.textContent = value.toFixed(1) + '%';
-            userData.interest = value;
-            calculate();
-            saveToLocalStorage();
-        }
-        
-        function calculate() {
-            const debt = parseInt(debtSlider.value);
-            const payment = parseInt(paymentSlider.value);
-            const interest = parseFloat(interestSlider.value) / 100 / 12;
-            
-            if (payment <= 0 || debt <= 0) return;
-            
-            let remaining = debt;
-            let months = 0;
-            let totalInterest = 0;
-            let monthlyDetails = [];
-            
-            while (remaining > 0 && months < 600) {
-                const monthlyInterest = remaining * interest;
-                const principalPayment = Math.min(payment - monthlyInterest, remaining);
-                
-                if (principalPayment <= 0) {
-                    months = 600;
-                    break;
-                }
-                
-                totalInterest += monthlyInterest;
-                remaining -= principalPayment;
-                months++;
-                
-                if (months <= 12) {
-                    monthlyDetails.push({
-                        month: months,
-                        payment: payment,
-                        interest: monthlyInterest,
-                        principal: principalPayment,
-                        remaining: remaining > 0 ? remaining : 0
-                    });
+                // Восстанавливаем прогресс
+                if (userData.totalMonths > 0) {
+                    updateProgressBar(userData.completedMonths, userData.totalMonths);
+                    updateCountdown();
+                    showAchievements();
+                    
+                    // Показываем таблицу платежей
+                    if (userData.monthlyDetails && userData.monthlyDetails.length > 0) {
+                        displayPaymentTable(userData.monthlyDetails);
+                    }
                 }
             }
+        } catch (e) {
+            console.warn('Не удалось загрузить данные:', e);
+            localStorage.removeItem(STORAGE_KEY);
+        }
+    }
+    
+    function clearAllData() {
+        if (confirm('Точно удалить все сохраненные данные? Это действие нельзя отменить.')) {
+            localStorage.removeItem(STORAGE_KEY);
+            userData = {
+                debt: 500000,
+                payment: 25000,
+                interest: 15,
+                startDate: null,
+                completedMonths: 0,
+                totalMonths: 0,
+                freedomDate: null,
+                lastSaved: null,
+                achievements: [],
+                paymentHistory: [],
+                monthlyDetails: []
+            };
             
-            if (months >= 600) {
-                showImpossiblePlan(debt, payment, interest);
+            debtSlider.value = 500000;
+            paymentSlider.value = 25000;
+            interestSlider.value = 15;
+            
+            updateDebt();
+            updatePayment();
+            updateInterest();
+            
+            progressFill.style.width = '0%';
+            progressText.textContent = 'Прогресс: 0%';
+            monthsLeft.textContent = 'Осталось: 0 месяцев';
+            countdownContainer.style.display = 'none';
+            paymentTableContainer.style.display = 'none';
+            achievementsContainer.innerHTML = `
+                <p>Здесь будут отображаться твои успехи в погашении долгов!</p>
+                <p>Начни с расчета плана и отмечай выполненные платежи.</p>
+            `;
+            
+            showMotivation('🎯 Начни свой путь к свободе заново!');
+        }
+    }
+    
+    function formatNumber(num) {
+        return new Intl.NumberFormat('ru-RU').format(Math.round(num));
+    }
+    
+    function updateDebt() {
+        const value = parseInt(debtSlider.value);
+        debtValue.textContent = formatNumber(value) + ' ₽';
+        userData.debt = value;
+        calculateFullPlanWithAllMonths(); // РАССЧИТЫВАЕМ ПОЛНЫЙ ПЛАН СРАЗУ
+        saveToLocalStorage();
+    }
+    
+    function updatePayment() {
+        const value = parseInt(paymentSlider.value);
+        paymentValue.textContent = formatNumber(value) + ' ₽';
+        userData.payment = value;
+        calculateFullPlanWithAllMonths(); // РАССЧИТЫВАЕМ ПОЛНЫЙ ПЛАН СРАЗУ
+        saveToLocalStorage();
+    }
+    
+    function updateInterest() {
+        const value = parseFloat(interestSlider.value);
+        interestValue.textContent = value.toFixed(1) + '%';
+        userData.interest = value;
+        calculateFullPlanWithAllMonths(); // РАССЧИТЫВАЕМ ПОЛНЫЙ ПЛАН СРАЗУ
+        saveToLocalStorage();
+    }
+    
+    // ============================================
+    // ГЛАВНАЯ ФУНКЦИЯ РАСЧЕТА - ПОКАЗЫВАЕТ ВСЕ МЕСЯЦЫ
+    // ============================================
+    
+    function calculateFullPlanWithAllMonths() {
+        const debt = parseInt(debtSlider.value);
+        const monthlyPayment = parseInt(paymentSlider.value);
+        const monthlyInterestRate = parseFloat(interestSlider.value) / 100 / 12;
+        
+        if (monthlyPayment <= 0 || debt <= 0) return;
+        
+        let remainingDebt = debt;
+        let months = 0;
+        let totalInterestPaid = 0;
+        const monthlyDetails = [];
+        
+        // Рассчитываем ВСЕ месяцы до полного погашения
+        while (remainingDebt > 0 && months < 600) { // 600 месяцев = 50 лет максимум
+            const interestThisMonth = remainingDebt * monthlyInterestRate;
+            const principalThisMonth = Math.min(monthlyPayment - interestThisMonth, remainingDebt);
+            
+            // Проверяем, может ли быть погашен долг
+            if (principalThisMonth <= 0) {
+                // Платеж меньше процентов - план невозможен
+                showImpossiblePlan(debt, monthlyPayment, monthlyInterestRate);
                 return;
             }
             
-            userData.totalMonths = months;
-            userData.startDate = userData.startDate || new Date().toISOString();
+            totalInterestPaid += interestThisMonth;
+            remainingDebt -= principalThisMonth;
+            months++;
             
-            const today = new Date();
-            today.setMonth(today.getMonth() + months);
-            userData.freedomDate = today.toLocaleDateString('ru-RU', {
+            // Сохраняем данные для КАЖДОГО месяца
+            monthlyDetails.push({
+                month: months,
+                payment: monthlyPayment,
+                interest: interestThisMonth,
+                principal: principalThisMonth,
+                remaining: remainingDebt > 0 ? remainingDebt : 0,
+                totalPaid: debt - remainingDebt + totalInterestPaid
+            });
+        }
+        
+        if (months >= 600) {
+            showImpossiblePlan(debt, monthlyPayment, monthlyInterestRate);
+            return;
+        }
+        
+        // Сохраняем данные
+        userData.totalMonths = months;
+        userData.startDate = userData.startDate || new Date().toISOString();
+        userData.monthlyDetails = monthlyDetails;
+        
+        // Рассчитываем дату освобождения
+        const freedomDate = new Date();
+        freedomDate.setMonth(freedomDate.getMonth() + months);
+        userData.freedomDate = freedomDate.toLocaleDateString('ru-RU', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+        
+        // Обновляем интерфейс
+        updateResults(debt, monthlyPayment, monthlyInterestRate, months, totalInterestPaid, userData.freedomDate);
+        updateProgressBar(userData.completedMonths, months);
+        updateCountdown();
+        
+        // ПОКАЗЫВАЕМ ВЕСЬ ГРАФИК ПЛАТЕЖЕЙ
+        displayPaymentTable(monthlyDetails);
+        
+        saveToLocalStorage();
+        
+        if (Math.random() > 0.7) {
+            showRandomMotivation();
+        }
+    }
+    
+    function displayPaymentTable(monthlyDetails) {
+        if (!monthlyDetails || monthlyDetails.length === 0) {
+            paymentTableContainer.style.display = 'none';
+            return;
+        }
+        
+        let tableHTML = `
+            <div class="table-row" style="background: #E3F2FD; font-weight: bold; position: sticky; top: 0; z-index: 10;">
+                <div class="table-cell">Месяц</div>
+                <div class="table-cell">Дата платежа</div>
+                <div class="table-cell">Платеж</div>
+                <div class="table-cell">Проценты</div>
+                <div class="table-cell">Основной долг</div>
+                <div class="table-cell">Остаток долга</div>
+                <div class="table-cell">Статус</div>
+            </div>
+        `;
+        
+        const startDate = userData.startDate ? new Date(userData.startDate) : new Date();
+        
+        // Показываем ВСЕ месяцы
+        monthlyDetails.forEach(detail => {
+            const paymentDate = new Date(startDate);
+            paymentDate.setMonth(paymentDate.getMonth() + detail.month - 1);
+            
+            const dateStr = paymentDate.toLocaleDateString('ru-RU', {
                 day: '2-digit',
                 month: '2-digit',
                 year: 'numeric'
             });
             
-            window.monthlyDetails = monthlyDetails;
-            window.currentPlan = { debt, payment, interest, months, freedomDate: userData.freedomDate };
+            const isPaid = detail.month <= userData.completedMonths;
+            const isCurrent = detail.month === userData.completedMonths + 1;
+            const rowClass = isCurrent ? 'current-cell' : (isPaid ? 'paid-cell' : '');
             
-            updateResults(debt, payment, interest, months, totalInterest, userData.freedomDate);
-            updateProgressBar(userData.completedMonths, months);
-            updateCountdown();
+            let status = '';
+            if (isPaid) status = '✅ Выполнено';
+            else if (isCurrent) status = '📍 Текущий';
+            else status = '📅 Ожидает';
             
-            if (Math.random() > 0.7) {
-                showRandomMotivation();
+            tableHTML += `
+                <div class="table-row ${rowClass}">
+                    <div class="table-cell"><strong>${detail.month}</strong></div>
+                    <div class="table-cell">${dateStr}</div>
+                    <div class="table-cell">${formatNumber(detail.payment)} ₽</div>
+                    <div class="table-cell">${formatNumber(detail.interest)} ₽</div>
+                    <div class="table-cell">${formatNumber(detail.principal)} ₽</div>
+                    <div class="table-cell">${formatNumber(detail.remaining)} ₽</div>
+                    <div class="table-cell">${status}</div>
+                </div>
+            `;
+        });
+        
+        // Итоговая строка
+        const totalPayment = monthlyDetails.reduce((sum, detail) => sum + detail.payment, 0);
+        const totalInterest = monthlyDetails.reduce((sum, detail) => sum + detail.interest, 0);
+        const totalPrincipal = userData.debt;
+        
+        tableHTML += `
+            <div class="table-row" style="background: #FFF8E1; font-weight: bold; position: sticky; bottom: 0; z-index: 10;">
+                <div class="table-cell">ИТОГО за ${monthlyDetails.length} мес.</div>
+                <div class="table-cell">${userData.freedomDate}</div>
+                <div class="table-cell">${formatNumber(totalPayment)} ₽</div>
+                <div class="table-cell">${formatNumber(totalInterest)} ₽</div>
+                <div class="table-cell">${formatNumber(totalPrincipal)} ₽</div>
+                <div class="table-cell">0 ₽</div>
+                <div class="table-cell">${userData.completedMonths >= monthlyDetails.length ? '🎉 СВОБОДА!' : 'В процессе'}</div>
+            </div>
+        `;
+        
+        paymentTable.innerHTML = tableHTML;
+        paymentTableContainer.style.display = 'block';
+        
+        // Делаем таблицу прокручиваемой
+        paymentTable.style.maxHeight = '500px';
+        paymentTable.style.overflowY = 'auto';
+        paymentTable.style.display = 'block';
+        
+        // Прокручиваем к текущему месяцу
+        setTimeout(() => {
+            const currentRows = document.querySelectorAll('.current-cell');
+            if (currentRows.length > 0) {
+                currentRows[0].scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
             }
+        }, 100);
+        
+        // Показываем сколько месяцев всего
+        showMotivation(`📊 Рассчитан план на ${monthlyDetails.length} месяцев!`);
+    }
+    
+    function showImpossiblePlan(debt, payment, monthlyInterestRate) {
+        const monthlyInterest = debt * monthlyInterestRate;
+        const neededPayment = monthlyInterest * 1.1; // Нужно платить на 10% больше процентов
+        
+        resultsContainer.innerHTML = `
+            <div class="result-card" style="grid-column: 1 / -1; background: #FFEBEE; border-color: #F44336;">
+                <span class="result-icon">⚠️</span>
+                <div class="result-value" style="color: #D32F2F;">ПЛАН НЕВОЗМОЖЕН</div>
+                <div class="result-label">
+                    <strong>Причина:</strong> Ежемесячный платеж (${formatNumber(payment)} ₽) меньше процентов (${formatNumber(monthlyInterest)} ₽)<br><br>
+                    <strong>Что делать:</strong> 
+                    <ol style="text-align: left; margin: 15px 0; padding-left: 20px;">
+                        <li>Увеличь платеж до <strong>${formatNumber(neededPayment)} ₽</strong> или больше</li>
+                        <li>Или выбери "План реструктуризации" ниже</li>
+                        <li>Или договорись с банком о снижении ставки</li>
+                    </ol>
+                </div>
+            </div>
+        `;
+        
+        paymentTableContainer.style.display = 'none';
+        countdownContainer.style.display = 'none';
+        userData.totalMonths = 0;
+        userData.monthlyDetails = [];
+    }
+    
+    function updateResults(debt, payment, interest, months, totalInterest, freedomDate) {
+        const totalPaid = debt + totalInterest;
+        
+        resultsContainer.innerHTML = `
+            <div class="result-card">
+                <span class="result-icon">📅</span>
+                <div class="result-value">${months} мес</div>
+                <div class="result-label">Общий срок</div>
+            </div>
+            
+            <div class="result-card">
+                <span class="result-icon">🌅</span>
+                <div class="result-value">${freedomDate}</div>
+                <div class="result-label">Дата освобождения</div>
+            </div>
+            
+            <div class="result-card">
+                <span class="result-icon">💰</span>
+                <div class="result-value">${formatNumber(totalPaid)} ₽</div>
+                <div class="result-label">Всего выплатишь</div>
+            </div>
+            
+            <div class="result-card">
+                <span class="result-icon">💸</span>
+                <div class="result-value">${formatNumber(totalInterest)} ₽</div>
+                <div class="result-label">Проценты банку</div>
+            </div>
+        `;
+        
+        countdownContainer.style.display = 'grid';
+    }
+    
+    // ============================================
+    // ОТСЛЕЖИВАНИЕ ПРОГРЕССА
+    // ============================================
+    
+    function markPaymentDone() {
+        if (!userData.totalMonths || userData.totalMonths <= 0) {
+            alert('Сначала рассчитай свой план!');
+            return;
         }
         
-        function showImpossiblePlan(debt, payment, interest) {
-            const monthlyInterest = debt * interest;
-            const neededPayment = monthlyInterest * 1.1;
-            
-            resultsContainer.innerHTML = `
-                <div class="result-card" style="grid-column: 1 / -1; background: #FFEBEE; border-color: #F44336;">
-                    <span class="result-icon">⚠️</span>
-                    <div class="result-value" style="color: #D32F2F;">ТРЕБУЕТСЯ КОРРЕКТИРОВКА</div>
-                    <div class="result-label">
-                        <strong>Проблема:</strong> Текущий платеж (${formatNumber(payment)} ₽) меньше ежемесячных процентов (${formatNumber(monthlyInterest)} ₽)<br><br>
-                        <strong>Решение:</strong> 
-                        <ol style="text-align: left; margin: 15px 0; padding-left: 20px;">
-                            <li>Увеличь платеж минимум до <strong>${formatNumber(neededPayment)} ₽</strong></li>
-                            <li>Или договорись с банком о реструктуризации</li>
-                            <li>Или выбери "План реструктуризации" ниже</li>
-                        </ol>
+        if (userData.completedMonths >= userData.totalMonths) {
+            showMotivation('🎉 Ты уже свободен! Все долги погашены!');
+            return;
+        }
+        
+        userData.completedMonths++;
+        
+        const paymentDate = new Date();
+        userData.paymentHistory.push({
+            date: paymentDate.toISOString(),
+            amount: userData.payment,
+            month: userData.completedMonths
+        });
+        
+        checkAchievements();
+        updateProgressBar(userData.completedMonths, userData.totalMonths);
+        updateCountdown();
+        
+        // Обновляем таблицу платежей
+        if (userData.monthlyDetails && userData.monthlyDetails.length > 0) {
+            displayPaymentTable(userData.monthlyDetails);
+        }
+        
+        saveToLocalStorage();
+        showMotivation(getPaymentMotivation());
+        
+        // Проверяем, достигнута ли свобода
+        if (userData.completedMonths >= userData.totalMonths) {
+            setTimeout(() => {
+                showMotivation('🎉🎉🎉 ПОЗДРАВЛЯЕМ! Ты достиг финансовой свободы! 🎉🎉🎉');
+                addAchievement('🏆 Полное освобождение', 'Ты погасил все долги!');
+            }, 1000);
+        }
+    }
+    
+    function updateProgressBar(completedMonths, totalMonths) {
+        const progress = totalMonths > 0 ? Math.min(100, (completedMonths / totalMonths) * 100) : 0;
+        progressFill.style.width = progress + '%';
+        progressText.textContent = `Прогресс: ${progress.toFixed(1)}% (${completedMonths}/${totalMonths} месяцев)`;
+        monthsLeft.textContent = totalMonths - completedMonths > 0 
+            ? `Осталось: ${totalMonths - completedMonths} месяцев до ${userData.freedomDate}`
+            : `🎉 СВОБОДА ДОСТИГНУТА! ${userData.freedomDate}`;
+    }
+    
+    function updateCountdown() {
+        if (!userData.totalMonths || userData.totalMonths <= 0) return;
+        
+        const remainingMonths = userData.totalMonths - userData.completedMonths;
+        const remainingDays = Math.round(remainingMonths * 30.4);
+        const remainingWeeks = Math.round(remainingMonths * 4.3);
+        const remainingPayments = remainingMonths;
+        
+        document.getElementById('cdMonths').textContent = remainingMonths;
+        document.getElementById('cdDays').textContent = remainingDays;
+        document.getElementById('cdWeeks').textContent = remainingWeeks;
+        document.getElementById('cdPayments').textContent = remainingPayments;
+        
+        // Показываем countdown только если остались платежи
+        countdownContainer.style.display = remainingMonths > 0 ? 'grid' : 'none';
+    }
+    
+    function getPaymentMotivation() {
+        const percentage = (userData.completedMonths / userData.totalMonths) * 100;
+        
+        if (percentage >= 100) return '🎉 ТЫ СВОБОДЕН!';
+        if (percentage >= 90) return 'Почти у цели! Осталось совсем немного! 🏁';
+        if (percentage >= 75) return 'Ты на финишной прямой! 🚀';
+        if (percentage >= 50) return 'Половина пути пройдена! Ты молодец! ✨';
+        if (percentage >= 25) return 'Уже четверть пути! Продолжай в том же духе! 💪';
+        if (userData.completedMonths === 1) return 'Первый платеж сделан! Отличное начало! 🎯';
+        
+        const messages = [
+            `Платеж №${userData.completedMonths} выполнен!`,
+            `Еще один шаг к свободе!`,
+            `На ${percentage.toFixed(1)}% ближе к цели!`,
+            `Так держать! Продолжай!`
+        ];
+        
+        return messages[Math.floor(Math.random() * messages.length)];
+    }
+    
+    // ============================================
+    // ДОСТИЖЕНИЯ И ПЛАНЫ
+    // ============================================
+    
+    function checkAchievements() {
+        const achievements = [];
+        
+        if (userData.completedMonths === 1) {
+            achievements.push({ title: '🎯 Первый шаг', desc: 'Сделан первый платеж' });
+        }
+        
+        if (userData.completedMonths === 3) {
+            achievements.push({ title: '📅 Первый квартал', desc: '3 месяца дисциплины' });
+        }
+        
+        if (userData.completedMonths === 6) {
+            achievements.push({ title: '✨ Полгода пути', desc: '6 месяцев регулярных платежей' });
+        }
+        
+        const percentage = (userData.completedMonths / userData.totalMonths) * 100;
+        
+        if (percentage >= 25 && !userData.achievements.find(a => a.title.includes('25%'))) {
+            achievements.push({ title: '🥉 25% пути', desc: 'Четверть долга погашена' });
+        }
+        
+        if (percentage >= 50 && !userData.achievements.find(a => a.title.includes('50%'))) {
+            achievements.push({ title: '🥈 50% пути', desc: 'Половина долга погашена' });
+        }
+        
+        if (percentage >= 75 && !userData.achievements.find(a => a.title.includes('75%'))) {
+            achievements.push({ title: '🥇 75% пути', desc: 'Большая часть долга погашена' });
+        }
+        
+        if (percentage >= 90 && !userData.achievements.find(a => a.title.includes('90%'))) {
+            achievements.push({ title: '💎 90% пути', desc: 'Почти у цели!' });
+        }
+        
+        achievements.forEach(achievement => {
+            if (!userData.achievements.find(a => a.title === achievement.title)) {
+                userData.achievements.push(achievement);
+                showMotivation(`🎉 Новое достижение: ${achievement.title}!`);
+            }
+        });
+        
+        showAchievements();
+    }
+    
+    function showAchievements() {
+        if (!userData.achievements || userData.achievements.length === 0) {
+            achievementsContainer.innerHTML = `
+                <div style="text-align: center; padding: 30px;">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🎯</div>
+                    <h3 style="color: #1A237E; margin-bottom: 15px;">Начни свой путь к свободе!</h3>
+                    <p style="color: #5C6BC0;">
+                        1. Рассчитай свой план (двигай ползунки)<br>
+                        2. Отмечай выполненные платежи кнопкой ниже<br>
+                        3. Собирай достижения!
+                    </p>
+                </div>
+            `;
+            return;
+        }
+        
+        let html = `
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
+        `;
+        
+        userData.achievements.forEach(achievement => {
+            html += `
+                <div style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid #FFD600;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">${achievement.title.split(' ')[0]}</div>
+                    <div style="font-weight: bold; color: #1A237E; margin-bottom: 5px;">${achievement.title}</div>
+                    <div style="color: #5C6BC0; font-size: 0.9rem;">${achievement.desc}</div>
+                </div>
+            `;
+        });
+        
+        html += `</div>`;
+        
+        html += `
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px;">
+                <h4 style="color: #FFD600; margin-bottom: 15px;">📈 Ваша статистика</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                    <div>
+                        <div style="font-size: 0.9rem; color: #90CAF9;">Выполнено платежей</div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #FFD600;">${userData.completedMonths}</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.9rem; color: #90CAF9;">Всего платежей</div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #4CAF50;">${userData.totalMonths}</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.9rem; color: #90CAF9;">Прогресс</div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #2979FF;">${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}%</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.9rem; color: #90CAF9;">Достижений</div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #9C27B0;">${userData.achievements.length}</div>
                     </div>
                 </div>
-            `;
-            
-            paymentTableContainer.style.display = 'none';
-            countdownContainer.style.display = 'none';
-        }
+            </div>
+        `;
         
-        function updateResults(debt, payment, interest, months, totalInterest, freedomDate) {
-            const totalPaid = debt + totalInterest;
-            
-            resultsContainer.innerHTML = `
-                <div class="result-card">
-                    <span class="result-icon">📅</span>
-                    <div class="result-value">${months} мес</div>
-                    <div class="result-label">До полной свободы</div>
-                </div>
-                
-                <div class="result-card">
-                    <span class="result-icon">🌅</span>
-                    <div class="result-value">${freedomDate}</div>
-                    <div class="result-label">Дата освобождения</div>
-                </div>
-                
-                <div class="result-card">
-                    <span class="result-icon">💰</span>
-                    <div class="result-value">${formatNumber(totalPaid)} ₽</div>
-                    <div class="result-label">Всего выплатишь</div>
-                </div>
-                
-                <div class="result-card">
-                    <span class="result-icon">💸</span>
-                    <div class="result-value">${formatNumber(totalInterest)} ₽</div>
-                    <div class="result-label">Проценты банку</div>
-                </div>
-            `;
-            
-            countdownContainer.style.display = 'grid';
+        achievementsContainer.innerHTML = html;
+    }
+    
+    function addAchievement(title, desc) {
+        if (!userData.achievements.find(a => a.title === title)) {
+            userData.achievements.push({ title, desc });
             saveToLocalStorage();
-        }
-        
-        function updateProgressBar(completedMonths, totalMonths) {
-            const progress = totalMonths > 0 ? Math.min(100, (completedMonths / totalMonths) * 100) : 0;
-            progressFill.style.width = progress + '%';
-            progressText.textContent = `Прогресс: ${progress.toFixed(1)}%`;
-            monthsLeft.textContent = `Осталось: ${totalMonths - completedMonths} месяцев`;
-        }
-        
-        function updateCountdown() {
-            if (!userData.totalMonths || userData.totalMonths <= 0) return;
-            
-            const remainingMonths = userData.totalMonths - userData.completedMonths;
-            const remainingDays = Math.round(remainingMonths * 30.4);
-            const remainingWeeks = Math.round(remainingMonths * 4.3);
-            const remainingPayments = remainingMonths;
-            
-            document.getElementById('cdMonths').textContent = remainingMonths;
-            document.getElementById('cdDays').textContent = remainingDays;
-            document.getElementById('cdWeeks').textContent = remainingWeeks;
-            document.getElementById('cdPayments').textContent = remainingPayments;
-        }
-        
-        function markPaymentDone() {
-            if (!userData.totalMonths || userData.totalMonths <= 0) {
-                alert('Сначала рассчитай свой план!');
-                return;
-            }
-            
-            if (userData.completedMonths >= userData.totalMonths) {
-                showMotivation('🎉 Ты уже свободен! Все долги погашены!');
-                return;
-            }
-            
-            userData.completedMonths++;
-            
-            const paymentDate = new Date();
-            userData.paymentHistory.push({
-                date: paymentDate.toISOString(),
-                amount: userData.payment,
-                month: userData.completedMonths
-            });
-            
-            checkAchievements();
-            updateProgressBar(userData.completedMonths, userData.totalMonths);
-            updateCountdown();
-            
-            if (window.monthlyDetails && window.monthlyDetails.length > 0) {
-                calculateFullPlan();
-                
-                setTimeout(() => {
-                    const rows = document.querySelectorAll('.table-row:not(:first-child)');
-                    const currentRow = userData.completedMonths;
-                    rows.forEach((row, index) => {
-                        row.classList.remove('current-cell');
-                        if (index === currentRow - 1 && index < rows.length) {
-                            row.classList.add('current-cell');
-                        }
-                    });
-                }, 100);
-            }
-            
-            saveToLocalStorage();
-            showMotivation(getPaymentMotivation());
-            
-            if (userData.completedMonths >= userData.totalMonths) {
-                setTimeout(() => {
-                    showMotivation('🎉🎉🎉 ПОЗДРАВЛЯЕМ! Ты достиг финансовой свободы! 🎉🎉🎉');
-                    addAchievement('🏆 Полное освобождение', 'Ты погасил все долги!');
-                }, 1000);
-            }
-        }
-        
-        function getPaymentMotivation() {
-            const percentage = (userData.completedMonths / userData.totalMonths) * 100;
-            
-            if (percentage >= 100) return '🎉 ТЫ СВОБОДЕН!';
-            if (percentage >= 90) return 'Почти у цели! Осталось совсем немного! 🏁';
-            if (percentage >= 75) return 'Ты на финишной прямой! 🚀';
-            if (percentage >= 50) return 'Половина пути пройдена! Ты молодец! ✨';
-            if (percentage >= 25) return 'Уже четверть пути! Продолжай в том же духе! 💪';
-            if (userData.completedMonths === 1) return 'Первый платеж сделан! Отличное начало! 🎯';
-            
-            const messages = [
-                `Платеж №${userData.completedMonths} выполнен!`,
-                `Еще один шаг к свободе!`,
-                `На ${percentage.toFixed(1)}% ближе к цели!`,
-                `Так держать! Продолжай!`
-            ];
-            
-            return messages[Math.floor(Math.random() * messages.length)];
-        }
-        
-        function checkAchievements() {
-            const achievements = [];
-            
-            if (userData.completedMonths === 1) {
-                achievements.push({ title: '🎯 Первый шаг', desc: 'Сделан первый платеж' });
-            }
-            
-            if (userData.completedMonths === 3) {
-                achievements.push({ title: '📅 Первый квартал', desc: '3 месяца дисциплины' });
-            }
-            
-            if (userData.completedMonths === 6) {
-                achievements.push({ title: '✨ Полгода пути', desc: '6 месяцев регулярных платежей' });
-            }
-            
-            const percentage = (userData.completedMonths / userData.totalMonths) * 100;
-            
-            if (percentage >= 25 && !userData.achievements.find(a => a.title === '25% пути')) {
-                achievements.push({ title: '🥉 25% пути', desc: 'Четверть долга погашена' });
-            }
-            
-            if (percentage >= 50 && !userData.achievements.find(a => a.title === '50% пути')) {
-                achievements.push({ title: '🥈 50% пути', desc: 'Половина долга погашена' });
-            }
-            
-            if (percentage >= 75 && !userData.achievements.find(a => a.title === '75% пути')) {
-                achievements.push({ title: '🥇 75% пути', desc: 'Большая часть долга погашена' });
-            }
-            
-            if (percentage >= 90 && !userData.achievements.find(a => a.title === '90% пути')) {
-                achievements.push({ title: '💎 90% пути', desc: 'Почти у цели!' });
-            }
-            
-            achievements.forEach(achievement => {
-                if (!userData.achievements.find(a => a.title === achievement.title)) {
-                    userData.achievements.push(achievement);
-                    showMotivation(`🎉 Новое достижение: ${achievement.title}!`);
-                }
-            });
-            
             showAchievements();
         }
-        
-        function showAchievements() {
-            if (!userData.achievements || userData.achievements.length === 0) {
-                achievementsContainer.innerHTML = `
-                    <div style="text-align: center; padding: 30px;">
-                        <div style="font-size: 4rem; margin-bottom: 20px;">🎯</div>
-                        <h3 style="color: #1A237E; margin-bottom: 15px;">Начни свой путь к свободе!</h3>
-                        <p style="color: #5C6BC0;">
-                            1. Рассчитай свой план<br>
-                            2. Отмечай выполненные платежи<br>
-                            3. Собирай достижения!
-                        </p>
-                    </div>
-                `;
-                return;
-            }
-            
-            let html = `
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
-            `;
-            
-            userData.achievements.forEach(achievement => {
-                html += `
-                    <div style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid #FFD600;">
-                        <div style="font-size: 2rem; margin-bottom: 10px;">${achievement.title.split(' ')[0]}</div>
-                        <div style="font-weight: bold; color: #1A237E; margin-bottom: 5px;">${achievement.title}</div>
-                        <div style="color: #5C6BC0; font-size: 0.9rem;">${achievement.desc}</div>
-                    </div>
-                `;
-            });
-            
-            html += `</div>`;
-            
-            html += `
-                <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px;">
-                    <h4 style="color: #FFD600; margin-bottom: 15px;">📈 Ваша статистика</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
-                        <div>
-                            <div style="font-size: 0.9rem; color: #90CAF9;">Выполнено платежей</div>
-                            <div style="font-size: 2rem; font-weight: bold; color: #FFD600;">${userData.completedMonths}</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.9rem; color: #90CAF9;">Всего платежей</div>
-                            <div style="font-size: 2rem; font-weight: bold; color: #4CAF50;">${userData.totalMonths}</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.9rem; color: #90CAF9;">Прогресс</div>
-                            <div style="font-size: 2rem; font-weight: bold; color: #2979FF;">${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}%</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.9rem; color: #90CAF9;">Достижений</div>
-                            <div style="font-size: 2rem; font-weight: bold; color: #9C27B0;">${userData.achievements.length}</div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            achievementsContainer.innerHTML = html;
+    }
+    
+    // ============================================
+    // ЭКСПОРТ И ПЛАНЫ
+    // ============================================
+    
+    function calculateFullPlan() {
+        calculateFullPlanWithAllMonths();
+    }
+    
+    function savePersonalPlan() {
+        if (!userData.totalMonths || userData.totalMonths <= 0) {
+            alert('Сначала рассчитай свой план!');
+            return;
         }
         
-        function addAchievement(title, desc) {
-            if (!userData.achievements.find(a => a.title === title)) {
-                userData.achievements.push({ title, desc });
-                saveToLocalStorage();
-                showAchievements();
-            }
-        }
+        const plan = generatePlanText();
+        const blob = new Blob([plan], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Выход_из_долгов_план_${new Date().toISOString().slice(0,10)}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
         
-        function calculateFullPlan() {
-            calculate();
-            
-            if (!window.monthlyDetails || window.monthlyDetails.length === 0) return;
-            
-            let tableHTML = `
-                <div class="table-row" style="background: #E3F2FD; font-weight: bold;">
-                    <div class="table-cell">Месяц</div>
-                    <div class="table-cell">Платеж</div>
-                    <div class="table-cell">Проценты</div>
-                    <div class="table-cell">Основной долг</div>
-                    <div class="table-cell">Остаток</div>
-                </div>
-            `;
-            
-            window.monthlyDetails.forEach(detail => {
-                const isCurrent = detail.month === userData.completedMonths + 1;
-                const isPaid = detail.month <= userData.completedMonths;
-                const rowClass = isCurrent ? 'current-cell' : (isPaid ? 'paid-cell' : '');
-                
-                tableHTML += `
-                    <div class="table-row ${rowClass}">
-                        <div class="table-cell">${detail.month} ${isPaid ? '✅' : (isCurrent ? '📍' : '')}</div>
-                        <div class="table-cell">${formatNumber(detail.payment)} ₽</div>
-                        <div class="table-cell">${formatNumber(detail.interest)} ₽</div>
-                        <div class="table-cell">${formatNumber(detail.principal)} ₽</div>
-                        <div class="table-cell">${formatNumber(detail.remaining)} ₽</div>
-                    </div>
-                `;
-            });
-            
-            if (window.currentPlan && window.currentPlan.months > 12) {
-                const totalInterest = window.currentPlan.debt * window.currentPlan.interest * 12 * (window.currentPlan.months/12) / 2;
-                tableHTML += `
-                    <div class="table-row" style="background: #FFF8E1; font-weight: bold;">
-                        <div class="table-cell">Итого</div>
-                        <div class="table-cell">${formatNumber(window.currentPlan.payment * window.currentPlan.months)} ₽</div>
-                        <div class="table-cell">${formatNumber(totalInterest)} ₽*</div>
-                        <div class="table-cell">${formatNumber(window.currentPlan.debt)} ₽</div>
-                        <div class="table-cell">0 ₽ через ${window.currentPlan.months} мес</div>
-                    </div>
-                `;
-            }
-            
-            paymentTable.innerHTML = tableHTML;
-            paymentTableContainer.style.display = 'block';
-            paymentTableContainer.scrollIntoView({ behavior: 'smooth' });
-            
-            showMotivation('📊 Полный план рассчитан! Теперь ты видишь свой путь к свободе. 👇');
-        }
+        showMotivation('🎉 Твой план сохранен! Открывай его каждое утро для мотивации! 💪');
+    }
+    
+    function generatePlanText() {
+        const today = new Date();
+        const startDate = userData.startDate ? new Date(userData.startDate) : today;
         
-        function savePersonalPlan() {
-            if (!window.currentPlan) {
-                alert('Сначала рассчитай свой план!');
-                return;
-            }
-            
-            const plan = generatePlanText();
-            const blob = new Blob([plan], { type: 'text/plain;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `Выход_из_долгов_мой_план_${new Date().toISOString().slice(0,10)}.txt`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            showMotivation('🎉 Твой план освобождения сохранен! Открывай его каждое утро для мотивации! 💪');
-        }
-        
-        function generatePlanText() {
-            const today = new Date();
-            const startDate = userData.startDate ? new Date(userData.startDate) : today;
-            
-            return `ВЫХОД ИЗ ДОЛГОВ: КАЛЬКУЛЯТОР И ПОШАГОВЫЙ ПЛАН НА 2026
+        return `ВЫХОД ИЗ ДОЛГОВ: ПОЛНЫЙ ПЛАН НА ВЕСЬ СРОК
 
-📊 ВАШИ ПЕРСОНАЛЬНЫЕ ДАННЫЕ:
+📊 ВАШИ ДАННЫЕ:
 • Общая сумма долга: ${formatNumber(userData.debt)} ₽
 • Ежемесячный платеж: ${formatNumber(userData.payment)} ₽
 • Процентная ставка: ${userData.interest}%
@@ -2131,282 +715,258 @@
 
 🎯 ВАШ ПУТЬ К СВОБОДЕ:
 • Общий срок: ${userData.totalMonths} месяцев
-• Выполнено: ${userData.completedMonths} месяцев (${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}%)
+• Выполнено: ${userData.completedMonths} месяцев
 • Осталось: ${userData.totalMonths - userData.completedMonths} месяцев
 • Дата освобождения: ${userData.freedomDate}
+• Прогресс: ${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}%
 
 💰 ФИНАНСОВЫЕ ИТОГИ:
-• Всего выплатите: ${formatNumber(userData.debt + (userData.debt * (userData.interest/100/12) * 12 * (userData.totalMonths/12) / 2))} ₽
-• Из них проценты: ${formatNumber(userData.debt * (userData.interest/100/12) * 12 * (userData.totalMonths/12) / 2)} ₽
+• Всего выплатите: ${formatNumber(userData.payment * userData.totalMonths)} ₽
+• Из них проценты: ${formatNumber((userData.payment * userData.totalMonths) - userData.debt)} ₽
 • Уже выплачено: ${formatNumber(userData.payment * userData.completedMonths)} ₽
 
-📈 ЕЖЕДНЕВНЫЙ ШАГ К СВОБОДЕ:
-• В день: ${formatNumber(userData.payment / 30.4)} ₽
-• В неделю: ${formatNumber(userData.payment / 4.3)} ₽
-• В месяц: ${formatNumber(userData.payment)} ₽
+📅 ГРАФИК ПЛАТЕЖЕЙ (первые 12 месяцев):
+${userData.monthlyDetails.slice(0, 12).map(detail => {
+    const paymentDate = new Date(startDate);
+    paymentDate.setMonth(paymentDate.getMonth() + detail.month - 1);
+    const dateStr = paymentDate.toLocaleDateString('ru-RU', { month: 'short', year: 'numeric' });
+    const status = detail.month <= userData.completedMonths ? '✅' : '📅';
+    return `Месяц ${detail.month} (${dateStr}): ${formatNumber(detail.payment)} ₽ - ${status}`;
+}).join('\n')}
+${userData.totalMonths > 12 ? `... и еще ${userData.totalMonths - 12} месяцев` : ''}
 
-🏆 ВАШИ ДОСТИЖЕНИЯ:
-${userData.achievements.length > 0 ? userData.achievements.map(a => `• ${a.title} - ${a.desc}`).join('\n') : 'Пока нет достижений. Начни отмечать платежи!'}
+🏆 ДОСТИЖЕНИЯ:
+${userData.achievements.length > 0 ? userData.achievements.map(a => `• ${a.title} - ${a.desc}`).join('\n') : 'Пока нет достижений'}
 
-📅 ПЛАТЕЖНАЯ ИСТОРИЯ:
-${userData.paymentHistory.length > 0 ? userData.paymentHistory.map(p => `• ${new Date(p.date).toLocaleDateString('ru-RU')} - Платеж №${p.month} - ${formatNumber(p.amount)} ₽`).join('\n') : 'Пока нет истории платежей'}
+💡 СОВЕТЫ:
+1. Плати вовремя, отмечай в калькуляторе
+2. Рассмотри ускоренный план если появится возможность
+3. Не пропускай платежи
+4. Помни: каждый платеж - шаг к свободе!
 
-💡 ПЕРСОНАЛЬНЫЕ СОВЕТЫ:
-1. Автоматизируй платежи в день зарплаты
-2. Каждые 3 месяца пробуй договориться о снижении ставки
-3. Отмечай каждый платеж в этом калькуляторе
-4. Сохраняй мотивацию - ты уже на ${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}% пути!
-
-🔥 АЛЬТЕРНАТИВНЫЕ СТРАТЕГИИ:
-⚡ Ускоренный: Плати на 10% больше → свобода раньше
-🔄 Реструктуризация: Плати на 30% меньше, но дольше
-🎯 Стандартный: Просто следуй графику
-
-✨ МОТИВИРУЮЩИЕ ЦИФРЫ:
-• Каждый месяц ты закрываешь ${(100 / userData.totalMonths).toFixed(2)}% пути
-• Каждую неделю: ${(100 / (userData.totalMonths * 4.3)).toFixed(2)}%
-• Каждый день: ${(100 / (userData.totalMonths * 30.4)).toFixed(2)}%
-
-💖 ЗАПОМНИ:
-Долг — это не твоя личность. Это просто цифры.
-Цифры можно посчитать, спланировать и победить.
-Ты уже на пути к свободе!
-
-Последнее обновление: ${new Date().toLocaleDateString('ru-RU')} ${new Date().toLocaleTimeString('ru-RU')}
-
-С верой в твой рассвет,
+Сгенерировано: ${new Date().toLocaleDateString('ru-RU')}
 ДОМЕНЗАДОЛЖЕН.РФ
-            `.trim();
+        `.trim();
+    }
+    
+    function exportToPDF() {
+        if (!window.jspdf) {
+            alert('Библиотека PDF не загружена. Попробуй позже.');
+            return;
         }
         
-        function exportToPDF() {
-            if (!window.jspdf) {
-                alert('Библиотека PDF не загружена. Попробуй позже.');
-                return;
-            }
-            
-            if (!window.currentPlan) {
-                alert('Сначала рассчитай свой план!');
-                return;
-            }
-            
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            
-            doc.setFillColor(26, 35, 126);
-            doc.rect(0, 0, 210, 40, 'F');
-            doc.setTextColor(255, 214, 0);
-            doc.setFontSize(28);
-            doc.text('ВЫХОД ИЗ ДОЛГОВ 2026', 105, 25, { align: 'center' });
-            doc.setFontSize(18);
-            doc.text('КАЛЬКУЛЯТОР И ПОШАГОВЫЙ ПЛАН', 105, 35, { align: 'center' });
-            
-            doc.setTextColor(26, 35, 126);
-            doc.setFontSize(12);
-            
-            let y = 60;
-            const lineHeight = 8;
-            
-            doc.text(`Дата генерации: ${new Date().toLocaleDateString('ru-RU')}`, 20, y);
-            y += lineHeight * 2;
-            
-            doc.setFontSize(14);
-            doc.text('📊 ВАШИ ПЕРСОНАЛЬНЫЕ ДАННЫЕ:', 20, y);
-            y += lineHeight;
-            
-            doc.setFontSize(12);
-            doc.text(`• Общая сумма долга: ${formatNumber(userData.debt)} ₽`, 25, y);
-            y += lineHeight;
-            doc.text(`• Ежемесячный платеж: ${formatNumber(userData.payment)} ₽`, 25, y);
-            y += lineHeight;
-            doc.text(`• Процентная ставка: ${userData.interest}%`, 25, y);
-            y += lineHeight;
-            doc.text(`• Выполнено платежей: ${userData.completedMonths} из ${userData.totalMonths}`, 25, y);
-            y += lineHeight * 2;
-            
-            doc.setFontSize(14);
-            doc.text('🎯 ВАШ ПУТЬ К СВОБОДЕ:', 20, y);
-            y += lineHeight;
-            
-            doc.setFontSize(12);
-            doc.text(`• Дата освобождения: ${userData.freedomDate}`, 25, y);
-            y += lineHeight;
-            doc.text(`• Прогресс: ${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}%`, 25, y);
-            y += lineHeight * 2;
-            
-            if (userData.achievements.length > 0) {
-                doc.setFontSize(14);
-                doc.text('🏆 ВАШИ ДОСТИЖЕНИЯ:', 20, y);
-                y += lineHeight;
-                
-                doc.setFontSize(12);
-                userData.achievements.forEach(ach => {
-                    doc.text(`• ${ach.title} - ${ach.desc}`, 25, y);
-                    y += lineHeight;
-                });
-                y += lineHeight;
-            }
-            
-            doc.save(`Выход_из_долгов_${new Date().toISOString().slice(0,10)}.pdf`);
-            showMotivation('📄 PDF сохранен! Распечатай и повесь на видное место! 🎯');
+        if (!userData.totalMonths || userData.totalMonths <= 0) {
+            alert('Сначала рассчитай свой план!');
+            return;
         }
         
-        function applyPlan(planNumber) {
-            const debt = parseInt(debtSlider.value);
-            
-            switch(planNumber) {
-                case 1:
-                    paymentSlider.value = Math.max(1000, Math.min(200000, debt * 0.05));
-                    interestSlider.value = 15;
-                    break;
-                case 2:
-                    paymentSlider.value = Math.max(1000, Math.min(200000, debt * 0.07));
-                    interestSlider.value = 15;
-                    break;
-                case 3:
-                    paymentSlider.value = Math.max(1000, Math.min(200000, debt * 0.035));
-                    interestSlider.value = 20;
-                    break;
-            }
-            
-            updatePayment();
-            updateInterest();
-            calculateFullPlan();
-            
-            const planNames = ["", "Стандартный", "Ускоренный", "Реструктуризация"];
-            showMotivation(`✅ План "${planNames[planNumber]}" применен! Посмотри на новый график. 📊`);
-        }
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
         
-        function resetCalculator() {
-            if (confirm('Сбросить все настройки калькулятора? Твои сохраненные данные останутся.')) {
-                debtSlider.value = 500000;
-                paymentSlider.value = 25000;
+        // Заголовок
+        doc.setFillColor(26, 35, 126);
+        doc.rect(0, 0, 210, 30, 'F');
+        doc.setTextColor(255, 214, 0);
+        doc.setFontSize(20);
+        doc.text('ВЫХОД ИЗ ДОЛГОВ 2026', 105, 20, { align: 'center' });
+        
+        doc.setTextColor(26, 35, 126);
+        doc.setFontSize(12);
+        
+        let y = 40;
+        doc.text(`Дата: ${new Date().toLocaleDateString('ru-RU')}`, 20, y);
+        y += 10;
+        
+        doc.setFontSize(14);
+        doc.text('ВАШ ПЛАН ПОГАШЕНИЯ ДОЛГОВ', 20, y);
+        y += 10;
+        
+        doc.setFontSize(12);
+        doc.text(`Сумма долга: ${formatNumber(userData.debt)} ₽`, 20, y);
+        y += 7;
+        doc.text(`Ежемесячный платеж: ${formatNumber(userData.payment)} ₽`, 20, y);
+        y += 7;
+        doc.text(`Срок: ${userData.totalMonths} месяцев`, 20, y);
+        y += 7;
+        doc.text(`Дата освобождения: ${userData.freedomDate}`, 20, y);
+        y += 7;
+        doc.text(`Прогресс: ${userData.completedMonths}/${userData.totalMonths} месяцев`, 20, y);
+        y += 10;
+        
+        doc.setFontSize(11);
+        doc.text('Распечатай этот план и повесь на видное место!', 20, y);
+        y += 15;
+        
+        doc.text('С уважением, ДОМЕНЗАДОЛЖЕН.РФ', 20, y);
+        
+        doc.save(`План_выхода_из_долгов_${new Date().toISOString().slice(0,10)}.pdf`);
+        showMotivation('📄 PDF сохранен! Распечатай и повесь на видное место! 🎯');
+    }
+    
+    function applyPlan(planNumber) {
+        const debt = parseInt(debtSlider.value);
+        
+        switch(planNumber) {
+            case 1: // Стандартный
+                paymentSlider.value = Math.max(1000, Math.min(200000, debt * 0.05));
                 interestSlider.value = 15;
-                
-                updateDebt();
-                updatePayment();
-                updateInterest();
-                
-                paymentTableContainer.style.display = 'none';
-                
-                showMotivation('🔄 Калькулятор сброшен! Начни расчет заново. 💪');
-            }
+                break;
+            case 2: // Ускоренный
+                paymentSlider.value = Math.max(1000, Math.min(200000, debt * 0.07));
+                interestSlider.value = 15;
+                break;
+            case 3: // Реструктуризация
+                paymentSlider.value = Math.max(1000, Math.min(200000, debt * 0.035));
+                interestSlider.value = 20;
+                break;
         }
         
-        function showRandomMotivation() {
-            if (Math.random() > 0.5) {
-                const msg = motivationMessages[Math.floor(Math.random() * motivationMessages.length)];
-                showMotivation(msg);
-            }
-        }
+        updatePayment();
+        updateInterest();
+        calculateFullPlanWithAllMonths();
         
-        function showMotivation(message) {
-            document.querySelectorAll('.motivation-toast').forEach(toast => toast.remove());
-            
-            const toast = document.createElement('div');
-            toast.className = 'motivation-toast';
-            toast.textContent = message;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.style.animation = 'slideOutRight 0.5s ease-out';
-                setTimeout(() => toast.remove(), 500);
-            }, 4000);
-        }
-        
-        function showAutoSaveIndicator() {
-            const indicator = document.createElement('div');
-            indicator.className = 'auto-save-indicator';
-            indicator.textContent = '💾 Данные сохранены';
-            document.body.appendChild(indicator);
-            
-            setTimeout(() => indicator.remove(), 2000);
-        }
-        
-        function copyWallet() {
-            const wallet = '4100118986223649';
-            navigator.clipboard.writeText(wallet).then(() => {
-                const element = document.getElementById('walletNumber');
-                const originalText = element.textContent;
-                
-                element.textContent = '✅ СКОПИРОВАНО! СПАСИБО!';
-                element.style.color = '#4CAF50';
-                
-                setTimeout(() => {
-                    element.textContent = originalText;
-                    element.style.color = '';
-                }, 2000);
-                
-                showMotivation('💫 Кошелек скопирован! Спасибо за поддержку проекта! 🌅');
-            }).catch(err => {
-                console.error('Ошибка копирования:', err);
-                showMotivation('📋 Скопируй номер вручную: 4100 1189 8622 3649');
-            });
-        }
-        
-        function showSuccessStories() {
-            document.getElementById('stories').style.display = 'block';
-            document.getElementById('stories').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function setCurrentDate() {
-            const now = new Date();
-            const options = { day: 'numeric', month: 'long', year: 'numeric' };
-            const dateString = now.toLocaleDateString('ru-RU', options);
-            document.getElementById('currentDate').textContent = dateString;
-        }
-        
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 150; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.width = Math.random() * 3 + 1 + 'px';
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                star.style.animationDuration = Math.random() * 2 + 2 + 's';
-                starsContainer.appendChild(star);
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            createStars();
-            setCurrentDate();
-            loadFromLocalStorage();
+        const planNames = ["", "Стандартный", "Ускоренный", "Реструктуризация"];
+        showMotivation(`✅ План "${planNames[planNumber]}" применен! Смотри новый график ниже. 📊`);
+    }
+    
+    function resetCalculator() {
+        if (confirm('Сбросить настройки калькулятора? Данные сохранятся.')) {
+            debtSlider.value = 500000;
+            paymentSlider.value = 25000;
+            interestSlider.value = 15;
             
             updateDebt();
             updatePayment();
             updateInterest();
             
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
+            showMotivation('🔄 Калькулятор сброшен! Меняй значения и смотри новый план. 💪');
+        }
+    }
+    
+    // ============================================
+    // ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+    // ============================================
+    
+    function showRandomMotivation() {
+        if (Math.random() > 0.5) {
+            const msg = motivationMessages[Math.floor(Math.random() * motivationMessages.length)];
+            showMotivation(msg);
+        }
+    }
+    
+    function showMotivation(message) {
+        document.querySelectorAll('.motivation-toast').forEach(toast => toast.remove());
+        
+        const toast = document.createElement('div');
+        toast.className = 'motivation-toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.style.animation = 'slideOutRight 0.5s ease-out';
+            setTimeout(() => toast.remove(), 500);
+        }, 4000);
+    }
+    
+    function showAutoSaveIndicator() {
+        const indicator = document.createElement('div');
+        indicator.className = 'auto-save-indicator';
+        indicator.textContent = '💾 Данные сохранены';
+        document.body.appendChild(indicator);
+        
+        setTimeout(() => indicator.remove(), 2000);
+    }
+    
+    function copyWallet() {
+        const wallet = '4100118986223649';
+        navigator.clipboard.writeText(wallet).then(() => {
+            const element = document.getElementById('walletNumber');
+            const originalText = element.textContent;
             
-            [debtSlider, paymentSlider, interestSlider].forEach(slider => {
-                slider.addEventListener('change', saveToLocalStorage);
-            });
+            element.textContent = '✅ СКОПИРОВАНО! СПАСИБО!';
+            element.style.color = '#4CAF50';
             
             setTimeout(() => {
-                calculate();
-                if (userData.completedMonths > 0) {
-                    showMotivation(`С возвращением! Ты уже на ${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}% пути!`);
-                }
-            }, 1000);
+                element.textContent = originalText;
+                element.style.color = '';
+            }, 2000);
+            
+            showMotivation('💫 Кошелек скопирован! Спасибо за поддержку проекта! 🌅');
+        }).catch(err => {
+            console.error('Ошибка копирования:', err);
+            showMotivation('📋 Скопируй номер вручную: 4100 1189 8622 3649');
         });
-    </script>
-</body>
-</html>
+    }
+    
+    function showSuccessStories() {
+        document.getElementById('stories').style.display = 'block';
+        document.getElementById('stories').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function setCurrentDate() {
+        const now = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        const dateString = now.toLocaleDateString('ru-RU', options);
+        document.getElementById('currentDate').textContent = dateString;
+    }
+    
+    function createStars() {
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.width = Math.random() * 3 + 1 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = Math.random() * 2 + 2 + 's';
+            starsContainer.appendChild(star);
+        }
+    }
+    
+    // ============================================
+    // ИНИЦИАЛИЗАЦИЯ
+    // ============================================
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        createStars();
+        setCurrentDate();
+        loadFromLocalStorage();
+        
+        // Инициализация значений
+        updateDebt();
+        updatePayment();
+        updateInterest();
+        
+        // Плавная прокрутка по якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Автосохранение при изменении слайдеров
+        [debtSlider, paymentSlider, interestSlider].forEach(slider => {
+            slider.addEventListener('change', saveToLocalStorage);
+        });
+        
+        // Первый расчет при загрузке
+        setTimeout(() => {
+            calculateFullPlanWithAllMonths();
+            if (userData.completedMonths > 0) {
+                showMotivation(`С возвращением! Ты уже на ${((userData.completedMonths / userData.totalMonths) * 100).toFixed(1)}% пути!`);
+            }
+        }, 500);
+    });
+</script>
