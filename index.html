@@ -261,4 +261,33 @@
     }
     </script>
 </body>
+
+    <!-- ========== ПЛАВАЮЩАЯ КНОПКА БОТА ========== -->
+<div id="telegramBotFloat" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    <a href="https://t.me/dolgobot" target="_blank" 
+       style="display: flex; align-items: center; gap: 12px; background: #0088cc; color: white; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 5px 20px rgba(0, 136, 204, 0.4); border: 2px solid white; animation: pulseFloat 2s infinite; font-size: 0.9rem;">
+        <span style="font-size: 1.5rem;">🤖</span>
+        <div>
+            <div>Бот @dolgobot</div>
+            <div style="font-size: 0.7rem; opacity: 0.9;">Помощь с долгами</div>
+        </div>
+    </a>
+</div>
+
+<style>
+@keyframes pulseFloat {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-3px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+}
+#telegramBotFloat:hover {
+    animation: none;
+    transform: translateY(-3px) scale(1.1) !important;
+}
+</style>
+<!-- ========== КОНЕЦ ПЛАВАЮЩЕЙ КНОПКИ ========== -->
+
+</body>
+</html>
+    
 </html>
