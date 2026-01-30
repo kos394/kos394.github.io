@@ -3,874 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Долг: Дневник выживания | Личный опыт борьбы с 1,37 млн ₽</title>
+    <title>Долг: Дневник выживания | Личный опыт борьбы с 1,37 млн</title>
+    
+    <!-- ======= НАЧАЛО SEO-ТЕГОВ ======= -->
     <meta name="description" content="Личный дневник реструктуризации долга в 1 372 000 ₽. Честный опыт борьбы с арестом счетов, банками и приставами. Поддержка, лайфхаки, реальные истории.">
     <meta name="keywords" content="реструктуризация долга, арест счетов, банкротство, долг 1.5 млн, кредиты, микрозаймы, приставы, как выжить с долгами, финансовая яма, ЮMoney">
     <meta property="og:title" content="Долг: Дневник выживания | Личный опыт борьбы с 1,37 млн">
     <meta property="og:description" content="Честная история Виталия о реструктуризации долга, аресте счетов и борьбе за финансовую свободу.">
     <meta property="og:image" content="https://kos394.github.io/domenzadolzhen/logo.png">
     <meta property="og:url" content="https://kos394.github.io/domenzadolzhen/">
+    <!-- ======= КОНЕЦ SEO-ТЕГОВ ======= -->
+    
     <style>
-        /* ====== ГЛОБАЛЬНЫЕ СТИЛИ ====== */
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --danger: #e74c3c;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --radius: 10px;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
         }
-        
-        .container {
-            max-width: 1200px;
+        body {
+            background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
         }
-        
-        /* ====== ШАПКА ====== */
         header {
-            background: linear-gradient(135deg, var(--primary), #1a252f);
-            color: white;
-            padding: 3rem 0;
-            border-radius: 0 0 var(--radius) var(--radius);
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));
-        }
-        
-        .header-content {
             text-align: center;
-            position: relative;
-            z-index: 2;
+            padding: 40px 20px;
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 40px;
         }
-        
         h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
         .subtitle {
             font-size: 1.3rem;
-            opacity: 0.9;
+            color: #bdc3c7;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 25px;
         }
-        
-        .debt-counter {
-            display: inline-block;
-            background: rgba(231, 76, 60, 0.9);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-top: 1rem;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        /* ====== НАВИГАЦИЯ ====== */
-        nav {
-            background: white;
-            padding: 1rem 0;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin: -1rem auto 2rem;
-            position: sticky;
-            top: 10px;
-            z-index: 1000;
-            max-width: 95%;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-        
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        nav a:hover {
-            background: var(--secondary);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        nav a.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* ====== ОСНОВНОЙ КОНТЕНТ ====== */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        @media (max-width: 992px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Блок статей */
-        .articles {
-            background: white;
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        
-        article {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px dashed var(--light);
-        }
-        
-        article:last-child {
-            border-bottom: none;
-        }
-        
-        .article-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .article-date {
-            background: var(--light);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        .article-category {
-            background: var(--danger);
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-        
-        h2 {
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-            font-size: 1.8rem;
-            line-height: 1.3;
-        }
-        
-        .article-content {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: var(--light);
-            border-radius: var(--radius);
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--danger);
-        }
-        
-        /* Боковая панель */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .widget {
-            background: white;
-            padding: 1.8rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .widget h3 {
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary);
-        }
-        
-        /* Виджет долга */
-        .debt-breakdown {
-            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
-        }
-        
-        .debt-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-        
-        .debt-total {
-            font-size: 2.2rem;
-            font-weight: bold;
-            text-align: center;
-            color: var(--danger);
-            margin: 1rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: var(--radius);
-            border: 3px dashed var(--danger);
-        }
-        
-        /* Прогресс */
-        .progress-bar {
-            height: 20px;
-            background: var(--light);
-            border-radius: 10px;
-            margin: 1rem 0;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--success), var(--secondary));
-            border-radius: 10px;
-            transition: width 1s ease;
-        }
-        
-        /* Таймлайн */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--secondary);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 5px;
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: var(--danger);
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--secondary);
-        }
-        
-        /* ====== ИНТЕРАКТИВНЫЕ ЭЛЕМЕНТЫ ====== */
-        .calculator {
-            background: linear-gradient(135deg, #a8edea, #fed6e3);
-            padding: 2rem;
-            border-radius: var(--radius);
-            margin: 2rem 0;
-        }
-        
-        .calculator h3 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        input, select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border 0.3s;
-        }
-        
-        input:focus, select:focus {
-            border-color: var(--secondary);
-            outline: none;
-        }
-        
-        button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-        
-        button:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* ====== ФУТЕР ====== */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 0;
-            border-radius: var(--radius) var(--radius) 0 0;
-            margin-top: 3rem;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .debt-counter {
-                font-size: 1.4rem;
-                padding: 0.8rem 1.5rem;
-            }
-        }
-        
-        .warning-box {
-            background: rgba(231, 76, 60, 0.1);
-            border-left: 4px solid var(--danger);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 var(--radius) var(--radius) 0;
-        }
-        
-        .motivation {
+        .author {
             font-style: italic;
+            color: #3498db;
+            font-size: 1.1rem;
+        }
+        .current-debt {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 10px 0;
+        }
+        .stage {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid;
+            transition: transform 0.3s;
+        }
+        .stage:hover {
+            transform: translateX(10px);
+        }
+        .stage-1 { border-color: #e74c3c; }
+        .stage-2 { border-color: #e67e22; }
+        .stage-3 { border-color: #f1c40f; }
+        .stage-4 { border-color: #2ecc71; }
+        .stage-5 { border-color: #3498db; }
+        .stage-6 { border-color: #9b59b6; }
+        .stage-7 { border-color: #1abc9c; }
+        .stage-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .stage-title .emoji {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+        .stage-date {
+            color: #95a5a6;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .tip {
+            background: rgba(52, 152, 219, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid #3498db;
+        }
+        .tip-title {
+            color: #f1c40f;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .donate-section {
+            background: rgba(46, 204, 113, 0.15);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #dfe6e9, #b2bec3);
-            border-radius: var(--radius);
-            margin: 2rem 0;
-            font-size: 1.2rem;
+            margin: 50px 0;
+            border: 2px solid #2ecc71;
         }
-        
-        /* ====== АНИМАЦИИ ====== */
-        .fade-in {
-            animation: fadeIn 1s ease;
+        .donate-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            color: white;
+            padding: 18px 35px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 20px 0 15px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .donate-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
         }
-        
-        .shake {
-            animation: shake 0.5s;
+        .yoomoney-widget {
+            margin: 25px auto;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
         }
-        
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+        .partners {
+            background: rgba(243, 156, 18, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            border-bottom: 1px dotted #3498db;
+        }
+        a:hover {
+            color: #f1c40f;
+        }
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1.1rem; }
+            .current-debt { font-size: 2rem; }
+            .stage { padding: 20px 15px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- ШАПКА -->
-        <header class="fade-in">
-            <div class="header-content">
-                <h1>Долг: Дневник выживания</h1>
-                <p class="subtitle">Честная история человека, который задолжал 1 372 000 ₽. День за днём, рубль за рублём - мой путь к финансовой свободе.</p>
-                <div class="debt-counter" id="currentDebt">1 372 000 ₽</div>
-            </div>
-        </header>
-
-        <!-- НАВИГАЦИЯ -->
-        <nav>
-            <div class="nav-container">
-                <a href="#home" class="active">Главная</a>
-                <a href="#diary">Дневник</a>
-                <a href="#calculator">Калькулятор</a>
-                <a href="#timeline">Хронология</a>
-                <a href="#tips">Лайфхаки</a>
-                <a href="#contacts">Поддержка</a>
-                <a href="#faq">Вопросы</a>
-            </div>
-        </nav>
-
-        <!-- ОСНОВНОЙ КОНТЕНТ -->
-        <div class="main-grid">
-            <!-- ЛЕВАЯ КОЛОНКА - СТАТЬИ -->
-            <div class="articles">
-                <!-- Последняя запись -->
-                <article class="fade-in">
-                    <div class="article-header">
-                        <div class="article-date">20 марта 2024</div>
-                        <div class="article-category">АРЕСТ СЧЕТОВ</div>
-                    </div>
-                    <h2>День 1: Счета арестованы. Как жить без денег?</h2>
-                    <div class="article-content">
-                        <p>Сегодня в 9:30 утра пришло СМС от ЮMoney: "Ваш счет арестован службой судебных приставов". Сердце упало...</p>
-                        
-                        <div class="warning-box">
-                            <strong>Что сделал за день:</strong>
-                            <ul>
-                                <li>Позвонил приставам (8-800-250-39-32) - узнал сумму долга к взысканию</li>
-                                <li>Нашел бесплатного юриста через госуслуги</li>
-                                <li>Подготовил заявление о рассрочке</li>
-                                <li>Продал старый ноутбук через Avito за 25 000 ₽</li>
-                            </ul>
-                        </div>
-                        
-                        <p><strong>Эмоции:</strong> Паника, страх, безысходность. Но вечером появился план действий.</p>
-                        
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <div class="stat-value">-1372к</div>
-                                <div>Общий долг</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">0 ₽</div>
-                                <div>На счетах сейчас</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">25к</div>
-                                <div>Выручил сегодня</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Предыдущая запись -->
-                <article class="fade-in">
-                    <div class="article-header">
-                        <div class="article-date">15 марта 2024</div>
-                        <div class="article-category">РЕСТРУКТУРИЗАЦИЯ</div>
-                    </div>
-                    <h2>Переговоры с банками: как снизили платежи в 2 раза</h2>
-                    <div class="article-content">
-                        <p>Прошел ад: 4 банка, 12 часов переговоров, куча документов. Но результат того стоил!</p>
-                        
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <strong>Тинькофф</strong> - снизили платеж с 28 000 до 14 000 ₽ в месяц
-                            </div>
-                            <div class="timeline-item">
-                                <strong>Альфа-Банк</strong> - кредитные каникулы на 6 месяцев
-                            </div>
-                            <div class="timeline-item">
-                                <strong>Совкомбанк</strong> - реструктуризация под 8% вместо 24%
-                            </div>
-                            <div class="timeline-item">
-                                <strong>Микрозаймы</strong> - 3 из 5 списали пени за просрочку
-                            </div>
-                        </div>
-                        
-                        <p><strong>Совет:</strong> Не бойтесь звонить в банки! По закону они обязаны рассматривать заявления о реструктуризации.</p>
-                    </div>
-                </article>
-
-                <!-- Калькулятор -->
-                <div class="calculator fade-in">
-                    <h3>📊 Калькулятор выплат по долгу</h3>
-                    <div class="form-group">
-                        <label for="debtAmount">Сумма долга (₽):</label>
-                        <input type="number" id="debtAmount" value="1372000" min="1000" max="10000000">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="monthlyPayment">Ежемесячный платеж (₽):</label>
-                        <input type="number" id="monthlyPayment" value="25000" min="1000" max="500000">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="interestRate">Процентная ставка (%):</label>
-                        <input type="number" id="interestRate" value="12" min="0" max="50" step="0.1">
-                    </div>
-                    
-                    <button onclick="calculateDebt()">Рассчитать срок выплаты</button>
-                    
-                    <div id="result" style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: var(--radius); display: none;">
-                        <h4>Результаты расчета:</h4>
-                        <p id="resultText"></p>
-                    </div>
-                </div>
-                
-                <!-- Мотивация -->
-                <div class="motivation fade-in">
-                    "Долг — это не приговор. Это временное состояние, из которого есть выход. Я уже вижу свет в конце тоннеля, и ты сможешь!"
-                </div>
-            </div>
-
-            <!-- ПРАВАЯ КОЛОНКА - ВИДЖЕТЫ -->
-            <div class="sidebar">
-                <!-- Разбивка долга -->
-                <div class="widget debt-breakdown fade-in">
-                    <h3>📈 Структура моего долга</h3>
-                    
-                    <div class="debt-item">
-                        <span>Тинькофф Банк</span>
-                        <span class="stat-value">540 000 ₽</span>
-                    </div>
-                    
-                    <div class="debt-item">
-                        <span>Микрозаймы (5 шт)</span>
-                        <span class="stat-value">320 000 ₽</span>
-                    </div>
-                    
-                    <div class="debt-item">
-                        <span>Кредитные карты</span>
-                        <span class="stat-value">187 000 ₽</span>
-                    </div>
-                    
-                    <div class="debt-item">
-                        <span>Займы у друзей</span>
-                        <span class="stat-value">325 000 ₽</span>
-                    </div>
-                    
-                    <div class="debt-total">
-                        1 372 000 ₽
-                    </div>
-                    
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="debtProgress" style="width: 5%"></div>
-                    </div>
-                    <p style="text-align: center; margin-top: 0.5rem;">Погашено: <strong id="paidAmount">68 600 ₽</strong> (5%)</p>
-                </div>
-
-                <!-- Контакты -->
-                <div class="widget fade-in">
-                    <h3>🚨 Экстренная помощь</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;">
-                            <strong>Бесплатная юридическая</strong><br>
-                            8-800-100-18-19 (круглосуточно)
-                        </li>
-                        <li style="margin-bottom: 0.8rem;">
-                            <strong>Психологическая помощь</strong><br>
-                            8-800-200-89-11 (анонимно)
-                        </li>
-                        <li style="margin-bottom: 0.8rem;">
-                            <strong>Соцзащита по долгам</strong><br>
-                            https://xn--90aijvdckh0n.xn--p1ai/
-                        </li>
-                    </ul>
-                    <button onclick="showSupportForm()" style="margin-top: 1rem; background: var(--success);">Написать мне</button>
-                </div>
-
-                <!-- Календарь выплат -->
-                <div class="widget fade-in">
-                    <h3>📅 Ближайшие платежи</h3>
-                    <div class="debt-item">
-                        <span>25 марта - Тинькофф</span>
-                        <span style="color: var(--danger); font-weight: bold;">14 000 ₽</span>
-                    </div>
-                    <div class="debt-item">
-                        <span>28 марта - Микрозайм</span>
-                        <span>8 500 ₽</span>
-                    </div>
-                    <div class="debt-item">
-                        <span>5 апреля - Кредитка</span>
-                        <span>6 200 ₽</span>
-                    </div>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd;">
-                        <strong>Всего в марте:</strong> 28 700 ₽
-                    </div>
-                </div>
-
-                <!-- Чек-лист -->
-                <div class="widget fade-in">
-                    <h3>✅ Чек-лист действий</h3>
-                    <div style="margin-bottom: 0.5rem;">
-                        <input type="checkbox" id="step1" checked> 
-                        <label for="step1">Составить полный список долгов</label>
-                    </div>
-                    <div style="margin-bottom: 0.5rem;">
-                        <input type="checkbox" id="step2" checked> 
-                        <label for="step2">Обратиться за бесплатной юрпомощью</label>
-                    </div>
-                    <div style="margin-bottom: 0.5rem;">
-                        <input type="checkbox" id="step3"> 
-                        <label for="step3">Подать заявление о рассрочке</label>
-                    </div>
-                    <div style="margin-bottom: 0.5rem;">
-                        <input type="checkbox" id="step4"> 
-                        <label for="step4">Найти дополнительный доход</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="step5"> 
-                        <label for="step5">Продать ненужные вещи</label>
-                    </div>
-                </div>
-            </div>
+    <header>
+        <h1>Долг: Дневник выживания</h1>
+        <p class="subtitle">Меня зовут Виталий. Мне 48 лет. Этот сайт — моя честная история борьбы с долгом в <span class="current-debt">1 372 000 ₽</span>. Я ещё не выбрался, но уже не сдаюсь.</p>
+        <p class="author">«Когда счета арестованы, а дух — нет»</p>
+        
+        <!-- Навигация -->
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" style="color: #3498db; margin: 0 15px; text-decoration: none; font-weight: bold;">Главная</a>
+            <a href="stories.html" style="color: #3498db; margin: 0 15px; text-decoration: none; font-weight: bold;">Истории других</a>
+            <a href="https://t.me/+0CiYGgagGGs5NmZi" target="_blank" style="color: #3498db; margin: 0 15px; text-decoration: none; font-weight: bold;">Наш Telegram</a>
         </div>
+    </header>
 
-        <!-- ФУТЕР -->
-        <footer class="fade-in">
-            <div class="footer-grid">
-                <div>
-                    <h4 style="margin-bottom: 1rem;">О дневнике</h4>
-                    <p>Это реальная история борьбы с долгами. Все суммы, даты и события - правда. Имена изменены для сохранения конфиденциальности.</p>
-                </div>
-                
-                <div>
-                    <h4 style="margin-bottom: 1rem;">Юридическая информация</h4>
-                    <p><strong>ВАЖНО:</strong> Этот сайт — личный дневник, а не финансовый совет. Все решения принимайте после консультации с юристом и финансовым советником.</p>
-                </div>
-                
-                <div>
-                    <h4 style="margin-bottom: 1rem;">Поддержать автора</h4>
-                    <p>Если мой опыт помогает вам, просто поделитесь этой страницей. Это лучшая поддержка!</p>
-                    <button onclick="sharePage()" style="background: var(--secondary); margin-top: 1rem;">📢 Поделиться историей</button>
-                </div>
+    <main>
+        <!-- Этап 1 -->
+        <section class="stage stage-1">
+            <div class="stage-title"><span class="emoji">🔥</span> Ловушка «быстрых денег»</div>
+            <span class="stage-date">2023-2024 год</span>
+            <p>Всё началось с рекламы финансовой биржи. Постоянная, навязчивая, многообещающая. Я поверил, вошёл в азарт и за год влез в кредиты, чтобы «зарабатывать» на рынке. Остановиться не мог, пока не упёрся в потолок.</p>
+            <div class="tip">
+                <div class="tip-title">📌 Вывод:</div>
+                Кредиты для торговли на бирже — это не инвестиции, это русская рулетка. Если слышите «гарантированная доходность» — бегите.
+            </div>
+        </section>
+
+        <!-- Этап 2 -->
+        <section class="stage stage-2">
+            <div class="stage-title"><span class="emoji">🔄</span> День сурка с микрозаймами</div>
+            <span class="stage-date">2024-2025 год</span>
+            <p>Чтобы платить по кредитам, начал брать микрозаймы. В день нужно было отдавать 2 000–2 500 ₽ только на проценты. Работал в такси на своей машине, но она стала ломаться. Зарабатывал всё меньше, а долг рос.</p>
+            <div class="tip">
+                <div class="tip-title">💡 Вопрос к вам:</div>
+                Знакомо чувство, когда берёшь новый заём, чтобы закрыть старый? Это замкнутый круг, который я не сразу разглядел.
+            </div>
+        </section>
+
+        <!-- Этап 3 -->
+        <section class="stage stage-3">
+            <div class="stage-title"><span class="emoji">⚖️</span> Поворотный момент</div>
+            <span class="stage-date">начало 2025 года</span>
+            <p>Знакомый посоветовал: «Подавай на банкротство». Обратился в компанию <a href="https://должникправ.рф" target="_blank">«Должник Прав»</a>. Юристы, изучив мои документы, сказали: «У тебя есть имущество и семья. При банкротстве всё потеряешь. Лучше реструктуризация».</p>
+            <div class="tip">
+                <div class="tip-title">🛡️ Важно:</div>
+                Банкротство — не панацея. Если есть что терять (квартира, машина, имущество), реструктуризация может быть единственным шансом.
+            </div>
+        </section>
+
+        <!-- Этап 4 -->
+        <section class="stage stage-4">
+            <div class="stage-title"><span class="emoji">📄</span> Решение: реструктуризация</div>
+            <span class="stage-date">Март 2025</span>
+            <p>Подготовил документы и подал на реструктуризацию долга через суд. С тех пор прошёл почти год, а суд ещё не назначен. Банки не спешат, проценты капают, долг вырос с 1 172 000 ₽ до 1 372 000 ₽.</p>
+            <div class="tip">
+                <div class="tip-title">⏳ Реальность:</div>
+                Система работает медленно. Готовьтесь к долгому ожиданию. Но лучше двигаться, даже медленно, чем стоять на месте.
+            </div>
+        </section>
+
+        <!-- Этап 5 -->
+        <section class="stage stage-5">
+            <div class="stage-title"><span class="emoji">⛔</span> Дно</div>
+            <span class="stage-date">Октябрь 2025</span>
+            <p>Приставы арестовали все счета. Работает только ЮMoney-кошелёк. А потом умер вариатор на моей рабочей машине. Денег на ремонт не было. На последние средства купил ноутбук — чтобы учиться и создать этот сайт.</p>
+            <div class="tip">
+                <div class="tip-title">💪 Мой выбор:</div>
+                Когда всё рушится — можно опустить руки, а можно начать строить новое, пусть даже виртуальное. Я выбрал второе.
+            </div>
+        </section>
+
+        <!-- Этап 6 -->
+        <section class="stage stage-6">
+            <div class="stage-title"><span class="emoji">💻</span> Создание этого сайта</div>
+            <span class="stage-date">Декабрь 2025</span>
+            <p>На том самом ноутбуке (купленном после смерти вариатора) я начал изучать веб-разработку. И создал этот сайт-дневник. Не для красивой картинки, а для честного разговора с такими же, как я.</p>
+            <div class="tip">
+                <div class="tip-title">🌟 Идея:</div>
+                Если мой опыт поможет хотя бы одному человеку не наступить на те же грабли — уже не зря.
+            </div>
+        </section>
+
+        <!-- Этап 7 -->
+        <section class="stage stage-7">
+            <div class="stage-title"><span class="emoji">🧠</span> Сейчас: Январь 2026</div>
+            <span class="stage-date">Сегодня</span>
+            <p>Долг: 1 372 000 ₽. Суд всё ещё «завтра». Приставы звонят. Но я уже не просто должник — я учусь, систематизирую информацию, делюсь ею с вами. И верю, что выберусь. А потом смогу помогать другим уже деньгами.</p>
+            <div class="tip">
+                <div class="tip-title">🔥 Философия:</div>
+                Финансовая независимость начинается не с больших денег, а с правильных решений. Я показываю, как их принимать в условиях, когда всё против тебя.
+            </div>
+        </section>
+
+        <!-- Блок поддержки -->
+        <section class="donate-section">
+            <h2>Поддержать эту борьбу</h2>
+            <p>Если мой дневник вам близок, если вы видите, что я не просто жалуюсь, а действую — вы можете поддержать проект.</p>
+            <p>Каждый рубль пойдёт на:</p>
+            <ul style="text-align: left; max-width: 500px; margin: 15px auto;">
+                <li>Оплату хостинга и домена</li>
+                <li>Развитие сайта (новые разделы, инструменты)</li>
+                <li>Моя жизнь, пока все счета арестованы</li>
+            </ul>
+            
+            <div class="yoomoney-widget">
+                <p><strong>ЮMoney-кошелёк:</strong> <code>4100118986223649</code></p>
+                <!-- Замени номер кошелька в ссылке ниже, если нужно -->
+                <a href="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20%C2%AB%D0%94%D0%BE%D0%BB%D0%B3%3A%20%D0%94%D0%BD%D0%B5%D0%B2%D0%BD%D0%B8%D0%BA%20%D0%B2%D1%8B%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%C2%BB&targets-hint=&default-sum=300&button-text=14&payment-type-choice=on&mobile-payment-type-choice=on&hint=&successURL=&quickpay=shop&account=4100118986223649" 
+                   target="_blank" class="donate-btn">
+                    Поддержать проект
+                </a>
+                <p style="margin-top: 10px; font-size: 0.9rem;">Оплата картой, ЮMoney или СБП</p>
             </div>
             
-            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                <p>Дневник выживания с долгами © 2024 | Обновлено сегодня</p>
-                <p style="font-size: 0.9rem; opacity: 0.8;">Следующая запись: завтра в 19:00</p>
-            </div>
-        </footer>
-    </div>
+            <p style="margin-top: 20px;"><em>Ваша поддержка — не просто донат. Это сигнал: «Ты не один, мы верим в твой путь».</em></p>
+        </section>
 
+        <!-- Блок Telegram -->
+        <section style="background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);
+                        padding: 50px 30px;
+                        border-radius: 20px;
+                        margin: 50px 0;
+                        text-align: center;
+                        border: 3px solid #3498db;
+                        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);">
+            
+            <div style="font-size: 4rem; margin-bottom: 20px; color: #f1c40f;">🔔</div>
+            
+            <h3 style="color: white; margin-bottom: 15px; font-size: 2rem; font-weight: 800;">
+                Telegram-канал: <span style="color: #f1c40f;">«Между долгом и свободой»</span>
+            </h3>
+            
+            <p style="color: rgba(255,255,255,0.9); 
+                      margin-bottom: 30px; 
+                      font-size: 1.2rem; 
+                      line-height: 1.6;
+                      max-width: 700px;
+                      margin-left: auto;
+                      margin-right: auto;">
+                Основная история — на сайте. А здесь, в канале, я делюсь мыслями в реальном времени,<br>
+                отвечаю на вопросы и публикую то, что не попадает в длинные тексты.
+            </p>
+            
+            <a href="https://t.me/+0CiYGgagGGs5NmZi"
+               target="_blank"
+               style="display: inline-block;
+                      background: linear-gradient(45deg, #0088cc, #005999);
+                      color: white;
+                      padding: 18px 45px;
+                      border-radius: 60px;
+                      text-decoration: none;
+                      font-weight: bold;
+                      font-size: 1.3rem;
+                      box-shadow: 0 8px 25px rgba(0, 136, 204, 0.5);
+                      transition: all 0.3s;
+                      margin-bottom: 20px;
+                      border: 2px solid rgba(255,255,255,0.2);">
+                <span style="font-size: 1.5rem; margin-right: 10px;">🚀</span>
+                ПОДПИСАТЬСЯ НА КАНАЛ
+            </a>
+            
+            <div style="background: rgba(255,255,255,0.1);
+                        padding: 15px 25px;
+                        border-radius: 12px;
+                        display: inline-block;
+                        margin-top: 20px;
+                        border: 1px solid rgba(255,255,255,0.2);
+                        word-break: break-all;">
+                <span style="color: #2ecc71; font-weight: bold; margin-right: 10px;">🔗 Ссылка:</span>
+                <code style="color: white; 
+                             background: rgba(0,0,0,0.4); 
+                             padding: 8px 15px; 
+                             border-radius: 8px; 
+                             font-size: 1rem;
+                             font-family: monospace;">
+                    t.me/+0CiYGgagGGs5NmZi
+                </code>
+            </div>
+            
+            <p style="color: rgba(255,255,255,0.7); 
+                      font-size: 1rem; 
+                      margin-top: 30px; 
+                      font-style: italic;
+                      max-width: 600px;
+                      margin-left: auto;
+                      margin-right: auto;">
+                Присоединяйся, чтобы не пропустить ни одного шага на этом пути. Вместе ищем выход.
+            </p>
+        </section>
+
+        <!-- Партнёры -->
+        <section class="partners">
+            <h3>Партнёры по несчастью</h3>
+            <p>Когда я запутался, мне помогли юристы компании <a href="https://должникправ.рф" target="_blank">«Должник Прав»</a>. Они не дали мне совершить ошибку с банкротством. Это не реклама — просто мой опыт. Решение я принимал сам.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024-2026 Долг: Дневник выживания. Это не коммерческий проект, а личный дневник Виталия.</p>
+        <p>Связь: <a href="mailto:vitaliy.debt.diary@example.com">vitaliy.debt.diary@example.com</a> | Telegram: <a href="https://t.me/+0CiYGgagGGs5NmZi" target="_blank">@mezhdu_dolgom</a></p>
+        <p><small>Имя сохранено, некоторые детали изменены для конфиденциальности. Сумма долга и хронология — реальные.</small></p>
+    </footer>
+
+    <!-- Простой скрипт для плавной прокрутки -->
     <script>
-        // ====== ФУНКЦИИ ДЛЯ ИНТЕРАКТИВА ======
-        
-        // Калькулятор выплат
-        function calculateDebt() {
-            const debt = parseInt(document.getElementById('debtAmount').value);
-            const monthly = parseInt(document.getElementById('monthlyPayment').value);
-            const rate = parseFloat(document.getElementById('interestRate').value);
-            
-            if (!debt || !monthly || monthly <= 0) {
-                alert('Введите корректные данные!');
-                return;
-            }
-            
-            // Простой расчет (без сложных процентов)
-            const monthlyRate = rate / 100 / 12;
-            let remaining = debt;
-            let months = 0;
-            let totalInterest = 0;
-            
-            while (remaining > 0 && months < 600) { // Макс 50 лет
-                const interest = remaining * monthlyRate;
-                const principal = monthly - interest;
-                
-                if (principal <= 0) {
-                    alert('Платеж слишком мал для покрытия процентов!');
-                    return;
-                }
-                
-                remaining -= principal;
-                totalInterest += interest;
-                months++;
-            }
-            
-            const years = Math.floor(months / 12);
-            const monthsRemain = months % 12;
-            
-            const resultDiv = document.getElementById('result');
-            const resultText = document.getElementById('resultText');
-            
-            if (remaining > 0) {
-                resultText.innerHTML = `При таких платежах долг не будет погашен никогда!<br>
-                Нужно увеличить ежемесячный платеж минимум до <strong>${Math.ceil(debt * monthlyRate * 1.1)} ₽</strong>`;
-            } else {
-                resultText.innerHTML = `
-                <strong>Результаты:</strong><br>
-                • Срок выплаты: ${years} лет ${monthsRemain} месяцев<br>
-                • Всего выплатите: <strong>${Math.round(debt + totalInterest).toLocaleString()} ₽</strong><br>
-                • Из них проценты: ${Math.round(totalInterest).toLocaleString()} ₽<br>
-                • Дата полного погашения: ${calculateDate(months)}
-                `;
-            }
-            
-            resultDiv.style.display = 'block';
-            resultDiv.classList.add('shake');
-            setTimeout(() => resultDiv.classList.remove('shake'), 500);
-        }
-        
-        function calculateDate(months) {
-            const date = new Date();
-            date.setMonth(date.getMonth() + months);
-            return date.toLocaleDateString('ru-RU');
-        }
-        
-        // Обновление прогресса
-        function updateProgress() {
-            const paid = 68600; // Уже погашено
-            const total = 1372000; // Общий долг
-            const percent = Math.round((paid / total) * 100);
-            
-            document.getElementById('debtProgress').style.width = percent + '%';
-            document.getElementById('paidAmount').textContent = paid.toLocaleString() + ' ₽ (' + percent + '%)';
-            
-            // Анимация счетчика долга
-            const debtElement = document.getElementById('currentDebt');
-            debtElement.textContent = (total - paid).toLocaleString() + ' ₽';
-        }
-        
-        // Поделиться страницей
-        function sharePage() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Дневник выживания с долгами',
-                    text: 'Честная история борьбы с долгом в 1.37 млн рублей',
-                    url: window.location.href
-                });
-            } else {
-                alert('Скопируйте ссылку и поделитесь: ' + window.location.href);
-            }
-        }
-        
-        // Форма поддержки
-        function showSupportForm() {
-            const message = prompt('Напишите мне сообщение (анонимно):');
-            if (message) {
-                alert('Спасибо! Ваше сообщение сохранено. Я обязательно прочитаю его в следующей записи дневника! 💪');
-                // Здесь можно добавить отправку на сервер
-            }
-        }
-        
-        // Имитация обновления чек-листа
-        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    this.parentElement.style.textDecoration = 'line-through';
-                    this.parentElement.style.opacity = '0.7';
-                } else {
-                    this.parentElement.style.textDecoration = 'none';
-                    this.parentElement.style.opacity = '1';
-                }
-            });
-        });
-        
-        // Плавная прокрутка для навигации
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-                this.classList.add('active');
-                
-                const targetId = this.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-        
-        // Запуск при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            updateProgress();
-            
-            // Анимация появления элементов при скролле
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                    }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
-            }, { threshold: 0.1 });
-            
-            document.querySelectorAll('article, .widget, .calculator').forEach(el => {
-                observer.observe(el);
             });
-            
-            // Таймер следующей записи
-            const nextUpdate = new Date();
-            nextUpdate.setDate(nextUpdate.getDate() + 1);
-            nextUpdate.setHours(19, 0, 0);
-            
-            setInterval(() => {
-                const now = new Date();
-                if (now >= nextUpdate) {
-                    document.querySelector('.motivation').innerHTML = 
-                        '<strong>НОВАЯ ЗАПИСЬ ОПУБЛИКОВАНА!</strong> Обновите страницу (F5)';
-                    document.querySelector('.motivation').style.background = 'linear-gradient(135deg, #74b9ff, #0984e3)';
-                    document.querySelector('.motivation').style.color = 'white';
-                }
-            }, 60000);
         });
     </script>
 </body>
