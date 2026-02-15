@@ -2,17 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="97267ab75fcb8481" />
     
     <!-- Яндекс.Метрика counter -->
     <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-        ym(106550087, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(106550087, 'init', {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/106550087" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
@@ -22,27 +29,10 @@
     <!-- ======= SEO ======= -->
     <meta name="description" content="Личный дневник реструктуризации долга в 1 372 000 ₽. Честный опыт борьбы с арестом счетов, банками и приставами. Поддержка, лайфхаки, реальные истории.">
     <meta name="keywords" content="реструктуризация долга, арест счетов, банкротство, долг 1.5 млн, кредиты, микрозаймы, приставы, как выжить с долгами, финансовая яма, ЮMoney">
-    
-    <!-- Open Graph для соцсетей -->
-    <meta property="og:title" content="Долг: Дневник выживания | 1,37 млн ₽">
+    <meta property="og:title" content="Долг: Дневник выживания | Личный опыт борьбы с 1,37 млн">
     <meta property="og:description" content="Честная история Виталия о реструктуризации долга, аресте счетов и борьбе за финансовую свободу.">
     <meta property="og:image" content="https://dolg-dnevnik.ru/logo.png">
     <meta property="og:url" content="https://dolg-dnevnik.ru/">
-    
-    <!-- Микроразметка для поисковиков -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Долг: Дневник выживания",
-        "description": "Личный дневник борьбы с долгами",
-        "author": {
-            "@type": "Person",
-            "name": "Виталий",
-            "email": "chernovvitalick@yandex.ru"
-        }
-    }
-    </script>
     
     <style>
         * {
@@ -56,122 +46,49 @@
             color: #fff;
             line-height: 1.6;
             padding: 20px;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         header {
             text-align: center;
-            padding: 30px 15px;
-            border-bottom: 3px solid #f1c40f;
-            margin-bottom: 30px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 0 0 30px 30px;
+            padding: 40px 20px;
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 40px;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
             color: #f1c40f;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
-        }
-        h2 {
-            color: #f1c40f;
-            margin: 30px 0 20px;
-            font-size: 2rem;
-            border-left: 5px solid #e74c3c;
-            padding-left: 20px;
-        }
-        h3 {
-            color: #3498db;
-            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #bdc3c7;
             max-width: 800px;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
         }
         .author {
             font-style: italic;
-            color: #f1c40f;
-            font-size: 1.2rem;
+            color: #3498db;
+            font-size: 1.1rem;
         }
         .current-debt {
             font-size: 2.5rem;
             color: #e74c3c;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            display: inline-block;
-            background: rgba(0,0,0,0.3);
-            padding: 5px 20px;
-            border-radius: 50px;
             margin: 10px 0;
         }
-        
-        /* Навигация */
-        .nav-menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 30px 0;
-            background: rgba(255,255,255,0.05);
-            padding: 15px;
-            border-radius: 50px;
-        }
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: all 0.3s;
-            background: rgba(52, 152, 219, 0.3);
-        }
-        .nav-menu a:hover {
-            background: #f1c40f;
-            color: #0c2461;
-            transform: scale(1.05);
-        }
-        
-        /* Кнопка калькулятора */
-        .calc-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #4CAF50, #2E7D32);
-            color: white;
-            padding: 20px 45px;
-            border-radius: 60px;
-            font-size: 1.6rem;
-            font-weight: 900;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.6);
-            border: 4px solid #FFD600;
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-            margin: 20px 0;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .calc-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.8);
-        }
-        
-        /* Этапы */
         .stage {
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
             padding: 25px;
-            margin: 25px 0;
-            border-left: 8px solid;
-            transition: all 0.3s;
-            backdrop-filter: blur(5px);
+            margin: 30px 0;
+            border-left: 5px solid;
+            transition: transform 0.3s;
         }
         .stage:hover {
-            transform: translateX(15px);
-            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
         }
         .stage-1 { border-color: #e74c3c; }
         .stage-2 { border-color: #e67e22; }
@@ -181,123 +98,71 @@
         .stage-6 { border-color: #9b59b6; }
         .stage-7 { border-color: #1abc9c; }
         .stage-title {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
         .stage-title .emoji {
-            font-size: 2rem;
-            margin-right: 15px;
+            font-size: 1.8rem;
+            margin-right: 10px;
         }
         .stage-date {
             color: #95a5a6;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 15px;
             display: block;
         }
         .tip {
             background: rgba(52, 152, 219, 0.2);
-            padding: 18px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 10px;
             margin-top: 15px;
-            border-left: 5px solid #f1c40f;
+            border-left: 3px solid #3498db;
         }
         .tip-title {
             color: #f1c40f;
             font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin-bottom: 5px;
         }
-        
-        /* Блок донатов - УСИЛЕННЫЙ */
         .donate-section {
-            background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(52, 152, 219, 0.2));
-            padding: 40px 20px;
-            border-radius: 30px;
+            background: rgba(46, 204, 113, 0.15);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
             margin: 50px 0;
-            border: 3px solid #2ecc71;
-            box-shadow: 0 0 30px rgba(46, 204, 113, 0.3);
+            border: 2px solid #2ecc71;
         }
         .donate-btn {
             display: inline-block;
             background: linear-gradient(45deg, #f39c12, #e74c3c);
             color: white;
-            padding: 22px 45px;
-            font-size: 1.8rem;
+            padding: 18px 35px;
+            font-size: 1.4rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 60px;
-            margin: 20px 0;
+            border-radius: 50px;
+            margin: 20px 0 15px;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.6);
-            border: 3px solid white;
-            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
         }
         .donate-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.8);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
         }
-        
-        /* QR-код (генерация без картинки) */
-        .qr-box {
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            display: inline-block;
+        .yoomoney-widget {
             margin: 25px auto;
-            text-align: center;
-            max-width: 280px;
-        }
-        .qr-code-svg {
-            width: 200px;
-            height: 200px;
-            margin: 10px auto;
-            display: block;
-        }
-        
-        /* Счетчик донатов */
-        .donation-counter {
-            background: rgba(0,0,0,0.3);
-            padding: 20px;
-            border-radius: 50px;
-            margin: 20px auto;
-            max-width: 400px;
-            font-size: 1.3rem;
-        }
-        .counter-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #f1c40f;
-        }
-        
-        /* Таблица последних донатов */
-        .donation-table {
             max-width: 500px;
-            margin: 25px auto;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 15px;
-        }
-        .donation-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px dotted rgba(255,255,255,0.2);
-        }
-        
-        /* Таймер */
-        .timer-box {
-            background: rgba(231, 76, 60, 0.2);
-            border: 2px solid #e74c3c;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            margin: 25px 0;
-            font-size: 1.4rem;
+            border-radius: 10px;
         }
-        
-        /* Полезные ресурсы */
+        .partners {
+            background: rgba(243, 156, 18, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -307,289 +172,356 @@
         .resource-card {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            border-radius: 15px;
-            border-left: 5px solid;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            border-left: 4px solid;
             transition: all 0.3s;
         }
         .resource-card:hover {
-            transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
         }
-        .resource-card a {
-            color: #f1c40f;
+        a {
+            color: #3498db;
             text-decoration: none;
-            font-weight: bold;
+            border-bottom: 1px dotted #3498db;
         }
-        
-        /* Адаптация */
+        a:hover {
+            color: #f1c40f;
+        }
         @media (max-width: 768px) {
             body { padding: 10px; }
-            h1 { font-size: 1.8rem; }
-            .current-debt { font-size: 1.8rem; }
-            .calc-btn { font-size: 1.2rem; padding: 15px 25px; }
-            .donate-btn { font-size: 1.3rem; padding: 15px 25px; }
-            .nav-menu { border-radius: 20px; }
-            .nav-menu a { padding: 6px 12px; font-size: 0.9rem; }
-        }
-        
-        /* Всплывающее окно */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background: linear-gradient(135deg, #0c2461, #1e3799);
-            padding: 40px;
-            border-radius: 30px;
-            max-width: 500px;
-            text-align: center;
-            border: 3px solid #f1c40f;
-            position: relative;
-        }
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: white;
-        }
-        .telegram-btn {
-            display: inline-block;
-            background: #0088cc;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            margin: 15px 0;
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1.1rem; }
+            .current-debt { font-size: 2rem; }
+            .stage { padding: 20px 15px; }
+            .resources-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-
-<!-- ВСПЛЫВАЮЩЕЕ ОКНО ПРИ ЗАХОДЕ -->
-<div id="welcomeModal" class="modal" style="display: flex;">
-    <div class="modal-content">
-        <span class="close-modal" onclick="document.getElementById('welcomeModal').style.display='none'">&times;</span>
-        <h2 style="color: #f1c40f;">🎯 Хочешь вылезти из долгов?</h2>
-        <p style="margin: 20px 0;">Я каждый день пишу в Telegram, что работает, а что нет. Присоединяйся!</p>
-        <a href="https://t.me/debt_warrior" target="_blank" class="telegram-btn">🚀 Подписаться</a>
-        <p style="font-size: 0.9rem;">Уже 1 247 человек читают</p>
-    </div>
-</div>
-
-<header>
-    <h1>💸 Долг: Дневник выживания</h1>
-    <p class="subtitle">Меня зовут <strong>Виталий</strong>, мне 48 лет. Я должен <span class="current-debt">1 372 000 ₽</span></p>
+    <header>
+    <h1>Долг: Дневник выживания</h1>
+    <p class="subtitle">Меня зовут Виталий. Мне 48 лет. Этот сайт — моя честная история борьбы с долгом в <span class="current-debt">1 372 000 ₽</span>. Я ещё не выбрался, но уже не сдаюсь.</p>
     <p class="author">«Когда счета арестованы, а дух — нет»</p>
     
-    <!-- Telegram баннер -->
-    <div style="background: linear-gradient(45deg, #e74c3c, #f39c12); padding: 15px; border-radius: 50px; margin: 20px auto; max-width: 600px;">
-        🔥 <strong>Telegram-канал:</strong> <a href="https://t.me/debt_warrior" target="_blank" style="color: white; font-weight: bold;">@debt_warrior</a> — 1 247 подписчиков
+    <!-- Telegram-канал -->
+    <div style="
+        background: linear-gradient(45deg, #e74c3c, #f39c12);
+        padding: 15px;
+        border-radius: 10px;
+        margin: 20px auto;
+        max-width: 800px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        border: 2px solid white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    ">
+        <span style="font-size: 1.3rem; margin-right: 10px;">🚀</span>
+        <strong>Telegram-канал восстановлен!</strong> 
+        Подписывайтесь: 
+        <a href="https://t.me/debt_warrior" 
+           target="_blank" 
+           style="color: white; 
+                  text-decoration: underline;
+                  font-weight: bold;
+                  background: rgba(255,255,255,0.2);
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  margin: 0 5px;">
+            @debt_warrior
+        </a>
+        - реальная борьба с долгом в 1 372 000₽
     </div>
     
     <!-- Навигация -->
-    <div class="nav-menu">
-        <a href="index.html">🏠 Главная</a>
-        <a href="kak-obshchatsya-s-kollektorami.html">📞 Коллекторы</a>
-        <a href="kak-restrukturizirovat-dolg.html">⚖️ Реструктуризация</a>
-        <a href="refinansirovanie-dolgov.html">🔄 Рефинансирование</a>
-        <a href="stories.html">👥 Истории</a>
-        <a href="calculator.html">🧮 Калькулятор</a>
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="index.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Главная</a>
+        <a href="kak-obshchatsya-s-kollektorami.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Как общаться с коллекторами</a>
+        <a href="kak-restrukturizirovat-dolg.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Как реструктурировать долг</a>
+        <a href="refinansirovanie-dolgov.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Рефинансирование долгов</a>
+        <a href="stories.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Истории других</a>
+        <a href="https://t.me/debt_warrior" target="_blank" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Наш Telegram</a>
     </div>
-    
+
     <!-- Кнопка калькулятора -->
-    <a href="calculator.html" class="calc-btn">🧮 ЗАПУСТИТЬ КАЛЬКУЛЯТОР ОСВОБОЖДЕНИЯ 🚀</a>
-    <p style="color: #B0BEC5; margin-top: 10px;">Рассчитай свой личный план выхода из долгов</p>
-</header>
-
-<main>
-    <!-- Этапы истории -->
-    <h2>📅 Моя хронология ада</h2>
-    
-    <section class="stage stage-1">
-        <div class="stage-title"><span class="emoji">🔥</span> Ловушка «быстрых денег»</div>
-        <span class="stage-date">2023-2024 год</span>
-        <p>Всё началось с рекламы финансовой биржи. Постоянная, навязчивая, многообещающая. Я поверил, вошёл в азарт и за год влез в кредиты, чтобы «зарабатывать» на рынке.</p>
-        <div class="tip"><span class="tip-title">📌 Вывод:</span> Кредиты для торговли на бирже — это не инвестиции, это русская рулетка. Если слышите «гарантированный доход» — бегите!</div>
-    </section>
-
-    <section class="stage stage-2">
-        <div class="stage-title"><span class="emoji">🔄</span> День сурка с микрозаймами</div>
-        <span class="stage-date">2024-2025 год</span>
-        <p>Чтобы платить по кредитам, начал брать микрозаймы. В день нужно было отдавать 2 000–2 500 ₽ только на проценты. Работал в такси, но машина ломалась.</p>
-        <div class="tip"><span class="tip-title">💡 Вопрос:</span> Знакомо чувство, когда берёшь новый заём, чтобы закрыть старый?</div>
-    </section>
-
-    <section class="stage stage-3">
-        <div class="stage-title"><span class="emoji">⚖️</span> Поворотный момент</div>
-        <span class="stage-date">начало 2025 года</span>
-        <p>Знакомый посоветовал подать на банкротство. Обратился в компанию «Должник Прав». Юристы сказали: «У тебя есть имущество — лучше реструктуризация».</p>
-    </section>
-
-    <section class="stage stage-4">
-        <div class="stage-title"><span class="emoji">📄</span> Решение: реструктуризация</div>
-        <span class="stage-date">Март 2025</span>
-        <p>Подготовил документы. Прошёл почти год, а суд ещё не назначен. Долг вырос с 1 172 000 ₽ до 1 372 000 ₽.</p>
-    </section>
-
-    <section class="stage stage-5">
-        <div class="stage-title"><span class="emoji">⛔</span> Дно</div>
-        <span class="stage-date">Октябрь 2025</span>
-        <p>Приставы арестовали все счета. Умер вариатор на машине. На последние 9 000 ₽ купил ноутбук — чтобы создать этот сайт.</p>
-    </section>
-
-    <section class="stage stage-6">
-        <div class="stage-title"><span class="emoji">💻</span> Создание сайта</div>
-        <span class="stage-date">Декабрь 2025</span>
-        <p>На том самом ноутбуке начал изучать веб-разработку. Создал этот сайт-дневник для честного разговора.</p>
-    </section>
-
-    <section class="stage stage-7">
-        <div class="stage-title"><span class="emoji">🧠</span> Сейчас: февраль 2026</div>
-        <span class="stage-date">Сегодня</span>
-        <p>Долг: 1 372 000 ₽. Суд всё ещё «завтра». Но я уже не просто должник — я учусь, делюсь опытом и верю, что выберусь.</p>
-    </section>
-
-    <!-- ===== УСИЛЕННЫЙ БЛОК ДОНАТОВ ===== -->
-    <section class="donate-section">
-        <h2 style="color: #2ecc71;">💳 ПОДДЕРЖИ ДНЕВНИК</h2>
-        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 20px;">
-            Твой 100₽ — это сигнал: «Ты не один, мы верим в твой путь». Я сразу вижу, кто меня поддерживает!
+    <div style="text-align: center; margin: 30px 0 20px;">
+        <a href="calculator.html" 
+           style="display: inline-block; 
+                  background: linear-gradient(45deg, #4CAF50, #2E7D32); 
+                  color: white; 
+                  padding: 18px 40px; 
+                  border-radius: 60px; 
+                  font-size: 1.5rem; 
+                  font-weight: 900; 
+                  text-decoration: none; 
+                  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.5);
+                  border: 3px solid #FFD600;
+                  transition: all 0.3s;">
+            🧮 ЗАПУСТИТЬ КАЛЬКУЛЯТОР ОСВОБОЖДЕНИЯ 🚀
+        </a>
+        <p style="color: #B0BEC5; margin-top: 15px; font-size: 1rem;">
+            Рассчитай свой личный план выхода из долгов
         </p>
-        
-        <!-- СЧЕТЧИК Собранных денег (динамический) -->
-        <div class="donation-counter">
-            <span>💰 Собрано сегодня:</span>
-            <span class="counter-number" id="totalDonations">2 847 ₽</span>
-        </div>
-        
-        <!-- КРУПНАЯ КНОПКА ДОНАТА -->
-        <a href="https://yoomoney.ru/to/4100118986223649" target="_blank" class="donate-btn">
-            💸 ПЕРЕВЕСТИ 100 ₽ СЕЙЧАС
-        </a>
-        
-        <!-- ТАЙМЕР СРОЧНОСТИ -->
-        <div class="timer-box" id="timer">
-            ⏳ До конца акции: <span id="hours">23</span>ч <span id="minutes">59</span>м <span id="seconds">59</span>с
-        </div>
-        
-        <!-- QR-код (рабочий, без картинки) -->
-        <div class="qr-box">
-            <h3 style="color: #0c2461; margin-bottom: 15px;">📱 Или по QR-коду</h3>
-            <svg class="qr-code-svg" viewBox="0 0 100 100">
-                <rect width="100" height="100" fill="white"/>
-                <rect x="10" y="10" width="20" height="20" fill="black"/>
-                <rect x="40" y="10" width="20" height="20" fill="black"/>
-                <rect x="70" y="10" width="20" height="20" fill="black"/>
-                <rect x="10" y="40" width="20" height="20" fill="black"/>
-                <rect x="40" y="40" width="20" height="20" fill="white"/>
-                <rect x="70" y="40" width="20" height="20" fill="black"/>
-                <rect x="10" y="70" width="20" height="20" fill="black"/>
-                <rect x="40" y="70" width="20" height="20" fill="black"/>
-                <rect x="70" y="70" width="20" height="20" fill="black"/>
-                <rect x="25" y="25" width="5" height="5" fill="white"/>
-                <rect x="55" y="25" width="5" height="5" fill="white"/>
-                <rect x="25" y="55" width="5" height="5" fill="white"/>
-                <rect x="55" y="55" width="5" height="5" fill="white"/>
-            </svg>
-            <p style="color: #333; margin-top: 10px;">Наведи камеру</p>
-        </div>
-        
-        <!-- ТАБЛИЦА ПОСЛЕДНИХ ДОНАТОВ -->
-        <div class="donation-table">
-            <h3 style="color: #f1c40f;">🔥 Последние поддержавшие:</h3>
-            <div class="donation-row"><span>Антон К.</span> <span>100 ₽</span></div>
-            <div class="donation-row"><span>Елена М.</span> <span>500 ₽</span></div>
-            <div class="donation-row"><span>Сергей В.</span> <span>200 ₽</span></div>
-            <div class="donation-row"><span>Дмитрий П.</span> <span>100 ₽</span></div>
-            <div class="donation-row"><span>Ольга С.</span> <span>300 ₽</span></div>
-            <div class="donation-row"><span>Игорь Н.</span> <span>150 ₽</span></div>
-        </div>
-        
-        <!-- СПИСОК ЦЕЛЕЙ -->
-        <div style="max-width: 600px; margin: 30px auto 0; text-align: left; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px;">
-            <h4>💰 На что пойдут деньги:</h4>
-            <ul style="list-style: none;">
-                <li>✅ <strong>200 ₽/мес</strong> — хостинг сайта</li>
-                <li>✅ <strong>Погашение долга</strong> — 1 372 000 ₽</li>
-                <li>✅ <strong>Еда и лекарства</strong> — пока счета арестованы</li>
-                <li>✅ <strong>Новые инструменты</strong> — калькуляторы, шаблоны</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Полезные ресурсы -->
-    <h2>🆘 Полезные ресурсы</h2>
-    <div class="resources-grid">
-        <div class="resource-card" style="border-color: #e74c3c;">
-            <h4>⚖️ Должник Прав</h4>
-            <p>Юридическая помощь</p>
-            <a href="https://xn--80aaig2a0a.xn--p1ai" target="_blank">→ Перейти</a>
-        </div>
-        <div class="resource-card" style="border-color: #3498db;">
-            <h4>🏛️ Госуслуги</h4>
-            <p>Банкротство</p>
-            <a href="https://www.gosuslugi.ru/10077/1" target="_blank">→ Официально</a>
-        </div>
-        <div class="resource-card" style="border-color: #2ecc71;">
-            <h4>🧮 Калькулятор</h4>
-            <p>График платежей</p>
-            <a href="https://www.vbr.ru/banki/calc/restructuring/" target="_blank">→ Бесплатно</a>
-        </div>
-        <div class="resource-card" style="border-color: #f1c40f;">
-            <h4>❤️ Психпомощь</h4>
-            <p>Бесплатно 24/7</p>
-            <a href="https://telefon-doveria.ru" target="_blank">→ Позвонить</a>
-        </div>
     </div>
-
-    <!-- Telegram-канал (еще раз) -->
-    <section style="background: linear-gradient(135deg, #0c2461, #1e3799); padding: 40px; border-radius: 30px; text-align: center; margin: 50px 0; border: 3px solid #3498db;">
-        <h2 style="color: white;">🔔 Telegram-канал «Между долгом и свободой»</h2>
-        <p style="margin: 20px 0; font-size: 1.2rem;">Основная история — на сайте. А здесь — мысли в реальном времени.</p>
-        <a href="https://t.me/debt_warrior" target="_blank" style="display: inline-block; background: #0088cc; color: white; padding: 18px 40px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 1.3rem;">
-            🚀 ПОДПИСАТЬСЯ (1 247 чел)
-        </a>
-        <p style="margin-top: 15px;">🔗 t.me/debt_warrior</p>
-    </section>
-
-    <!-- Партнеры -->
-    <section style="background: rgba(243,156,18,0.1); padding: 20px; border-radius: 15px;">
-        <h3>🤝 Партнёры по несчастью</h3>
-        <p>Мне помогли юристы <a href="https://должникправ.рф" target="_blank">«Должник Прав»</a>. Не дали совершить ошибку с банкротством.</p>
-    </section>
-</main>
-
-<footer style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
-    <p>© 2024-2026 Долг: Дневник выживания. Личный дневник Виталия.</p>
-    <p>✉️ <a href="mailto:chernovvitalick@yandex.ru">chernovvitalick@yandex.ru</a> | 📱 <a href="https://t.me/debt_warrior">@debt_warrior</a></p>
-</footer>
-
-<script>
-    // Таймер для срочности
-    function updateTimer() {
-        let hours = document.getElementById('hours');
-        let minutes = document.getElementById('minutes');
-        let seconds = document.getElementById('seconds');
+     
+</header>
         
-        if (hours && minutes && seconds) {
-            let h = parseInt(hours.innerText);
-            let m = parseInt(minutes.innerText);
-            let s = parseInt(seconds.innerText);
+    <main>
+        <!-- Этап 1 -->
+        <section class="stage stage-1">
+            <div class="stage-title"><span class="emoji">🔥</span> Ловушка «быстрых денег»</div>
+            <span class="stage-date">2023-2024 год</span>
+            <p>Всё началось с рекламы финансовой биржи. Постоянная, навязчивая, многообещающая. Я поверил, вошёл в азарт и за год влез в кредиты, чтобы «зарабатывать» на рынке. Остановиться не мог, пока не упёрся в потолок.</p>
+            <div class="tip">
+                <div class="tip-title">📌 Вывод:</div>
+                Кредиты для торговли на бирже — это не инвестиции, это русская рулетка. Если слышите: «гарантированный доход» — бегите!
+            </div>
+        </section>
+
+        <!-- Этап 2 -->
+        <section class="stage stage-2">
+            <div class="stage-title"><span class="emoji">🔄</span> День сурка с микрозаймами</div>
+            <span class="stage-date">2024-2025 год</span>
+            <p>Чтобы платить по кредитам, начал брать микрозаймы. В день нужно было отдавать 2 000–2 500 ₽ только на проценты. Работал в такси на своей машине, но она стала ломаться. Зарабатывал всё меньше, а долг рос.</p>
+            <div class="tip">
+                <div class="tip-title">💡 Вопрос к вам:</div>
+                Знакомо чувство, когда берёшь новый заём, чтобы закрыть старый? Это замкнутый круг, который я не сразу разглядел.
+            </div>
+        </section>
+
+        <!-- Этап 3 -->
+        <section class="stage stage-3">
+            <div class="stage-title"><span class="emoji">⚖️</span> Поворотный момент</div>
+            <span class="stage-date">начало 2025 года</span>
+            <p>Знакомый посоветовал: «Подавай на банкротство». Обратился в компанию <a href="https://должникправ.рф" target="_blank">«Должник Прав»</a>. Юристы, изучив мои документы, сказали: «У тебя есть имущество и семья. При банкротстве всё потеряешь. Лучше реструктуризация».</p>
+            <div class="tip">
+                <div class="tip-title">🛡️ Важно:</div>
+                Банкротство — не панацея. Если есть что терять (квартира, машина, имущество), реструктуризация может быть единственным шансом!
+            </div>
+        </section>
+
+        <!-- Этап 4 -->
+        <section class="stage stage-4">
+            <div class="stage-title"><span class="emoji">📄</span> Решение: реструктуризация</div>
+            <span class="stage-date">Март 2025</span>
+            <p>Подготовил документы и подал на реструктуризацию долга через юридическую компанию. С тех пор прошёл почти год, а суд ещё не назначен. Банки не спешат, проценты капают, долг вырос с 1 172 000 ₽ до 1 372 000 ₽.</p>
+            <div class="tip">
+                <div class="tip-title">⏳ Реальность:</div>
+                Система работает медленно. Готовьтесь к долгому ожиданию. Но лучше двигаться, даже медленно, чем стоять на месте.
+            </div>
+        </section>
+
+        <!-- Этап 5 -->
+        <section class="stage stage-5">
+            <div class="stage-title"><span class="emoji">⛔</span> Дно</div>
+            <span class="stage-date">Октябрь 2025</span>
+            <p>Приставы арестовали все счета. Работает только ЮMoney-кошелёк. А потом умер вариатор на моей рабочей машине. Денег на ремонт не было. <strong>На последние 9 000 ₽ купил ноутбук</strong> — чтобы учиться и создать этот сайт.</p>
             
-            s--;
-            if (s < 0) { s = 59; m--; }
-            if (m < 0) { m = 59; h--; }
-            if (h < 0) { h = 23; }
+            <div style="background: rgba(231, 76, 60, 0.1); padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 3px solid #e74c3c;">
+                <p style="margin: 0; color: #f1c40f; font-size: 0.95rem;">
+                    <span style="margin-right: 8px;">💰</span>
+                    <strong>Конкретные цифры:</strong> Долг на тот момент — 1 372 000 ₽ в 5 банков.
+                </p>
+            </div>
             
-            hours.innerText = h.toString().padStart(2,
+            <div class="tip">
+                <div class="tip-title">💪 Мой выбор:</div>
+                Когда всё рушится — можно опустить руки, а можно начать строить новое, пусть даже виртуальное. <strong>Я выбрал второе.</strong>
+            </div>
+        </section>
+
+        <!-- Этап 6 -->
+        <section class="stage stage-6">
+            <div class="stage-title"><span class="emoji">💻</span> Создание этого сайта</div>
+            <span class="stage-date">Декабрь 2025</span>
+            <p><strong>На том самом ноутбуке</strong> (купленном после смерти вариатора) я начал изучать веб-разработку. И создал этот сайт-дневник. Не для красивой картинки, а для честного разговора с такими же, как я.</p>
+            <div class="tip">
+                <div class="tip-title">🌟 Идея:</div>
+                Если мой опыт поможет хотя бы одному человеку не наступить на те же грабли — уже не зря.
+            </div>
+        </section>
+
+        <!-- Этап 7 -->
+        <section class="stage stage-7">
+            <div class="stage-title"><span class="emoji">🧠</span> Сейчас: февраль 2026</div>
+            <span class="stage-date">Сегодня</span>
+            <p>Долг: 1 372 000 ₽. Суд всё ещё «завтра». Приставы звонят. Но я уже не просто должник — я учусь, систематизирую информацию, делюсь ею с вами. И верю, что выберусь. А потом смогу помогать другим уже деньгами.</p>
+            <div class="tip">
+                <div class="tip-title">🔥 Философия:</div>
+                Финансовая независимость начинается не с больших денег, а с правильных решений. Я показываю, как их принимать в условиях, когда всё против тебя.
+            </div>
+        </section>
+
+        <!-- Пошаговый план -->
+        <section style="background: rgba(243, 156, 18, 0.1); padding: 30px; border-radius: 15px; margin: 40px 0; border: 2px solid #f39c12;">
+            <h2 style="color: #f1c40f; text-align: center; margin-bottom: 25px;">🧭 Мой пошаговый план выхода из долгов (актуален на январь 2026)</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+                    <div style="font-size: 2rem; text-align: center; margin-bottom: 10px;">1️⃣</div>
+                    <strong>Собрать все долги</strong>
+                    <small style="display: block; margin-top: 5px;">Точные суммы, проценты, сроки</small>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+                    <div style="font-size: 2rem; text-align: center; margin-bottom: 10px;">2️⃣</div>
+                    <strong>Юридическая консультация</strong>
+                    <small style="display: block; margin-top: 5px;">Бесплатно через госуслуги</small>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+                    <div style="font-size: 2rem; text-align: center; margin-bottom: 10px;">3️⃣</div>
+                    <strong>Реструктуризация</strong>
+                    <small style="display: block; margin-top: 5px;">Судебная или внесудебная</small>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+                    <div style="font-size: 2rem; text-align: center; margin-bottom: 10px;">4️⃣</div>
+                    <strong>Дополнительный доход</strong>
+                    <small style="display: block; margin-top: 5px;">Сайт, фриланс, подработки</small>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://t.me/debt_warrior" target="_blank" 
+                   style="display: inline-block; 
+                          background: #2ecc71; 
+                          color: white; 
+                          padding: 12px 25px; 
+                          border-radius: 30px; 
+                          text-decoration: none;
+                          font-weight: bold;">
+                    💬 Обсудить план в Telegram @debt_warrior
+                </a>
+            </div>
+        </section>
+
+        <!-- БЛОК ДОНАТОВ (ИСПРАВЛЕННЫЙ) -->
+        <section style="background: rgba(46, 204, 113, 0.15); padding: 40px 30px; border-radius: 20px; text-align: center; margin: 50px 0; border: 2px solid #2ecc71;">
+            <h2 style="color: #2ecc71; margin-bottom: 15px;">💳 Поддержать «Дневник выживания»</h2>
+            <p style="margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Если мой дневник вам близок, если вы видите, что я не просто жалуюсь, а действую — вы можете поддержать проект.
+                <strong>Каждый рубль — это сигнал: «Ты не один, мы верим в твой путь».</strong>
+            </p>
+            
+            <!-- Инструкция по переводу (вместо QR-кода, требующего файл) -->
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 12px; max-width: 700px; margin: 0 auto 25px; text-align: left;">
+                <h3 style="color: #f1c40f; margin-top: 0;">📱 Как перевести деньги:</h3>
+                <ol style="margin-bottom: 0; padding-left: 20px;">
+                    <li><strong>Открой приложение своего банка</strong> (Сбер, Тинькофф, ВТБ, Альфа и др.)</li>
+                    <li><strong>Найди перевод по номеру счета или QR-коду</strong></li>
+                    <li><strong>Переведи на номер карты или счета</strong></li>
+                </ol>
+                <p style="margin-top: 15px; margin-bottom: 0; color: #bdc3c7; font-size: 0.9em;">
+                    ⚡ <strong>Работает через СБП</strong> — комиссия 0%, перевод за 5 секунд.
+                </p>
+            </div>
+            
+            <!-- Прямая ссылка на ЮMoney -->
+            <div style="margin-top: 30px;">
+                <p style="margin-bottom: 15px;">💜 <strong>Перевести напрямую через ЮMoney:</strong></p>
+                <a href="https://yoomoney.ru/to/4100118986223649" 
+                   target="_blank"
+                   class="donate-btn">
+                    ▶️ ПЕРЕВЕСТИ 100 ₽ ЧЕРЕЗ ЮMONEY
+                </a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #bdc3c7;">
+                    (Работает даже если у вас нет кошелька ЮMoney — можно оплатить картой)
+                </p>
+            </div>
+            
+            <!-- Куда идут деньги -->
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed rgba(255,255,255,0.3);">
+                <h3 style="color: #f1c40f; margin-bottom: 10px;">💰 На что пойдут деньги:</h3>
+                <ul style="margin-bottom: 0; padding-left: 20px; text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li>✅ <strong>200 ₽/мес</strong> — хостинг сайта (без него сайт пропадёт)</li>
+                    <li>✅ <strong>Погашение моего долга</strong> — 1 372 000 ₽ в АО "Адресная банковская"</li>
+                    <li>✅ <strong>Еда и лекарства</strong> — пока все счета арестованы приставами</li>
+                    <li>✅ <strong>Новые инструменты</strong> — калькуляторы, шаблоны документов для всех</li>
+                </ul>
+                <p style="margin-top: 15px; color: #f1c40f; font-weight: bold;">
+                    💎 Ваш донат — инвестиция в моё освобождение от долгов.
+                </p>
+            </div>
+        </section>
+
+        <!-- Полезные ресурсы -->
+        <section>
+            <h2 style="color: #f1c40f; margin-bottom: 20px;">Полезные ресурсы</h2>
+            <p>Это не реклама — это инструменты, которые реально помогли или помогают мне сейчас.</p>
+
+            <div class="resources-grid">
+                <div class="resource-card" style="border-color: #e74c3c;">
+                    <h3>Должник Прав</h3>
+                    <p>Юридическая помощь при реструктуризации</p>
+                    <a href="https://xn--80aaig2a0a.xn--p1ai" target="_blank" rel="nofollow">→ Мой выбор</a>
+                </div>
+                
+                <div class="resource-card" style="border-color: #3498db;">
+                    <h3>Госуслуги (банкротство)</h3>
+                    <p>Бесплатная информация от государства</p>
+                    <a href="https://www.gosuslugi.ru/10077/1" target="_blank" rel="nofollow">→ Официально</a>
+                </div>
+
+                <div class="resource-card" style="border-color: #2ecc71;">
+                    <h3>Калькулятор реструктуризации</h3>
+                    <p>Посчитайте свой график платежей</p>
+                    <a href="https://www.vbr.ru/banki/calc/restructuring/" target="_blank" rel="nofollow">→ Бесплатно</a>
+                </div>
+
+                <div class="resource-card" style="border-color: #f1c40f;">
+                    <h3>Психологическая помощь</h3>
+                    <p>Бесплатно, анонимно, круглосуточно</p>
+                    <a href="https://telefon-doveria.ru" target="_blank" rel="nofollow">→ Важно</a>
+                </div>
+            </div>
+
+            <p><small>Как этим пользоваться? Я указываю только то, что проверял сам. Эти ссылки — как спасательные круги. Берите то, что нужно именно вам.</small></p>
+        </section>
+
+        <!-- Блок Telegram -->
+        <section style="background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%); padding: 50px 30px; border-radius: 20px; margin: 50px 0; text-align: center; border: 3px solid #3498db; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);">
+            
+            <div style="font-size: 4rem; margin-bottom: 20px; color: #f1c40f;">🔔</div>
+            
+            <h2 style="color: white; margin-bottom: 15px; font-size: 2rem;">
+                Telegram-канал: <span style="color: #f1c40f;">«Между долгом и свободой»</span>
+            </h2>
+            
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 30px; font-size: 1.2rem; line-height: 1.6; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Основная история — на сайте. А здесь, в канале, я делюсь мыслями в реальном времени,<br>
+                отвечаю на вопросы и публикую то, что не попадает в длинные тексты.
+            </p>
+            
+            <a href="https://t.me/debt_warrior"
+               target="_blank"
+               style="display: inline-block; background: linear-gradient(45deg, #0088cc, #005999); color: white; padding: 18px 45px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 1.3rem; box-shadow: 0 8px 25px rgba(0, 136, 204, 0.5); transition: all 0.3s; margin-bottom: 20px; border: 2px solid rgba(255,255,255,0.2);">
+                <span style="font-size: 1.5rem; margin-right: 10px;">🚀</span>
+                ПОДПИСАТЬСЯ НА КАНАЛ
+            </a>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; display: inline-block; margin-top: 20px; border: 1px solid rgba(255,255,255,0.2); word-break: break-all;">
+                <span style="color: #2ecc71; font-weight: bold; margin-right: 10px;">🔗 Ссылка:</span>
+                <code style="color: white; background: rgba(0,0,0,0.4); padding: 8px 15px; border-radius: 8px; font-size: 1rem; font-family: monospace;">
+                    t.me/debt_warrior
+                </code>
+            </div>
+            
+            <p style="color: rgba(255,255,255,0.7); font-size: 1rem; margin-top: 30px; font-style: italic;">
+                Присоединяйся, чтобы не пропустить ни одного шага на этом пути.
+            </p>
+        </section>
+
+        <!-- Партнёры -->
+        <section class="partners">
+            <h2>Партнёры по несчастью</h2>
+            <p>Когда я запутался, мне помогли юристы компании <a href="https://должникправ.рф" target="_blank">«Должник Прав»</a>. Они не дали мне совершить ошибку с банкротством. Это не реклама — просто мой опыт. Решение я принимал сам.</p>
+        </section>
+    </main>
+
+    <footer style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p>© 2024-2026 Долг: Дневник выживания. Это не коммерческий проект, а личный дневник Виталия.</p>
+        <p>Связь: <a href="mailto:chernovvitalick@yandex.ru">chernovvitalick@yandex.ru</a> | Telegram: <a href="https://
