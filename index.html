@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -236,9 +236,9 @@
         - реальная борьба с долгом в 1 372 000₽
     </div>
     
-    <!-- Навигация -->
+    <!-- Навигация ИСПРАВЛЕННАЯ: index.html заменен на / -->
     <div style="text-align: center; margin: 30px 0;">
-        <a href="index.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Главная</a>
+        <a href="/" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Главная</a>
         <a href="kak-obshchatsya-s-kollektorami.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Как общаться с коллекторами</a>
         <a href="kak-restrukturizirovat-dolg.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Как реструктурировать долг</a>
         <a href="refinansirovanie-dolgov.html" style="color: #3498db; margin: 0 10px; text-decoration: none; font-weight: bold;">Рефинансирование долгов</a>
@@ -399,7 +399,7 @@
             </div>
         </section>
 
-        <!-- БЛОК ДОНАТОВ (ИСПРАВЛЕННЫЙ) -->
+        <!-- БЛОК ДОНАТОВ (QR-код оставлен как было) -->
         <section style="background: rgba(46, 204, 113, 0.15); padding: 40px 30px; border-radius: 20px; text-align: center; margin: 50px 0; border: 2px solid #2ecc71;">
             <h2 style="color: #2ecc71; margin-bottom: 15px;">💳 Поддержать «Дневник выживания»</h2>
             <p style="margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto;">
@@ -407,22 +407,33 @@
                 <strong>Каждый рубль — это сигнал: «Ты не один, мы верим в твой путь».</strong>
             </p>
             
-            <!-- Инструкция по переводу (вместо QR-кода, требующего файл) -->
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 12px; max-width: 700px; margin: 0 auto 25px; text-align: left;">
-                <h3 style="color: #f1c40f; margin-top: 0;">📱 Как перевести деньги:</h3>
-                <ol style="margin-bottom: 0; padding-left: 20px;">
-                    <li><strong>Открой приложение своего банка</strong> (Сбер, Тинькофф, ВТБ, Альфа и др.)</li>
-                    <li><strong>Найди перевод по номеру счета или QR-коду</strong></li>
-                    <li><strong>Переведи на номер карты или счета</strong></li>
-                </ol>
-                <p style="margin-top: 15px; margin-bottom: 0; color: #bdc3c7; font-size: 0.9em;">
-                    ⚡ <strong>Работает через СБП</strong> — комиссия 0%, перевод за 5 секунд.
+            <!-- QR-код (как в оригинале) -->
+            <div style="background: white; padding: 25px; border-radius: 15px; display: inline-block; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                <h3 style="color: #0c2461; margin-top: 0; margin-bottom: 15px;">📱 Перевести через QR-код</h3>
+                <img src="/yoomoney-qr.png" width="220" alt="QR-код для перевода" style="margin-bottom: 15px;">
+                <p style="color: #666; font-size: 0.9em; max-width: 300px; margin: 0 auto;">
+                    <strong>Рекомендуемая сумма:</strong> 100 ₽
                 </p>
             </div>
             
-            <!-- Прямая ссылка на ЮMoney -->
+            <!-- Инструкция -->
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 12px; max-width: 700px; margin: 0 auto 25px; text-align: left;">
+                <h3 style="color: #f1c40f; margin-top: 0;">💡 Как перевести деньги через QR-код:</h3>
+                <ol style="margin-bottom: 0; padding-left: 20px;">
+                    <li><strong>Открой приложение своего банка</strong> (Сбер, Тинькофф, ВТБ, Альфа и др.)</li>
+                    <li><strong>Нажми «Оплатить по QR-коду»</strong> или значок 📷</li>
+                    <li><strong>Наведите камеру на QR-код выше</strong></li>
+                    <li><strong>Введите сумму</strong> (рекомендуем 100 ₽ — оптимально для поддержки)</li>
+                    <li><strong>Подтвердите перевод</strong> — деньги придут мне на ЮMoney мгновенно</li>
+                </ol>
+                <p style="margin-top: 15px; margin-bottom: 0; color: #bdc3c7; font-size: 0.9em;">
+                    ⚡ <strong>Работает через СБП (Систему Быстрых Платежей)</strong> — комиссия 0%, перевод за 5 секунд.
+                </p>
+            </div>
+            
+            <!-- Прямая ссылка -->
             <div style="margin-top: 30px;">
-                <p style="margin-bottom: 15px;">💜 <strong>Перевести напрямую через ЮMoney:</strong></p>
+                <p style="margin-bottom: 15px;">💜 <strong>Или переведите напрямую через ЮMoney:</strong></p>
                 <a href="https://yoomoney.ru/to/4100118986223649" 
                    target="_blank"
                    class="donate-btn">
@@ -499,29 +510,6 @@
             <a href="https://t.me/debt_warrior"
                target="_blank"
                style="display: inline-block; background: linear-gradient(45deg, #0088cc, #005999); color: white; padding: 18px 45px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 1.3rem; box-shadow: 0 8px 25px rgba(0, 136, 204, 0.5); transition: all 0.3s; margin-bottom: 20px; border: 2px solid rgba(255,255,255,0.2);">
-                <span style="font-size: 1.5rem; margin-right: 10px;">🚀</span>
-                ПОДПИСАТЬСЯ НА КАНАЛ
-            </a>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; display: inline-block; margin-top: 20px; border: 1px solid rgba(255,255,255,0.2); word-break: break-all;">
-                <span style="color: #2ecc71; font-weight: bold; margin-right: 10px;">🔗 Ссылка:</span>
-                <code style="color: white; background: rgba(0,0,0,0.4); padding: 8px 15px; border-radius: 8px; font-size: 1rem; font-family: monospace;">
-                    t.me/debt_warrior
-                </code>
-            </div>
-            
-            <p style="color: rgba(255,255,255,0.7); font-size: 1rem; margin-top: 30px; font-style: italic;">
-                Присоединяйся, чтобы не пропустить ни одного шага на этом пути.
-            </p>
-        </section>
+                <span style="font-size: 1.5rem; margin-right: 10
 
-        <!-- Партнёры -->
-        <section class="partners">
-            <h2>Партнёры по несчастью</h2>
-            <p>Когда я запутался, мне помогли юристы компании <a href="https://должникправ.рф" target="_blank">«Должник Прав»</a>. Они не дали мне совершить ошибку с банкротством. Это не реклама — просто мой опыт. Решение я принимал сам.</p>
-        </section>
-    </main>
-
-    <footer style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
-        <p>© 2024-2026 Долг: Дневник выживания. Это не коммерческий проект, а личный дневник Виталия.</p>
-        <p>Связь: <a href="mailto:chernovvitalick@yandex.ru">chernovvitalick@yandex.ru</a> | Telegram: <a href="https://
+Continue
