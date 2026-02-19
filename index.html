@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
+    <!-- ЭТИ ДВЕ СТРОЧКИ ТЕПЕРЬ ВНУТРИ <head> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="97267ab75fcb8481" />
+
+    <style>
+        /* Золотой венец по бокам */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 180px;
+            height: 100vh;
+            background: url('crown-left.png') no-repeat center left;
+            background-size: contain;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 180px;
+            height: 100vh;
+            background: url('crown-right.png') no-repeat center right;
+            background-size: contain;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Убираем на телефонах */
+        @media (max-width: 768px) {
+            body::before, body::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
     
     <!-- Яндекс.Метрика counter -->
 <script type="text/javascript">
