@@ -18,8 +18,8 @@
         .btn:hover { background: #b85c1a; }
         .price-box { background: #151515; padding: 30px; margin: 30px 0; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-around; text-align: center; }
         .price-num { font-size: 2rem; color: #e67e22; font-weight: bold; }
-        .gallery { display: flex; gap: 15px; flex-wrap: wrap; margin: 30px 0; }
-        .gallery div { background: #1f1f1f; padding: 30px; flex: 1; text-align: center; border: 1px dashed #e67e22; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #e67e22; }
         .footer { text-align: center; padding: 50px 0 30px; margin-top: 80px; border-top: 1px solid #222; }
         .footer a { color: #e67e22; text-decoration: none; }
         @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } }
@@ -57,10 +57,10 @@
     </ul>
 
     <div class="gallery">
-        <div>📸 Сварка калитки</div>
-        <div>📸 Ремонт стула</div>
-        <div>📸 Стройка каркаса</div>
-        <div>📸 Забор / ворота</div>
+        <img src="foto/svarka-1.jpg" alt="Сварка калитки">
+        <img src="foto/garaj-1.jpg" alt="Ремонт в гараже">
+        <img src="foto/stroika-1.jpg" alt="Стройка каркаса">
+        <img src="foto/stroika-2.jpg" alt="Стройка дома">
     </div>
 
     <div style="background: #151515; padding: 30px; text-align: center; margin: 40px 0;">
