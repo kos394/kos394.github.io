@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои долги — Честный разбор. Парень из Братска</title>
+    <title>История моего долга — Парень из Братска</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
     <!-- Yandex.Metrika counter -->
@@ -30,17 +30,13 @@
         .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
         .nav-links a { color: #ddd; text-decoration: none; font-weight: 600; }
         .nav-links a:hover { color: #e67e22; }
-        .total-debt { background: #151515; padding: 30px; text-align: center; border: 2px solid #e74c3c; border-radius: 20px; margin: 30px 0; }
-        .total-number { font-size: 3rem; color: #e74c3c; font-weight: bold; }
-        .debt-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #151515; }
-        .debt-table th, .debt-table td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
-        .debt-table th { color: #e67e22; }
-        .screenshot { background: #151515; padding: 20px; margin: 30px 0; text-align: center; border-radius: 12px; }
-        .screenshot img { max-width: 400px; width: 100%; border-radius: 8px; border: 1px solid #e67e22; margin: 0 auto; display: block; }
+        .stage { background: #151515; padding: 25px; margin: 30px 0; border-left: 4px solid #e67e22; border-radius: 0 12px 12px 0; }
+        .stage h3 { color: #e67e22; margin-bottom: 10px; }
+        .stage-date { color: #888; font-size: 0.9rem; margin-bottom: 15px; display: block; }
         .footer { text-align: center; padding: 50px 0 30px; margin-top: 80px; border-top: 1px solid #222; }
         .footer a { color: #e67e22; text-decoration: none; }
         .btn-back { display: inline-block; background: #e67e22; color: white; padding: 10px 20px; text-decoration: none; margin-top: 20px; border-radius: 8px; }
-        @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } .debt-table th, .debt-table td { padding: 10px; font-size: 0.9rem; } .screenshot img { max-width: 100%; } }
+        @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
@@ -60,47 +56,23 @@
         </div>
     </div>
 
-    <h1>💸 Мои долги: честный разбор</h1>
-    <p>Никакой воды. Только цифры, факты и скриншоты.</p>
+    <h1>История моего долга</h1>
+    <p>Виталий, 48 лет. Братск. Честно о том, как я влез в долги и как пытаюсь выбраться.</p>
 
-    <div class="total-debt">
-        <div class="total-number">~ 1 372 000 ₽</div>
-        <p>Общий долг (с учётом процентов, которые продолжают капать)</p>
-        <small>Из них по данным Госуслуг: <strong>951 143,25 ₽</strong> (5 задолженностей, арест счетов)</small>
-    </div>
+    <div class="stage"><h3>🔥 2023-2024: Ловушка «быстрых денег»</h3><span class="stage-date">Биржа, кредиты, азарт</span><p>Всё началось с рекламы финансовой биржи. Поверил, вошёл в азарт, взял кредиты — и проиграл. Остановиться не мог, пока не упёрся в потолок.</p></div>
+    <div class="stage"><h3>🔄 2024-2025: День сурка с микрозаймами</h3><span class="stage-date">Новые займы для старых долгов</span><p>Чтобы платить по кредитам, брал микрозаймы. В день отдавал 2000-2500 ₽ только процентов. Работал в такси, но машина ломалась. Долг рос.</p></div>
+    <div class="stage"><h3>⚖️ Март 2025: Реструктуризация</h3><span class="stage-date">Решение через суд</span><p>Подал на реструктуризацию. Суд переносят уже 14 раз. Долг вырос с 1 172 000 до 1 372 000 ₽. Проценты капают, но я не сдаюсь.</p></div>
+    <div class="stage"><h3>⛔ Октябрь 2025: Дно</h3><span class="stage-date">Арест счетов, смерть вариатора</span><p>Приставы арестовали все счета. Умер вариатор на машине. На последние 25 000 ₽ купил ноутбук и начал учиться делать сайты.</p></div>
+    <div class="stage"><h3>💻 Декабрь 2025: Создание сайта</h3><span class="stage-date">Начало новой жизни</span><p>На том самом ноутбуке создал этот сайт. Не для денег, а чтобы помочь другим не наступить на те же грабли.</p></div>
+    <div class="stage"><h3>🧠 Сейчас: Июнь 2026</h3><span class="stage-date">Долг 1,37 млн, но я в деле</span><p>Долг всё ещё здесь. Но я строю дом, работаю мастером, учусь, развиваю сайт. И верю, что вылезу.</p></div>
 
-    <h2>🏦 По банкам</h2>
-    <table class="debt-table">
-        <thead><tr><th>Банк / Кредитор</th><th>Сумма долга</th><th>Статус</th></tr></thead>
-        <tbody>
-            <tr><td>АО "Адресная банковская"</td><td>~1 372 000 ₽ (общая с %)</td><td>Реструктуризация через суд, проценты капают</td></tr>
-            <tr><td>Остальные 4 банка (9 кредитов/карт)</td><td>Данные уточняются</td><td>Часть в работе у «Должник Прав», часть ещё висит</td></tr>
-        </tbody>
-    </table>
-
-    <div class="screenshot">
-        <h3>📸 Скриншот из Госуслуг</h3>
-        <img src="foto/gosuslugi-dolg.jpg" alt="Скриншот задолженностей из Госуслуг">
-        <p><small>Судебные задолженности на сумму 951 143,25 ₽, арест счетов</small></p>
-    </div>
-
-    <div class="screenshot">
-        <h3>📸 Арест счетов (ВТБ или другой банк)</h3>
-        <img src="foto/arest-scheta.jpg" alt="Скриншот ареста счета">
-        <p><small>Счета арестованы приставами, пользоваться нельзя</small></p>
-    </div>
-
-    <h3>📉 Что с процентами?</h3>
-    <p>Пока идёт реструктуризация, проценты продолжают капать. Долг растёт с каждым днём. Поэтому каждый рубль поддержки — это реальная помощь, чтобы остановить этот рост.</p>
-
-    <a href="donate.html" class="btn-back" style="background: #2ecc71;">💳 ПЕРЕЙТИ К ПОМОЩИ</a>
     <a href="index.html" class="btn-back">← На главную</a>
 </div>
 <footer class="footer">
     <div class="container">
         <p><strong>Виталий, Парень из Братска</strong> — должник, строитель, мастер.</p>
         <p>Честная история без прикрас. Сварка, стройка, долги — всё в одном месте.</p>
-        <p style="margin-top:20px;">📞 Телефон: <a href="tel:89294390444">8 929 439-04-44</a> | Телега: <a href="https://t.me/vitalyan2906" target="_blank">@vitalyan2906</a></p>
+        <p style="margin-top:20px;">📞 Телефон: <a href="tel:89294390444">8 929 439-04-44</a> | 💬 Телега: <a href="https://t.me/vitalyan2906" target="_blank">@vitalyan2906</a></p>
         <p style="margin-top:20px; font-size:0.8rem;">Парень из Братска — живой человек. Братск 2026.</p>
     </div>
 </footer>
