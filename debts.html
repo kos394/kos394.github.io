@@ -27,4 +27,82 @@
         .header { border-bottom: 2px solid #e67e22; padding: 20px 0; margin-bottom: 40px; }
         .nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
         .logo { font-size: 1.8rem; font-weight: 800; color: #e67e22; }
-        .nav-links { display: flex
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { color: #ddd; text-decoration: none; font-weight: 600; }
+        .nav-links a:hover { color: #e67e22; }
+        .total-debt { background: #151515; padding: 30px; text-align: center; border: 2px solid #e74c3c; border-radius: 20px; margin: 30px 0; }
+        .total-number { font-size: 3rem; color: #e74c3c; font-weight: bold; }
+        .debt-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #151515; }
+        .debt-table th, .debt-table td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+        .debt-table th { color: #e67e22; }
+        .screenshot { background: #151515; padding: 20px; margin: 30px 0; text-align: center; border-radius: 12px; }
+        .screenshot img { max-width: 400px; width: 100%; border-radius: 8px; border: 1px solid #e67e22; margin: 0 auto; display: block; }
+        .footer { text-align: center; padding: 50px 0 30px; margin-top: 80px; border-top: 1px solid #222; }
+        .footer a { color: #e67e22; text-decoration: none; }
+        .btn-back { display: inline-block; background: #e67e22; color: white; padding: 10px 20px; text-decoration: none; margin-top: 20px; border-radius: 8px; }
+        @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } .debt-table th, .debt-table td { padding: 10px; font-size: 0.9rem; } .screenshot img { max-width: 100%; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="nav">
+            <div class="logo">ПАРЕНЬ ИЗ БРАТСКА</div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="history.html">История долга</a>
+                <a href="master.html">Услуги мастера</a>
+                <a href="debts.html">Мои долги</a>
+                <a href="donate.html">Помочь</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="reviews.html">Отзывы</a>
+            </div>
+        </div>
+    </div>
+
+    <h1>💸 Мои долги: честный разбор</h1>
+    <p>Никакой воды. Только цифры, факты и скриншоты.</p>
+
+    <div class="total-debt">
+        <div class="total-number">~ 1 372 000 ₽</div>
+        <p>Общий долг (с учётом процентов, которые продолжают капать)</p>
+        <small>Из них по данным Госуслуг: <strong>951 143,25 ₽</strong> (5 задолженностей, арест счетов)</small>
+    </div>
+
+    <h2>🏦 По банкам</h2>
+    <table class="debt-table">
+        <thead><tr><th>Банк / Кредитор</th><th>Сумма долга</th><th>Статус</th></tr></thead>
+        <tbody>
+            <tr><td>АО "Адресная банковская"</td><td>~1 372 000 ₽ (общая с %)</td><td>Реструктуризация через суд, проценты капают</td></tr>
+            <tr><td>Остальные 4 банка (9 кредитов/карт)</td><td>Данные уточняются</td><td>Часть в работе у «Должник Прав», часть ещё висит</td></tr>
+        </tbody>
+    </table>
+
+    <div class="screenshot">
+        <h3>📸 Скриншот из Госуслуг</h3>
+        <img src="foto/gosuslugi-dolg.jpg" alt="Скриншот задолженностей из Госуслуг">
+        <p><small>Судебные задолженности на сумму 951 143,25 ₽, арест счетов</small></p>
+    </div>
+
+    <div class="screenshot">
+        <h3>📸 Арест счетов (ВТБ или другой банк)</h3>
+        <img src="foto/arest-scheta.jpg" alt="Скриншот ареста счета">
+        <p><small>Счета арестованы приставами, пользоваться нельзя</small></p>
+    </div>
+
+    <h3>📉 Что с процентами?</h3>
+    <p>Пока идёт реструктуризация, проценты продолжают капать. Долг растёт с каждым днём. Поэтому каждый рубль поддержки — это реальная помощь, чтобы остановить этот рост.</p>
+
+    <a href="donate.html" class="btn-back" style="background: #2ecc71;">💳 ПЕРЕЙТИ К ПОМОЩИ</a>
+    <a href="index.html" class="btn-back">← На главную</a>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p><strong>Виталий, Парень из Братска</strong> — должник, строитель, мастер.</p>
+        <p>Честная история без прикрас. Сварка, стройка, долги — всё в одном месте.</p>
+        <p style="margin-top:20px;">📞 Телефон: <a href="tel:89294390444">8 929 439-04-44</a> | 💬 Телега: <a href="https://t.me/vitalyan2906" target="_blank">Написать в Телегу</a></p>
+        <p style="margin-top:20px; font-size:0.8rem;">Парень из Братска — живой человек. Братск 2026.</p>
+    </div>
+</footer>
+</body>
+</html>
