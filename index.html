@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Услуги мастера — Сварка, ремонт, стройка в Братске</title>
+    <title>Мастер в Братске | Сварка, ремонт, стройка | Опыт более 8 лет</title>
+    <meta name="description" content="Мастер в Братске. Сварка, ремонт, стройка. Опыт более 8 лет. Честная история Виталия: долг 1,3 млн, стройка своими руками.">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
     <!-- Yandex.Metrika counter -->
@@ -21,31 +22,175 @@
     <!-- /Yandex.Metrika counter -->
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0a0a0a; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .header { border-bottom: 2px solid #e67e22; padding: 20px 0; margin-bottom: 40px; }
-        .nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .logo { font-size: 1.8rem; font-weight: 800; color: #e67e22; }
-        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
-        .nav-links a { color: #ddd; text-decoration: none; font-weight: 600; }
-        .nav-links a:hover { color: #e67e22; }
-        .btn { display: inline-block; background: #e67e22; color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; margin: 10px 5px; }
-        .btn:hover { background: #b85c1a; }
-        .price-box { background: #151515; padding: 30px; margin: 30px 0; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-around; text-align: center; }
-        .price-num { font-size: 2rem; color: #e67e22; font-weight: bold; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
-        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #e67e22; }
-        .footer { text-align: center; padding: 50px 0 30px; margin-top: 80px; border-top: 1px solid #222; }
-        .footer a { color: #e67e22; text-decoration: none; }
-        @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            border-bottom: 2px solid #e67e22;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #e67e22;
+        }
+        .logo span {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0 60px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+        .hero .highlight {
+            color: #e67e22;
+            border-left: 4px solid #e67e22;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .btn-primary {
+            background: #b85c1a;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .btn-secondary {
+            background: #2c2c2c;
+            color: #e0e0e0;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #e67e22;
+        }
+        .debt-stats {
+            background: #111;
+            padding: 40px 20px;
+            margin: 60px 0;
+            text-align: center;
+            border-top: 1px solid #e67e22;
+            border-bottom: 1px solid #e67e22;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #e67e22;
+        }
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        .card {
+            background: #151515;
+            padding: 30px;
+            border-left: 4px solid #e67e22;
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .master-prices {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: #111;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .price {
+            text-align: center;
+            flex: 1;
+        }
+        .price .num {
+            font-size: 2rem;
+            color: #e67e22;
+            font-weight: bold;
+        }
+        .footer {
+            background: #050505;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        .footer a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .hero, .two-columns {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
+
+<div class="header">
+    <div class="container">
         <div class="nav">
-            <div class="logo">МАСТЕР В БРАТСКЕ</div>
+            <div class="logo">МАСТЕР В БРАТСКЕ <span>Виталий</span></div>
             <div class="nav-links">
                 <a href="index.html">Главная</a>
                 <a href="history.html">История долга</a>
@@ -57,55 +202,105 @@
             </div>
         </div>
     </div>
-
-    <h1>🔧 Сварка, ремонт, стройка в Братске</h1>
-    <p style="color: #e67e22; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">👨‍🔧 Виталий, мастер с опытом 8 лет</p>
-    <p>Меня зовут Виталий. Я — «Мастер в Братске». Делаю качественно, отвечаю за результат. Цены договорные.</p>
-
-    <div class="price-box">
-        <div>Выезд по Братску (центр + правый берег)<br><div class="price-num">500 ₽</div></div>
-        <div>Сварка (калитки, заборы, ворота)<br><div class="price-num">от 1500 ₽</div></div>
-        <div>Ремонт и стройка<br><div class="price-num">цена обсуждается при осмотре</div></div>
-    </div>
-
-    <h2>Что я умею</h2>
-    <ul style="margin: 20px 0 20px 30px;">
-        <li>⚡ Сварка электродом / полуавтоматом — калитки, заборы, ворота, ремонт швов</li>
-        <li>🪑 Ремонт мебели — стулья, тумбочки, крепления, фурнитура</li>
-        <li>🏠 Мелкая стройка — каркасы, полки, стеллажи, гардины, крепёж</li>
-        <li>🔨 Ремонт жилых и нежилых помещений — отделка, косметический ремонт, мелкие работы</li>
-    </ul>
-
-    <div class="gallery">
-        <img src="foto/svarka-1.jpg" alt="Сварка пресса">
-        <img src="foto/garage-1.jpg" alt="Ремонт в гараже">
-        <img src="foto/stroyka-1.jpg" alt="Стройка каркаса">
-        <img src="foto/stroyka-2.jpg" alt="Стройка дома">
-        <img src="foto/lestnitsa-1.jpg" alt="Лестница">
-        <img src="foto/balkon.jpg" alt="Балкон">
-        <img src="foto/dveri.jpg" alt="Двери">
-        <img src="foto/gebsokarton.jpg" alt="Гипсокартон">
-        <img src="foto/lamenat.jpg" alt="Ламинат">
-        <img src="foto/predbannik.jpg" alt="Пристройка к бане">
-        <img src="foto/pristroika.jpg" alt="Пристройка к дому">
-    </div>
-
-    <div style="background: #151515; padding: 30px; text-align: center; margin: 40px 0;">
-        <p style="font-size: 1.3rem;">📞 Нужно сделать? Звони или пиши!</p>
-        <a href="tel:89294390444" class="btn">📞 ПОЗВОНИТЬ</a>
-        <a href="https://t.me/vitalyan2906" target="_blank" class="btn">💬 НАПИСАТЬ В ТЕЛЕГУ</a>
-        <p style="margin-top: 20px;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала сделаю, потом заплатишь.</p>
-    </div>
-
-    <a href="index.html" style="color: #e67e22;">← На главную</a>
 </div>
+
+<main class="container">
+    <div class="hero">
+        <div>
+            <h1>Стройка, ремонт, сварочные работы в Братске</h1>
+            <div class="highlight">
+                Долг 1,3 млн. Счета арестованы. Строю дом для семьи.
+            </div>
+            <div class="btn-group">
+                <a href="history.html" class="btn-primary">Моя история →</a>
+                <a href="master.html" class="btn-secondary">Нанять мастера →</a>
+                <a href="donate.html" class="btn-secondary">Помочь рублём →</a>
+            </div>
+        </div>
+        <div style="background: #1f1f1f; padding: 20px; text-align: center; border-left: 4px solid #e67e22;">
+            <img src="foto/vitaliy.jpg" alt="Виталий за работой" style="max-width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px; color: #e67e22;">📞 Нужен мастер? Звоните, приеду, посмотрим, замерим — договоримся.</p>
+        </div>
+    </div>
+
+    <div class="debt-stats">
+        <h2>Прямо сейчас. Без вранья.</h2>
+        <div class="stats-grid">
+            <div class="stat"><div class="stat-number">1 372 000 ₽</div><div>долг банкам</div></div>
+            <div class="stat"><div class="stat-number">0 ₽</div><div>на счетах — арест</div></div>
+            <div class="stat"><div class="stat-number">4 года</div><div>строю сам</div></div>
+            <div class="stat"><div class="stat-number">48 лет</div><div>не сдался</div></div>
+        </div>
+    </div>
+
+    <div class="two-columns">
+        <div class="card">
+            <h3>📉 Я в долгах</h3>
+            <p>Биржа, микрозаймы, кредиты. Приставы арестовали все счета. Суд по реструктуризации переносят 14-й раз. Моя борьба за преодоление продолжается.</p>
+            <a href="history.html" style="color:#e67e22;">→ Читать дневник должника</a>
+        </div>
+        <div class="card">
+            <h3>🔧 Я — мастер</h3>
+            <p>Сварка, ремонт, стройка в Братске. Ответственно, без скрытых доплат. Я не обещаю — я делаю. Моя работа говорит сама за себя.</p>
+            <a href="master.html" style="color:#e67e22;">→ Заказать услуги мастера</a>
+        </div>
+    </div>
+
+    <div class="master-prices">
+        <div class="price">Выезд по Братску (центр + правый берег)<br><span class="num">500 ₽</span></div>
+        <div class="price">Сварка (калитки, заборы, ворота)<br><span class="num">от 1500 ₽</span></div>
+        <div class="price">Ремонт и стройка<br><span class="num">цена обсуждается при осмотре</span></div>
+    </div>
+
+    <!-- Блок: О себе (коротко, без понтов) -->
+    <div style="background: #151515; padding: 30px; margin: 40px 0; border-left: 4px solid #e67e22;">
+        <p style="font-size: 1.1rem;">👨‍🔧 Меня зовут Виталий. Опыт в ремонте и строительстве более 8 лет. Работаю руками, отвечаю за результат. Без пустых обещаний.</p>
+    </div>
+
+    <!-- Блок: Почему мне можно верить и помогать -->
+    <div style="background: #151515; padding: 40px; margin: 60px 0; border-left: 4px solid #e67e22; border-radius: 0 12px 12px 0;">
+        <h2 style="color: #e67e22; margin-bottom: 20px;">💛 Почему мне можно верить и помогать?</h2>
+        <p>Я строю дом не для роскоши, а для жены и двоих детей. Сыну 12 лет, дочери 10. Они не виноваты в моих долгах.</p>
+        <p style="margin-top: 15px;">Сейчас я не могу закончить стройку из-за арестованных счетов. Но я не стою на месте. Имею хороший опыт в строительстве и ремонте, также научился работать со сваркой.</p>
+        
+        <h3 style="color: #e67e22; margin: 25px 0 15px 0;">📺 Мои каналы, где видна моя работа:</h3>
+        <ul style="margin-left: 25px; margin-bottom: 25px;">
+            <li><a href="https://rutube.ru/channel/76892899/" target="_blank" style="color:#e67e22;">📺 Rutube (стройка)</a></li>
+            <li><a href="https://youtube.com/channel/UCwVlTWIXslcEpjM8pGA8lNA" target="_blank" style="color:#e67e22;">🎬 YouTube (ремонт авто)</a></li>
+            <li><a href="https://vk.com/siberian_build" target="_blank" style="color:#e67e22;">📱 ВКонтакте (строю сам)</a></li>
+            <li><a href="https://ok.ru/remont.kvartirofisovgarazhey" target="_blank" style="color:#e67e22;">📱 Одноклассники (ВАШ МАСТЕР)</a></li>
+        </ul>
+        
+        <p>Если у вас есть в сердце отклик помочь в моей ситуации, вы можете:</p>
+        <ul style="margin-left: 25px; margin-bottom: 25px;">
+            <li>🔧 Заказать у меня ремонт или сварные работы;</li>
+            <li>👍 Подписаться на мои каналы по ссылкам выше;</li>
+            <li>💳 Поддержать рублём через ЮMoney.</li>
+        </ul>
+        <p style="font-weight: bold; color: #e67e22;">Любая помощь приближает мою семью к своему дому.</p>
+    </div>
+
+    <!-- Блок "Поделиться" (только ВК и ОК) -->
+    <div style="text-align: center; margin: 40px 0;">
+        <p style="color: #e67e22; margin-bottom: 15px;">📢 Поделиться сайтом с друзьями:</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://vk.com/share.php?url=https://master-bratsk.ru/" target="_blank" style="background: #0077FF; color: white; padding: 8px 20px; text-decoration: none; border-radius: 20px;">ВКонтакте</a>
+            <a href="https://connect.ok.ru/offer?url=https://master-bratsk.ru/" target="_blank" style="background: #EE8208; color: white; padding: 8px 20px; text-decoration: none; border-radius: 20px;">Одноклассники</a>
+        </div>
+    </div>
+</main>
+
 <footer class="footer">
     <div class="container">
         <p><strong>Виталий, Мастер в Братске</strong> — должник, строитель, мастер.</p>
         <p>Честная история без прикрас. Сварка, стройка, долги — всё в одном месте.</p>
-        <p style="margin-top:20px;">📞 Телефон: <a href="tel:89294390444">8 929 439-04-44</a> | 💬 Телега: <a href="https://t.me/vitalyan2906" target="_blank">@vitalyan2906</a></p>
+        <p style="margin-top:20px;">
+            📞 Телефон: <a href="tel:89294390444">8 929 439-04-44</a><br>
+            💬 Телега: <a href="https://t.me/vitalyan2906" target="_blank">@vitalyan2906</a>
+        </p>
         <p style="margin-top:20px; font-size:0.8rem;">Мастер в Братске — живой человек. Братск 2026.</p>
     </div>
 </footer>
+
 </body>
 </html>
