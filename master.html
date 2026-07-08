@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Услуги мастера — Столярка, сварка, ремонт в Братске</title>
+    <title>Мои работы — Мастер в Братске</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
         * {
@@ -67,61 +67,39 @@
             color: #ccc;
             margin-bottom: 40px;
         }
-        .service-block {
-            background: #151515;
-            padding: 40px;
-            margin-bottom: 40px;
-            border-left: 4px solid #e67e22;
-            border-radius: 0 12px 12px 0;
-        }
-        .service-block h2 {
-            color: #e67e22;
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .service-grid {
+        .works-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
-            margin: 25px 0;
+            margin: 40px 0;
         }
-        .service-item {
-            background: #1f1f1f;
-            padding: 20px;
+        .work-item {
+            background: #151515;
             border-radius: 8px;
-            border-bottom: 2px solid #e67e22;
+            overflow: hidden;
+            border-bottom: 3px solid #e67e22;
+            transition: transform 0.2s;
         }
-        .service-item h3 {
+        .work-item:hover {
+            transform: scale(1.02);
+        }
+        .work-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .work-item .desc {
+            padding: 15px;
+            text-align: center;
+        }
+        .work-item .desc h3 {
             color: #e67e22;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
-        .price-tag {
-            display: inline-block;
-            background: #e67e22;
-            color: #0a0a0a;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .full-list {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-        }
-        .full-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #2a2a2a;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .full-list li:before {
-            content: "•";
-            color: #e67e22;
-            font-weight: bold;
-            font-size: 1.5rem;
+        .work-item .desc p {
+            color: #aaa;
+            font-size: 0.9rem;
         }
         .cta-block {
             background: #1a1a1a;
@@ -161,28 +139,6 @@
         .btn-secondary:hover {
             background: #3a3a3a;
         }
-        .works-link-block {
-            text-align: center;
-            margin: 40px 0;
-            padding: 30px;
-            background: #111;
-            border-radius: 12px;
-            border: 1px solid #e67e22;
-        }
-        .works-link-block .big-link {
-            display: inline-block;
-            background: #e67e22;
-            color: #0a0a0a;
-            padding: 15px 45px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3rem;
-            border-radius: 40px;
-            transition: background 0.2s;
-        }
-        .works-link-block .big-link:hover {
-            background: #f39c12;
-        }
         .footer {
             background: #050505;
             padding: 50px 0 30px;
@@ -194,7 +150,7 @@
             text-decoration: none;
         }
         @media (max-width: 768px) {
-            .service-grid {
+            .works-grid {
                 grid-template-columns: 1fr;
             }
             .page-title {
@@ -221,117 +177,56 @@
                 <a href="donate.html">Помочь</a>
                 <a href="contacts.html">Контакты</a>
                 <a href="reviews.html">Отзывы</a>
-                <a href="akril.html">Акрил</a>
             </div>
         </div>
     </div>
 </div>
 
 <main class="container">
-    <h1 class="page-title">🪚 Столярка, сварка, ремонт в Братске</h1>
-    <p class="sub-title">👨🔧 Виталий, мастер с опытом более 8 лет. Работаю руками, отвечаю за результат. Делаю не быстро, а надёжно.</p>
+    <h1 class="page-title">📸 Мои работы</h1>
+    <p class="sub-title">Примеры того, что я делаю своими руками. Каждый проект — живой, сделанный на совесть.</p>
 
-    <!-- БЛОК: СТОЛЯРКА -->
-    <div class="service-block">
-        <h2>🪑 Столярка на заказ — ручная работа</h2>
-        <p>Изготовлю мебель и изделия из дерева по вашим размерам, эскизам или образцам. Работаю с деревом, фанерой, ДСП. Материал ваш, или я помогу подобрать и привезти.</p>
-
-        <div class="service-grid">
-            <div class="service-item">
-                <h3>Садовые лавочки</h3>
-                <p>Простые и со спинкой, для дачи и улицы. Обработка от влаги и насекомых.</p>
-                <span class="price-tag">от 2500 ₽</span>
-            </div>
-            <div class="service-item">
-                <h3>Столы обеденные и журнальные</h3>
-                <p>Для кухни, гостиной, веранды. Любые размеры и формы — прямоугольные, круглые, угловые.</p>
-                <span class="price-tag">от 4000 ₽</span>
-            </div>
-            <div class="service-item">
-                <h3>Стулья, табуреты</h3>
-                <p>Прочные и устойчивые. Можно сделать комплект к столу.</p>
-                <span class="price-tag">от 1500 ₽</span>
-            </div>
-            <div class="service-item">
-                <h3>Полки, вешалки, рамки</h3>
-                <p>Мелкие изделия для дома и дачи. Быстро, аккуратно, под ваш интерьер.</p>
-                <span class="price-tag">от 1000 ₽</span>
-            </div>
-            <div class="service-item">
-                <h3>Восстановление старой мебели</h3>
-                <p>Починю ножки, заменю крепления, обновлю каркасы стульев и столов.</p>
-                <span class="price-tag">по договорённости</span>
-            </div>
-            <div class="service-item">
-                <h3>Лестницы и простые конструкции</h3>
-                <p>Чердачные, садовые, межэтажные — из дерева и металла.</p>
-                <span class="price-tag">по договорённости</span>
+    <div class="works-grid">
+        <!-- ФОТО 1: Лестница -->
+        <div class="work-item">
+            <img src="foto/lesnica.jpg" alt="Деревянная лестница">
+            <div class="desc">
+                <h3>Деревянная лестница</h3>
+                <p>Чердачная лестница из сосны, изготовлена на заказ</p>
             </div>
         </div>
 
-        <p style="margin-top: 15px; color: #ccc;">✅ <strong>Условия:</strong> работаю по вашему материалу или подберу сам. Сроки и цену обсуждаем. Сначала делаю, потом вы платите.</p>
-    </div>
-
-    <!-- БЛОК: СВАРКА -->
-    <div class="service-block">
-        <h2>⚡ Сварка металлоконструкций</h2>
-        <p>Сварю всё, что нужно: от калитки до теплицы. Работаю электродом и полуавтоматом. Аккуратные швы, надёжное соединение.</p>
-
-        <div class="service-grid">
-            <div class="service-item">
-                <h3>Калитки, заборы, ворота</h3>
-                <p>Из профильной трубы, арматуры, листового металла. Под ключ или с вашим материалом.</p>
-                <span class="price-tag">от 1500 ₽</span>
-            </div>
-            <div class="service-item">
-                <h3>Козырьки, навесы, теплицы</h3>
-                <p>Металлические каркасы для дачи и дома. Любая сложность.</p>
-                <span class="price-tag">от 2000 ₽</span>
-            </div>
-            <div class="service-item">
-                <h3>Ремонт автосварочных узлов</h3>
-                <p>Лопнувшие кронштейны, глушители, рамы — восстановлю на месте или в гараже.</p>
-                <span class="price-tag">по договорённости</span>
-            </div>
-            <div class="service-item">
-                <h3>Мелкие металлоизделия</h3>
-                <p>Крепления, кронштейны, стеллажи, подставки — сделаю по вашим размерам.</p>
-                <span class="price-tag">от 500 ₽</span>
+        <!-- ФОТО 2: Пресс (сварка) -->
+        <div class="work-item">
+            <img src="foto/press.jpg" alt="Сварной пресс">
+            <div class="desc">
+                <h3>Сварной пресс</h3>
+                <p>Пресс из профильной трубы, сварка своими руками</p>
             </div>
         </div>
-        <p style="margin-top: 15px; color: #ccc;">✅ <strong>Условия:</strong> выезд по Братску — 500 ₽. Работаю с материалом заказчика или привезу свой (по согласованию).</p>
+
+        <!-- ФОТО 3: Стройка -->
+        <div class="work-item">
+            <img src="foto/stroyka.jpg" alt="Строительные работы">
+            <div class="desc">
+                <h3>Строительные и ремонтные работы</h3>
+                <p>Отделка, монтаж, мелкая стройка</p>
+            </div>
+        </div>
     </div>
 
-    <!-- БЛОК: РЕМОНТ И МЕЛКАЯ СТРОЙКА -->
-    <div class="service-block">
-        <h2>🏠 Ремонт и мелкая стройка</h2>
-        <p>Помогу с ремонтом квартир, домов, гаражей. Выполню отделочные работы, монтаж, мелкое строительство.</p>
-        <ul class="full-list">
-            <li>🪚 <strong>Монтаж дверей, плинтусов, карнизов</strong> — установка, подгонка, крепёж</li>
-            <li>🧱 <strong>Отделочные работы</strong> — гипсокартон, панели ПВХ, штукатурка, покраска</li>
-            <li>🛁 <strong>Покрытие ванн акрилом</strong> — восстановлю старую ванну за 1 день. <strong>Материал заказываю сам</strong>, вы получаете готовый результат без хлопот. <a href="akril.html" style="color: #e67e22; text-decoration: underline;">Подробнее →</a></li>
-            <li>🔨 <strong>Мелкая стройка</strong> — стеллажи, каркасы, полки, крепления</li>
-            <li>🪑 <strong>Ремонт мебели</strong> — стулья, тумбочки, крепления, фурнитура</li>
-        </ul>
-        <p style="margin-top: 15px; color: #ccc;">✅ <strong>Цена:</strong> по договорённости после осмотра. Выезд на замер — 500 ₽.</p>
+    <div style="background: #151515; padding: 30px; margin: 40px 0; text-align: center; border-left: 4px solid #e67e22; border-radius: 0 12px 12px 0;">
+        <p style="font-size: 1.1rem; color: #ccc;">✅ Больше фото и примеров — по запросу. Я могу показать видео или сделать фото конкретного объекта.</p>
     </div>
 
-    <!-- БЛОК: ССЫЛКА НА СТРАНИЦУ "МОИ РАБОТЫ" -->
-    <div class="works-link-block">
-        <p style="font-size: 1.3rem; margin-bottom: 15px;">📸 Хотите увидеть, что я уже сделал?</p>
-        <a href="works.html" class="big-link">Посмотреть мои работы →</a>
-        <p style="margin-top: 15px; color: #aaa;">Лестницы, столы, лавочки, сварка — более 10 выполненных проектов</p>
-    </div>
-
-    <!-- ПРИЗЫВ + ТЕЛЕФОН -->
     <div class="cta-block">
-        <p style="font-size: 1.5rem;">📞 Нужно сделать? Звони или пиши!</p>
+        <p style="font-size: 1.5rem;">📞 Есть заказ или идея? Звоните, обсудим!</p>
         <a href="tel:89294390444" class="big-phone">8 929 439-04-44</a>
         <div>
             <a href="tel:89294390444" class="btn">📞 ПОЗВОНИТЬ</a>
             <a href="https://t.me/vitalyan2906" target="_blank" class="btn btn-secondary">💬 НАПИСАТЬ В ТЕЛЕГУ</a>
         </div>
-        <p style="margin-top: 20px; color: #aaa;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала сделаю, потом заплатишь. Принимаю заказы на столярку, сварку и ремонт. Материал заказчика или подберу сам.</p>
+        <p style="margin-top: 20px; color: #aaa;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала делаю, потом вы платите.</p>
     </div>
 </main>
 
