@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои работы — Мастер в Братске</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            border-bottom: 2px solid #e67e22;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #e67e22;
+        }
+        .logo span {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+        .page-title {
+            color: #e67e22;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .sub-title {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+        .works-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .work-item {
+            background: #151515;
+            border-radius: 8px;
+            overflow: hidden;
+            border-bottom: 3px solid #e67e22;
+            transition: transform 0.2s;
+        }
+        .work-item:hover {
+            transform: scale(1.02);
+        }
+        .work-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .work-item .desc {
+            padding: 15px;
+            text-align: center;
+        }
+        .work-item .desc h3 {
+            color: #e67e22;
+            margin-bottom: 5px;
+        }
+        .work-item .desc p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .cta-block {
+            background: #1a1a1a;
+            padding: 35px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 12px;
+            border: 1px solid #e67e22;
+        }
+        .cta-block .big-phone {
+            font-size: 2.5rem;
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin: 15px 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: #0a0a0a;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 40px;
+            margin: 10px 5px;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #f39c12;
+        }
+        .btn-secondary {
+            background: #2c2c2c;
+            color: #e0e0e0;
+            border: 1px solid #e67e22;
+        }
+        .btn-secondary:hover {
+            background: #3a3a3a;
+        }
+        .footer {
+            background: #050505;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        .footer a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-title {
+                font-size: 2rem;
+            }
+            .cta-block .big-phone {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="nav">
+            <div class="logo">МАСТЕР В БРАТСКЕ <span>Виталий</span></div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="history.html">История долга</a>
+                <a href="master.html">Услуги мастера</a>
+                <a href="works.html">Мои работы</a>
+                <a href="debts.html">Мои долги</a>
+                <a href="donate.html">Помочь</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="reviews.html">Отзывы</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="container">
+    <h1 class="page-title">📸 Мои работы</h1>
+    <p class="sub-title">Примеры того, что я делаю своими руками. Каждый проект — живой, сделанный на совесть.</p>
+
+    <div class="works-grid">
+        <!-- ФОТО 1: Лестница -->
+        <div class="work-item">
+            <img src="foto/lesnica.jpg" alt="Деревянная лестница">
+            <div class="desc">
+                <h3>Деревянная лестница</h3>
+                <p>Чердачная лестница из сосны, изготовлена на заказ</p>
+            </div>
+        </div>
+
+        <!-- ФОТО 2: Стол -->
+        <div class="work-item">
+            <img src="foto/stol.jpg" alt="Обеденный стол">
+            <div class="desc">
+                <h3>Обеденный стол</h3>
+                <p>Деревянный стол на заказ для дачи</p>
+            </div>
+        </div>
+
+        <!-- ФОТО 3: Лавочка -->
+        <div class="work-item">
+            <img src="foto/lavochka.jpg" alt="Садовые лавочки">
+            <div class="desc">
+                <h3>Садовые лавочки</h3>
+                <p>Лавочка со спинкой из массива сосны</p>
+            </div>
+        </div>
+
+        <!-- ФОТО 4: Сварка (калитка) -->
+        <div class="work-item">
+            <img src="foto/kalitka.jpg" alt="Металлическая калитка">
+            <div class="desc">
+                <h3>Металлическая калитка</h3>
+                <p>Калитка с элементами ковки, усиленный каркас</p>
+            </div>
+        </div>
+
+        <!-- ФОТО 5: Сварка (забор) -->
+        <div class="work-item">
+            <img src="foto/zabor.jpg" alt="Забор из профтрубы">
+            <div class="desc">
+                <h3>Сварной забор</h3>
+                <p>Забор из профильной трубы для частного дома</p>
+            </div>
+        </div>
+
+        <!-- ФОТО 6: Полки или стулья (если есть) -->
+        <div class="work-item">
+            <img src="foto/polka.jpg" alt="Полка">
+            <div class="desc">
+                <h3>Полки</h3>
+                <p>Навесные полки из натурального дерева</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-block">
+        <p style="font-size: 1.5rem;">📞 Есть заказ или идея? Звоните, обсудим!</p>
+        <a href="tel:89294390444" class="big-phone">8 929 439-04-44</a>
+        <div>
+            <a href="tel:89294390444" class="btn">📞 ПОЗВОНИТЬ</a>
+            <a href="https://t.me/vitalyan2906" target="_blank" class="btn btn-secondary">💬 НАПИСАТЬ В ТЕЛЕГУ</a>
+        </div>
+        <p style="margin-top: 20px; color: #aaa;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала делаю, потом вы платите.</p>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p><strong>Виталий, Мастер в Братске</strong> — должник, строитель, мастер.</p>
+        <p>Честная история без прикрас. Сварка, стройка, долги — всё в одном месте.</p>
+        <p style="margin-top:20px;">
+            📞 Телефон: <a href="tel:89294390444">8 929 439-04-44</a><br>
+            💬 Телеграм: <a href="https://t.me/vitalyan2906" target="_blank">@vitalyan2906</a>
+        </p>
+        <p style="margin-top:20px; font-size:0.8rem;">Мастер в Братске — живой человек. Братск 2026.</p>
+    </div>
+</footer>
+
+</body>
+</html>
