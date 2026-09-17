@@ -16,10 +16,16 @@
         .nav-links a { color: #ddd; text-decoration: none; font-weight: 600; }
         .nav-links a:hover { color: #e67e22; }
         .review-card { background: #151515; padding: 25px; margin: 30px 0; border-left: 4px solid #e67e22; border-radius: 0 12px 12px 0; }
-        .review-card img { max-width: 300px; width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; border: 1px solid #333; }
         .review-name { color: #e67e22; font-weight: bold; margin-bottom: 10px; }
         .review-text { margin-bottom: 10px; }
         .review-date { color: #888; font-size: 0.8rem; }
+
+        /* Галерея фото в отзыве */
+        .review-gallery { margin-top: 15px; }
+        .gallery-grid { display: flex; gap: 10px; flex-wrap: wrap; }
+        .gallery-grid img { width: 150px; height: 150px; object-fit: cover; border-radius: 8px; border: 1px solid #333; cursor: pointer; transition: transform 0.2s; }
+        .gallery-grid img:hover { transform: scale(1.05); border-color: #e67e22; }
+
         .footer { text-align: center; padding: 50px 0 30px; margin-top: 80px; border-top: 1px solid #222; }
         .footer a { color: #e67e22; text-decoration: none; }
         @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } }
@@ -45,29 +51,38 @@
     <h1 style="color: #e67e22; font-size: 2.5rem; margin-bottom: 10px;">⭐ Отзывы о моей работе</h1>
     <p>Реальные слова реальных людей. Никакой фальши.</p>
 
-     <!-- ОТЗЫВ ЕЛЕНЫ (реальный) -->
-<div class="review-card">
-    <div class="review-name">📌 Елена, Братск</div>
-    <div class="review-text">
-        «Виталий все сделал на отлично. Нужно было поменять крышу на веранде. 
-        Быстро договорились, приехал, посмотрел. Скинул смету, материал закупали сами. 
-        Пара дней и веранда готова. Все делал аккуратно, качественно. Рекомендую.»
-    </div>
-    <div class="review-date">август 2026</div>
-    
-    <!-- ГАЛЕРЕЯ ФОТО (добавляем под отзывом) -->
-    <div class="review-gallery">
-        <div class="gallery-grid">
-            <img src="img/reviews/elena-1.jpg" alt="Крыша до ремонта">
-            <img src="img/reviews/elena-2.jpg" alt="Процесс демонтажа">
-            <img src="img/reviews/elena-3.jpg" alt="Новая стропильная система">
-            <img src="img/reviews/elena-4.jpg" alt="Укладка профлиста">
-            <img src="img/reviews/elena-5.jpg" alt="Готовая крыша">
-            <img src="img/reviews/elena-6.jpg" alt="Веранда после ремонта">
+    <!-- ОТЗЫВ ЕЛЕНЫ (крыша на веранде) -->
+    <div class="review-card">
+        <div class="review-name">📌 Елена, Братск</div>
+        <div class="review-text">
+            «Виталий все сделал на отлично. Нужно было поменять крышу на веранде. 
+            Быстро договорились, приехал, посмотрел. Скинул смету, материал закупали сами. 
+            Пара дней и веранда готова. Все делал аккуратно, качественно. Рекомендую.»
+        </div>
+        <div class="review-date">август 2026</div>
+
+        <!-- ГАЛЕРЕЯ ФОТО -->
+        <div class="review-gallery">
+            <div class="gallery-grid">
+                <img src="img/reviews/elena-1.jpg" alt="Старая крыша">
+                <img src="img/reviews/elena-2.jpg" alt="Процесс работы">
+                <img src="img/reviews/elena-3.jpg" alt="Готовый результат">
+            </div>
         </div>
     </div>
-</div>
 
+    <!-- ОТЗЫВ ЮЛИИ (ремонт балкона) -->
+    <div class="review-card">
+        <div class="review-name">📌 Юлия, Братск</div>
+        <div class="review-text">
+            «Обратилась по вопросу ремонта деревянной рамы на балконе. 
+            Виталий оперативно, качественно и с душой подошёл к делу. 
+            Рекомендую специалиста. Золотые руки!»
+        </div>
+        <div class="review-date">сентябрь 2026</div>
+    </div>
+
+    <!-- ОТЗЫВ АННЫ -->
     <div class="review-card">
         <img src="foto/otzyv-anna.jpg" alt="Замена стекол на веранде">
         <div class="review-name">📌 Анна, дача в Братске</div>
@@ -75,12 +90,14 @@
         <div class="review-date">19 июля 2026</div>
     </div>
 
+    <!-- ОТЗЫВ АНДРЕЯ -->
     <div class="review-card">
         <div class="review-name">📌 Андрей, Братск</div>
         <div class="review-text">«Виталий приварил калитку на даче. Быстро, аккуратно, недорого. Рекомендую!»</div>
         <div class="review-date">май 2026</div>
     </div>
 
+    <!-- ОТЗЫВ СЕРГЕЯ -->
     <div class="review-card">
         <div class="review-name">📌 Сергей, Братск</div>
         <div class="review-text">«Помог с ремонтом в гараже. Всё сделал чётко, без грязи. Цена договорная — остался доволен.»</div>
@@ -91,6 +108,7 @@
 
     <a href="index.html" style="color: #e67e22;">← На главную</a>
 </div>
+
 <footer class="footer">
     <div class="container">
         <p><strong>Виталий, Мастер в Братске</strong> — строитель, мастер, человек.</p>
