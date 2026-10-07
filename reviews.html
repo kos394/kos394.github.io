@@ -19,7 +19,6 @@
             background-attachment: fixed;
         }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        /* Шапка */
         .header {
             border-bottom: 1px solid rgba(201, 169, 97, 0.4);
             padding: 20px 0;
@@ -52,7 +51,6 @@
             transition: color 0.2s;
         }
         .nav-links a:hover { color: #e8c977; text-shadow: 0 0 10px rgba(232, 201, 119, 0.5); }
-        /* Заголовок */
         .page-title {
             font-family: 'Forum', serif;
             color: #e8c977;
@@ -75,7 +73,6 @@
             font-style: italic;
             margin-bottom: 30px;
         }
-        /* Карточка отзыва */
         .review-card {
             background: rgba(30, 18, 10, 0.6);
             padding: 25px;
@@ -111,7 +108,6 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        /* Фото внутри отзыва (уменьшенное) */
         .review-card img {
             max-width: 250px;
             width: 100%;
@@ -121,7 +117,6 @@
             display: block;
             border: 1px solid rgba(201, 169, 97, 0.4);
         }
-        /* Галерея */
         .review-gallery { margin-top: 15px; }
         .gallery-grid { display: flex; gap: 10px; flex-wrap: wrap; }
         .gallery-grid img {
@@ -132,7 +127,6 @@
             transition: transform 0.2s, border-color 0.2s;
         }
         .gallery-grid img:hover { transform: scale(1.05); border-color: #e8c977; }
-        /* Подвал */
         .footer {
             background: rgba(5, 3, 2, 0.9);
             padding: 50px 0 30px;
@@ -144,7 +138,6 @@
         .footer p { color: #c9a961; font-family: 'Old Standard TT', serif; }
         .footer a { color: #e8c977; text-decoration: none; transition: color 0.2s; }
         .footer a:hover { color: #fff; }
-        /* Ссылка "На главную" */
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -183,7 +176,34 @@
     <h1 class="page-title">⭐ Отзывы о моей работе</h1>
     <p class="sub-title">Реальные слова реальных людей. Никакой фальши.</p>
 
-    <!-- ОТЗЫВ ЕЛЕНЫ -->
+    <!-- ОТЗЫВ НАТАЛЬИ (25 сентября) -->
+    <div class="review-card">
+        <div class="review-name">📌 Наталья, Братск</div>
+        <div class="review-text">
+            «Виталий, мастер золотые руки! Никто не хотел браться за работу, сделать дверки в туалет. Виталий все продумал, предложил вариант и сделал на отлично!»
+        </div>
+        <div class="review-date">25 сентября 2026</div>
+
+        <div class="review-gallery">
+            <div class="gallery-grid">
+                <img src="foto/natalya-1.jpg" alt="Работа Натальи, фото 1">
+                <img src="foto/natalya-2.jpg" alt="Работа Натальи, фото 2">
+            </div>
+        </div>
+    </div>
+
+    <!-- ОТЗЫВ ЮЛИИ (сентябрь) -->
+    <div class="review-card">
+        <div class="review-name">📌 Юлия, Братск</div>
+        <div class="review-text">
+            «Обратилась по вопросу ремонта деревянной рамы на балконе. 
+            Виталий оперативно, качественно и с душой подошёл к делу. 
+            Рекомендую специалиста. Золотые руки!»
+        </div>
+        <div class="review-date">сентябрь 2026</div>
+    </div>
+
+    <!-- ОТЗЫВ ЕЛЕНЫ (август) -->
     <div class="review-card">
         <div class="review-name">📌 Елена, Братск</div>
         <div class="review-text">
@@ -202,30 +222,12 @@
         </div>
     </div>
 
-    <!-- ОТЗЫВ ЮЛИИ -->
-    <div class="review-card">
-        <div class="review-name">📌 Юлия, Братск</div>
-        <div class="review-text">
-            «Обратилась по вопросу ремонта деревянной рамы на балконе. 
-            Виталий оперативно, качественно и с душой подошёл к делу. 
-            Рекомендую специалиста. Золотые руки!»
-        </div>
-        <div class="review-date">сентябрь 2026</div>
-    </div>
-
-    <!-- ОТЗЫВ АННЫ -->
+    <!-- ОТЗЫВ АННЫ (19 июля) -->
     <div class="review-card">
         <img src="foto/otzyv-anna.jpg" alt="Замена стекол на веранде">
         <div class="review-name">📌 Анна, дача в Братске</div>
         <div class="review-text">«Большое спасибо за работу !!! Созвонились, договорились, всё сделал профессионально, аккуратно, быстро заменил стекла на веранде. Однозначно рекомендую мастера !!!»</div>
         <div class="review-date">19 июля 2026</div>
-    </div>
-
-    <!-- ОТЗЫВ АНДРЕЯ -->
-    <div class="review-card">
-        <div class="review-name">📌 Андрей, Братск</div>
-        <div class="review-text">«Виталий приварил калитку на даче. Быстро, аккуратно, недорого. Рекомендую!»</div>
-        <div class="review-date">май 2026</div>
     </div>
 
     <!-- ОТЗЫВ СЕРГЕЯ -->
