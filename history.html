@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Моя история — Мастер в Братске</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,20 +13,27 @@
             box-sizing: border-box;
         }
         body {
-            background: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            font-family: 'Old Standard TT', serif;
+            background: 
+                radial-gradient(ellipse at top, #2a1810 0%, #1a0f08 50%, #0d0705 100%),
+                #0d0705;
+            color: #f0e0c8;
+            line-height: 1.7;
+            min-height: 100vh;
+            background-attachment: fixed;
         }
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
+        /* Шапка */
         .header {
-            border-bottom: 2px solid #e67e22;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.4);
             padding: 20px 0;
             margin-bottom: 40px;
+            background: rgba(13, 7, 5, 0.7);
+            backdrop-filter: blur(5px);
         }
         .nav {
             display: flex;
@@ -35,13 +43,18 @@
             gap: 20px;
         }
         .logo {
+            font-family: 'Forum', serif;
             font-size: 1.8rem;
-            font-weight: 800;
-            color: #e67e22;
+            font-weight: 400;
+            color: #e8c977;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(232, 201, 119, 0.3);
         }
         .logo span {
-            color: #aaa;
+            color: #c9a961;
             font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-family: 'Marck Script', cursive;
         }
         .nav-links {
             display: flex;
@@ -49,39 +62,66 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #ddd;
+            color: #e8dcc8;
             text-decoration: none;
-            font-weight: 600;
+            font-family: 'Forum', serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: #e67e22;
+            color: #e8c977;
+            text-shadow: 0 0 10px rgba(232, 201, 119, 0.5);
         }
+        /* Блок истории */
         .story-block {
-            background: #151515;
+            background: rgba(30, 18, 10, 0.6);
             padding: 50px;
             margin: 40px 0;
-            border-left: 4px solid #e67e22;
-            border-radius: 0 12px 12px 0;
+            border-left: 4px solid #c9a961;
+            border-radius: 0 4px 4px 0;
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+        .story-block::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
         }
         .story-block h1 {
-            color: #e67e22;
+            font-family: 'Forum', serif;
+            color: #e8c977;
             font-size: 2.5rem;
             margin-bottom: 25px;
             line-height: 1.2;
+            letter-spacing: 3px;
+            font-weight: 400;
+        }
+        .story-block h1::before,
+        .story-block h1::after {
+            content: '❦';
+            color: #c9a961;
+            margin: 0 15px;
+            opacity: 0.6;
+            font-size: 1.2rem;
         }
         .story-block p {
             margin-bottom: 20px;
             font-size: 1.1rem;
-            color: #e0e0e0;
+            color: #e8dcc8;
         }
         .story-block .highlight-text {
-            color: #e67e22;
+            color: #e8c977;
             font-weight: bold;
+            text-shadow: 0 0 10px rgba(232, 201, 119, 0.3);
         }
         .story-block .signature {
-            font-size: 1.4rem;
-            color: #e67e22;
-            font-weight: bold;
+            font-family: 'Marck Script', cursive;
+            font-size: 1.8rem;
+            color: #e8c977;
             margin-top: 30px;
         }
         .skills-list {
@@ -93,66 +133,108 @@
             padding: 0;
         }
         .skills-list li {
-            background: #1f1f1f;
+            background: rgba(30, 18, 10, 0.8);
             padding: 12px 20px;
-            border-radius: 8px;
-            border-left: 3px solid #e67e22;
+            border-radius: 2px;
+            border-left: 3px solid #c9a961;
             font-size: 1rem;
+            color: #e8dcc8;
+            font-family: 'Old Standard TT', serif;
         }
+        /* CTA-блок */
         .cta-block {
-            background: #1a1a1a;
+            background: rgba(30, 18, 10, 0.6);
             padding: 35px;
             text-align: center;
             margin: 40px 0;
-            border-radius: 12px;
-            border: 1px solid #e67e22;
+            border-radius: 4px;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+        .cta-block::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
         }
         .cta-block .big-phone {
+            font-family: 'Forum', serif;
             font-size: 2.5rem;
-            color: #e67e22;
+            color: #e8c977;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 400;
             display: block;
             margin: 15px 0;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(232, 201, 119, 0.4);
         }
         .btn {
             display: inline-block;
-            background: #e67e22;
-            color: #0a0a0a;
+            background: linear-gradient(135deg, #8b6f3a, #c9a961, #8b6f3a);
+            color: #1a0f08;
             padding: 15px 35px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 40px;
+            font-family: 'Forum', serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            border-radius: 2px;
             margin: 10px 5px;
-            transition: background 0.2s;
+            transition: all 0.3s;
+            border: 1px solid #c9a961;
         }
         .btn:hover {
-            background: #f39c12;
+            box-shadow: 0 0 30px rgba(201, 169, 97, 0.6);
+            transform: translateY(-2px);
         }
         .btn-secondary {
-            background: #2c2c2c;
-            color: #e0e0e0;
-            border: 1px solid #e67e22;
+            background: rgba(30, 18, 10, 0.8);
+            color: #e8c977;
+            border: 1px solid rgba(201, 169, 97, 0.6);
         }
         .btn-secondary:hover {
-            background: #3a3a3a;
+            background: rgba(201, 169, 97, 0.15);
+            box-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
         }
+        /* Подвал */
         .footer {
-            background: #050505;
+            background: rgba(5, 3, 2, 0.9);
             padding: 50px 0 30px;
             margin-top: 80px;
             text-align: center;
+            border-top: 1px solid rgba(201, 169, 97, 0.4);
+        }
+        .footer strong {
+            font-family: 'Forum', serif;
+            color: #e8c977;
+            letter-spacing: 2px;
+        }
+        .footer p {
+            color: #c9a961;
+            font-family: 'Old Standard TT', serif;
         }
         .footer a {
-            color: #e67e22;
+            color: #e8c977;
             text-decoration: none;
+            transition: color 0.2s;
         }
+        .footer a:hover {
+            color: #fff;
+        }
+        /* Адаптив */
         @media (max-width: 768px) {
             .story-block {
                 padding: 30px;
             }
             .story-block h1 {
                 font-size: 2rem;
+            }
+            .story-block h1::before,
+            .story-block h1::after {
+                margin: 0 8px;
+                font-size: 0.9rem;
             }
             .skills-list {
                 grid-template-columns: 1fr;
@@ -163,6 +245,12 @@
             }
             .cta-block .big-phone {
                 font-size: 1.8rem;
+            }
+            .logo {
+                font-size: 1.4rem;
+            }
+            .story-block .signature {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -198,7 +286,7 @@
         
         <p>У меня нет «лишних» слов и пустых обещаний. Я делаю то, что умею, и не берусь за то, в чём не уверен. Если я говорю, что сделаю, — значит, сделаю на совесть.</p>
         
-        <h3 style="color: #e67e22; margin-top: 30px; margin-bottom: 15px;">Что я умею сегодня:</h3>
+        <h3 style="color: #e8c977; margin-top: 30px; margin-bottom: 15px; font-family: 'Forum', serif; letter-spacing: 2px;">Что я умею сегодня:</h3>
         <ul class="skills-list">
             <li>⚡ Сварка (калитки, заборы, ворота, навесы, металлоконструкции)</li>
             <li>🏠 Внутренняя отделка помещений (ГКЛ, ОСБ, ПВХ, линолеум)</li>
@@ -216,13 +304,13 @@
     </div>
 
     <div class="cta-block">
-        <p style="font-size: 1.5rem;">📞 Есть задача или вопрос? Звоните, я отвечу</p>
+        <p style="font-size: 1.5rem; color: #e8c977;">📞 Есть задача или вопрос? Звоните, я отвечу</p>
         <a href="tel:89294390444" class="big-phone">8 929 439-04-44</a>
         <div>
             <a href="tel:89294390444" class="btn">📞 ПОЗВОНИТЬ</a>
             <a href="https://t.me/vitalyan2906" target="_blank" class="btn btn-secondary">💬 НАПИСАТЬ В ТЕЛЕГУ</a>
         </div>
-        <p style="margin-top: 20px; color: #aaa;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала сделаю, потом заплатите.</p>
+        <p style="margin-top: 20px; color: #c9a961;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала сделаю, потом заплатите.</p>
     </div>
 </main>
 
