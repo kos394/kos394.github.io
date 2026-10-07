@@ -5,48 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Отзывы — Мастер в Братске</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0a0a0a; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .header { border-bottom: 2px solid #e67e22; padding: 20px 0; margin-bottom: 40px; }
+        body {
+            font-family: 'Old Standard TT', serif;
+            background: 
+                radial-gradient(ellipse at top, #2a1810 0%, #1a0f08 50%, #0d0705 100%),
+                #0d0705;
+            color: #f0e0c8;
+            line-height: 1.7;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        /* Шапка */
+        .header {
+            border-bottom: 1px solid rgba(201, 169, 97, 0.4);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            background: rgba(13, 7, 5, 0.7);
+            backdrop-filter: blur(5px);
+        }
         .nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .logo { font-size: 1.8rem; font-weight: 800; color: #e67e22; }
+        .logo {
+            font-family: 'Forum', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #e8c977;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(232, 201, 119, 0.3);
+        }
+        .logo span {
+            color: #c9a961;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-family: 'Marck Script', cursive;
+        }
         .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
-        .nav-links a { color: #ddd; text-decoration: none; font-weight: 600; }
-        .nav-links a:hover { color: #e67e22; }
-        .review-card { background: #151515; padding: 25px; margin: 30px 0; border-left: 4px solid #e67e22; border-radius: 0 12px 12px 0; }
-        .review-name { color: #e67e22; font-weight: bold; margin-bottom: 10px; }
-        .review-text { margin-bottom: 10px; }
-        .review-date { color: #888; font-size: 0.8rem; }
-
+        .nav-links a {
+            color: #e8dcc8;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #e8c977; text-shadow: 0 0 10px rgba(232, 201, 119, 0.5); }
+        /* Заголовок */
+        .page-title {
+            font-family: 'Forum', serif;
+            color: #e8c977;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            font-weight: 400;
+            text-shadow: 0 0 25px rgba(232, 201, 119, 0.3);
+        }
+        .page-title::before,
+        .page-title::after {
+            content: '❦';
+            color: #c9a961;
+            margin: 0 15px;
+            opacity: 0.6;
+            font-size: 1.2rem;
+        }
+        .sub-title {
+            color: #c9a961;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        /* Карточка отзыва */
+        .review-card {
+            background: rgba(30, 18, 10, 0.6);
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid #c9a961;
+            border-radius: 0 4px 4px 0;
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+        .review-card::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .review-name {
+            font-family: 'Marck Script', cursive;
+            font-size: 1.5rem;
+            color: #e8c977;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .review-text {
+            margin-bottom: 10px;
+            color: #e8dcc8;
+            font-size: 1.05rem;
+        }
+        .review-date {
+            color: #a88c5c;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
         /* Фото внутри отзыва (уменьшенное) */
         .review-card img {
             max-width: 250px;
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 2px;
             margin-bottom: 15px;
             display: block;
-            border: 1px solid #333;
+            border: 1px solid rgba(201, 169, 97, 0.4);
         }
-
-        /* Галерея фото в отзыве */
+        /* Галерея */
         .review-gallery { margin-top: 15px; }
         .gallery-grid { display: flex; gap: 10px; flex-wrap: wrap; }
-        .gallery-grid img { width: 150px; height: 150px; object-fit: cover; border-radius: 8px; border: 1px solid #333; cursor: pointer; transition: transform 0.2s; }
-        .gallery-grid img:hover { transform: scale(1.05); border-color: #e67e22; }
-
-        .footer { text-align: center; padding: 50px 0 30px; margin-top: 80px; border-top: 1px solid #222; }
-        .footer a { color: #e67e22; text-decoration: none; }
-        @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } }
+        .gallery-grid img {
+            width: 150px; height: 150px; object-fit: cover;
+            border-radius: 2px;
+            border: 1px solid rgba(201, 169, 97, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .gallery-grid img:hover { transform: scale(1.05); border-color: #e8c977; }
+        /* Подвал */
+        .footer {
+            background: rgba(5, 3, 2, 0.9);
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 97, 0.4);
+        }
+        .footer strong { font-family: 'Forum', serif; color: #e8c977; letter-spacing: 2px; }
+        .footer p { color: #c9a961; font-family: 'Old Standard TT', serif; }
+        .footer a { color: #e8c977; text-decoration: none; transition: color 0.2s; }
+        .footer a:hover { color: #fff; }
+        /* Ссылка "На главную" */
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #e8c977;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { text-shadow: 0 0 10px rgba(232, 201, 119, 0.5); }
+        @media (max-width: 768px) {
+            .nav { flex-direction: column; align-items: center; }
+            .page-title { font-size: 1.8rem; }
+            .page-title::before,
+            .page-title::after { margin: 0 8px; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
         <div class="nav">
-            <div class="logo">МАСТЕР В БРАТСКЕ</div>
+            <div class="logo">МАСТЕР В БРАТСКЕ <span>Виталий</span></div>
             <div class="nav-links">
                 <a href="index.html">Главная</a>
                 <a href="history.html">Моя история</a>
@@ -59,10 +180,10 @@
         </div>
     </div>
 
-    <h1 style="color: #e67e22; font-size: 2.5rem; margin-bottom: 10px;">⭐ Отзывы о моей работе</h1>
-    <p>Реальные слова реальных людей. Никакой фальши.</p>
+    <h1 class="page-title">⭐ Отзывы о моей работе</h1>
+    <p class="sub-title">Реальные слова реальных людей. Никакой фальши.</p>
 
-    <!-- ОТЗЫВ ЕЛЕНЫ (крыша на веранде) -->
+    <!-- ОТЗЫВ ЕЛЕНЫ -->
     <div class="review-card">
         <div class="review-name">📌 Елена, Братск</div>
         <div class="review-text">
@@ -72,17 +193,16 @@
         </div>
         <div class="review-date">август 2026</div>
 
-        <!-- ГАЛЕРЕЯ ФОТО -->
         <div class="review-gallery">
             <div class="gallery-grid">
                 <img src="elena-1.jpg" alt="Старая крыша">
-<img src="elena-2.jpg" alt="Процесс работы">
-<img src="elena-3.jpg" alt="Готовый результат">
+                <img src="elena-2.jpg" alt="Процесс работы">
+                <img src="elena-3.jpg" alt="Готовый результат">
             </div>
         </div>
     </div>
 
-    <!-- ОТЗЫВ ЮЛИИ (ремонт балкона) -->
+    <!-- ОТЗЫВ ЮЛИИ -->
     <div class="review-card">
         <div class="review-name">📌 Юлия, Братск</div>
         <div class="review-text">
@@ -115,9 +235,9 @@
         <div class="review-date">май 2026</div>
     </div>
 
-    <p style="text-align: center; margin-top: 40px;">Хотите оставить отзыв? Напишите мне в Telegram или позвоните — опубликую с удовольствием.</p>
+    <p style="text-align: center; margin-top: 40px; color: #e8c977;">Хотите оставить отзыв? Напишите мне в Telegram или позвоните — опубликую с удовольствием.</p>
 
-    <a href="index.html" style="color: #e67e22;">← На главную</a>
+    <a href="index.html" class="back-link">← На главную</a>
 </div>
 
 <footer class="footer">
