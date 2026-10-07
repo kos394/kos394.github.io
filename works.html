@@ -5,34 +5,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои работы — Мастер в Братске</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0a0a0a; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+        body {
+            font-family: 'Old Standard TT', serif;
+            background: 
+                radial-gradient(ellipse at top, #2a1810 0%, #1a0f08 50%, #0d0705 100%),
+                #0d0705;
+            color: #f0e0c8;
+            line-height: 1.7;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { border-bottom: 2px solid #e67e22; padding: 20px 0; margin-bottom: 40px; }
+        /* Шапка */
+        .header {
+            border-bottom: 1px solid rgba(201, 169, 97, 0.4);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            background: rgba(13, 7, 5, 0.7);
+            backdrop-filter: blur(5px);
+        }
         .nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .logo { font-size: 1.8rem; font-weight: 800; color: #e67e22; }
+        .logo {
+            font-family: 'Forum', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #e8c977;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(232, 201, 119, 0.3);
+        }
+        .logo span {
+            color: #c9a961;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-family: 'Marck Script', cursive;
+        }
         .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
-        .nav-links a { color: #ddd; text-decoration: none; font-weight: 600; }
-        .nav-links a:hover { color: #e67e22; }
-        .page-title { color: #e67e22; font-size: 2.8rem; margin-bottom: 10px; line-height: 1.2; }
-        .sub-title { font-size: 1.3rem; color: #ccc; margin-bottom: 40px; }
+        .nav-links a {
+            color: #e8dcc8;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #e8c977; text-shadow: 0 0 10px rgba(232, 201, 119, 0.5); }
+        /* Заголовок */
+        .page-title {
+            font-family: 'Forum', serif;
+            color: #e8c977;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            font-weight: 400;
+            text-shadow: 0 0 25px rgba(232, 201, 119, 0.3);
+        }
+        .page-title::before,
+        .page-title::after {
+            content: '❦';
+            color: #c9a961;
+            margin: 0 15px;
+            opacity: 0.6;
+            font-size: 1.2rem;
+        }
+        .sub-title {
+            font-size: 1.3rem;
+            color: #c9a961;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        /* Сетка работ */
         .works-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin: 40px 0; }
-        .work-item { background: #151515; border-radius: 8px; overflow: hidden; border-bottom: 3px solid #e67e22; transition: transform 0.2s; }
-        .work-item:hover { transform: scale(1.02); }
+        .work-item {
+            background: rgba(30, 18, 10, 0.6);
+            border-radius: 2px;
+            overflow: hidden;
+            border-bottom: 3px solid #c9a961;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+        .work-item::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .work-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(201, 169, 97, 0.3);
+        }
         .work-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
         .work-item .desc { padding: 15px; text-align: center; }
-        .work-item .desc h3 { color: #e67e22; margin-bottom: 5px; }
-        .work-item .desc p { color: #aaa; font-size: 0.9rem; }
-        .cta-block { background: #1a1a1a; padding: 35px; text-align: center; margin: 40px 0; border-radius: 12px; border: 1px solid #e67e22; }
-        .cta-block .big-phone { font-size: 2.5rem; color: #e67e22; text-decoration: none; font-weight: bold; display: block; margin: 15px 0; }
-        .btn { display: inline-block; background: #e67e22; color: #0a0a0a; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 40px; margin: 10px 5px; transition: background 0.2s; }
-        .btn:hover { background: #f39c12; }
-        .btn-secondary { background: #2c2c2c; color: #e0e0e0; border: 1px solid #e67e22; }
-        .btn-secondary:hover { background: #3a3a3a; }
-        .footer { background: #050505; padding: 50px 0 30px; margin-top: 80px; text-align: center; }
-        .footer a { color: #e67e22; text-decoration: none; }
-        @media (max-width: 768px) { .works-grid { grid-template-columns: 1fr; } .page-title { font-size: 2rem; } .cta-block .big-phone { font-size: 1.8rem; } }
+        .work-item .desc h3 {
+            font-family: 'Forum', serif;
+            color: #e8c977;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+        .work-item .desc p { color: #c9a961; font-size: 0.9rem; }
+        /* CTA */
+        .cta-block {
+            background: rgba(30, 18, 10, 0.6);
+            padding: 35px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 4px;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+        .cta-block::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .cta-block .big-phone {
+            font-family: 'Forum', serif;
+            font-size: 2.5rem;
+            color: #e8c977;
+            text-decoration: none;
+            font-weight: 400;
+            display: block;
+            margin: 15px 0;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(232, 201, 119, 0.4);
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b6f3a, #c9a961, #8b6f3a);
+            color: #1a0f08;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            margin: 10px 5px;
+            transition: all 0.3s;
+            border: 1px solid #c9a961;
+        }
+        .btn:hover {
+            box-shadow: 0 0 30px rgba(201, 169, 97, 0.6);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(30, 18, 10, 0.8);
+            color: #e8c977;
+            border: 1px solid rgba(201, 169, 97, 0.6);
+        }
+        .btn-secondary:hover {
+            background: rgba(201, 169, 97, 0.15);
+            box-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
+        }
+        /* Блок примечания */
+        .note-block {
+            background: rgba(30, 18, 10, 0.6);
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border-left: 4px solid #c9a961;
+            border-radius: 0 4px 4px 0;
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+        .note-block::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .note-block p {
+            font-size: 1.1rem;
+            color: #c9a961;
+        }
+        /* Подвал */
+        .footer {
+            background: rgba(5, 3, 2, 0.9);
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 97, 0.4);
+        }
+        .footer strong { font-family: 'Forum', serif; color: #e8c977; letter-spacing: 2px; }
+        .footer p { color: #c9a961; font-family: 'Old Standard TT', serif; }
+        .footer a { color: #e8c977; text-decoration: none; transition: color 0.2s; }
+        .footer a:hover { color: #fff; }
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .works-grid { grid-template-columns: 1fr; }
+            .page-title { font-size: 2rem; }
+            .page-title::before,
+            .page-title::after { margin: 0 8px; font-size: 0.9rem; }
+            .cta-block .big-phone { font-size: 1.8rem; }
+            .nav { flex-direction: column; align-items: center; }
+            .logo { font-size: 1.4rem; }
+        }
     </style>
 </head>
 <body>
@@ -69,13 +248,13 @@
         </div>
 
         <!-- БАЛКОН -->
-<div class="work-item">
-    <img src="foto/balkon.jpg" alt="Отделка балкона">
-    <div class="desc">
-        <h3>Отделка балкона</h3>
-        <p>Внутренняя отделка балкона, утепление, монтаж панелей</p>
-    </div>
-</div>
+        <div class="work-item">
+            <img src="foto/balkon.jpg" alt="Отделка балкона">
+            <div class="desc">
+                <h3>Отделка балкона</h3>
+                <p>Внутренняя отделка балкона, утепление, монтаж панелей</p>
+            </div>
+        </div>
 
         <!-- 2. МИНИ ПРЕСС ГАРАЖНЫЙ -->
         <div class="work-item">
@@ -104,50 +283,50 @@
             </div>
         </div>
 
-       <!-- 5. ГИПСОКАРТОН И ОТДЕЛКА -->
-<div class="work-item">
-    <img src="foto/gebsokarton.jpg" alt="Монтаж гипсокартона">
-    <div class="desc">
-        <h3>Монтаж гипсокартона</h3>
-        <p>Установка стен, перегородок, обшивка поверхностей ГКЛ</p>
-    </div>
-</div>
+        <!-- 5. ГИПСОКАРТОН И ОТДЕЛКА -->
+        <div class="work-item">
+            <img src="foto/gebsokarton.jpg" alt="Монтаж гипсокартона">
+            <div class="desc">
+                <h3>Монтаж гипсокартона</h3>
+                <p>Установка стен, перегородок, обшивка поверхностей ГКЛ</p>
+            </div>
+        </div>
 
         <!-- ЗАМЕНА СТЁКОЛ -->
-<div class="work-item">
-    <img src="foto/otzyv-anna.jpg" alt="Замена стёкол на веранде">
-    <div class="desc">
-        <h3>Замена стёкол на веранде</h3>
-        <p>Быстро, аккуратно, без лишней грязи. Отзыв от клиента</p>
-    </div>
-</div>
+        <div class="work-item">
+            <img src="foto/otzyv-anna.jpg" alt="Замена стёкол на веранде">
+            <div class="desc">
+                <h3>Замена стёкол на веранде</h3>
+                <p>Быстро, аккуратно, без лишней грязи. Отзыв от клиента</p>
+            </div>
+        </div>
 
         <!-- ПРИСТРОЙКА -->
-<div class="work-item">
-    <img src="foto/pristroika.jpg" alt="Пристройка к дому">
-    <div class="desc">
-        <h3>Пристройка к дому</h3>
-        <p>Строительство и отделка пристройки, монтаж кровли</p>
-    </div>
-</div>
+        <div class="work-item">
+            <img src="foto/pristroika.jpg" alt="Пристройка к дому">
+            <div class="desc">
+                <h3>Пристройка к дому</h3>
+                <p>Строительство и отделка пристройки, монтаж кровли</p>
+            </div>
+        </div>
 
         <!-- ПРЕДБАННИК -->
-<div class="work-item">
-    <img src="foto/predbannik.jpg" alt="Отделка предбанника">
-    <div class="desc">
-        <h3>Пристройка к бане</h3>
-        <p>Ремонт и пристройка предбанника к бане</p>
-    </div>
-</div>
+        <div class="work-item">
+            <img src="foto/predbannik.jpg" alt="Отделка предбанника">
+            <div class="desc">
+                <h3>Пристройка к бане</h3>
+                <p>Ремонт и пристройка предбанника к бане</p>
+            </div>
+        </div>
 
         <!-- ЛАМИНАТ -->
-<div class="work-item">
-    <img src="foto/lamenat.jpg" alt="Укладка ламината">
-    <div class="desc">
-        <h3>Укладка ламината</h3>
-        <p>Профессиональная укладка ламината, подгонка, монтаж плинтусов</p>
-    </div>
-</div>
+        <div class="work-item">
+            <img src="foto/lamenat.jpg" alt="Укладка ламината">
+            <div class="desc">
+                <h3>Укладка ламината</h3>
+                <p>Профессиональная укладка ламината, подгонка, монтаж плинтусов</p>
+            </div>
+        </div>
 
         <!-- 6. СТРОЙКА И РЕМОНТ -->
         <div class="work-item">
@@ -159,18 +338,18 @@
         </div>
     </div>
 
-    <div style="background: #151515; padding: 30px; margin: 40px 0; text-align: center; border-left: 4px solid #e67e22; border-radius: 0 12px 12px 0;">
-        <p style="font-size: 1.1rem; color: #ccc;">✅ Больше фото и примеров — по запросу. Я могу показать видео или сделать фото конкретного объекта.</p>
+    <div class="note-block">
+        <p>✅ Больше фото и примеров — по запросу. Я могу показать видео или сделать фото конкретного объекта.</p>
     </div>
 
     <div class="cta-block">
-        <p style="font-size: 1.5rem;">📞 Есть заказ или идея? Звоните, обсудим!</p>
+        <p style="font-size: 1.5rem; color: #e8c977;">📞 Есть заказ или идея? Звоните, обсудим!</p>
         <a href="tel:89294390444" class="big-phone">8 929 439-04-44</a>
         <div>
             <a href="tel:89294390444" class="btn">📞 ПОЗВОНИТЬ</a>
             <a href="https://web.telegram.org/k/#@vitalyan2906" target="_blank" class="btn btn-secondary">💬 НАПИСАТЬ В TELEGRAM</a>
         </div>
-        <p style="margin-top: 20px; color: #aaa;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала делаю, потом вы платите.</p>
+        <p style="margin-top: 20px; color: #c9a961;">⚡ Работаю в Братске и рядом. Без предоплаты — сначала делаю, потом вы платите.</p>
     </div>
 </main>
 
