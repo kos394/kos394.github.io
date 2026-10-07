@@ -5,30 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поддержать мастера — заказать услуги в Братске</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0a0a0a; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .header { border-bottom: 2px solid #e67e22; padding: 20px 0; margin-bottom: 40px; }
+        body {
+            font-family: 'Old Standard TT', serif;
+            background: 
+                radial-gradient(ellipse at top, #2a1810 0%, #1a0f08 50%, #0d0705 100%),
+                #0d0705;
+            color: #f0e0c8;
+            line-height: 1.7;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        /* Шапка */
+        .header {
+            border-bottom: 1px solid rgba(201, 169, 97, 0.4);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            background: rgba(13, 7, 5, 0.7);
+            backdrop-filter: blur(5px);
+        }
         .nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .logo { font-size: 1.8rem; font-weight: 800; color: #e67e22; }
+        .logo {
+            font-family: 'Forum', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #e8c977;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(232, 201, 119, 0.3);
+        }
+        .logo span {
+            color: #c9a961;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-family: 'Marck Script', cursive;
+        }
         .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
-        .nav-links a { color: #ddd; text-decoration: none; font-weight: 600; }
-        .nav-links a:hover { color: #e67e22; }
-        .help-box { background: #151515; padding: 40px; margin: 30px 0; text-align: center; border: 2px solid #e67e22; border-radius: 20px; }
-        .help-box-green { border-color: #2ecc71; }
-        .btn-primary { background: #e67e22; color: #0a0a0a; padding: 12px 25px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold; transition: background 0.2s; }
-        .btn-primary:hover { background: #f39c12; }
-        .footer { text-align: center; padding: 50px 0 30px; margin-top: 80px; border-top: 1px solid #222; }
-        .footer a { color: #e67e22; text-decoration: none; }
-        @media (max-width: 768px) { .nav { flex-direction: column; align-items: center; } }
+        .nav-links a {
+            color: #e8dcc8;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #e8c977; text-shadow: 0 0 10px rgba(232, 201, 119, 0.5); }
+        /* Заголовок */
+        .page-title {
+            font-family: 'Forum', serif;
+            color: #e8c977;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            font-weight: 400;
+            text-shadow: 0 0 25px rgba(232, 201, 119, 0.3);
+            text-align: center;
+        }
+        .page-title::before,
+        .page-title::after {
+            content: '❦';
+            color: #c9a961;
+            margin: 0 15px;
+            opacity: 0.6;
+            font-size: 1.2rem;
+        }
+        .sub-title {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #c9a961;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        /* Блоки помощи */
+        .help-box {
+            background: rgba(30, 18, 10, 0.6);
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid rgba(201, 169, 97, 0.4);
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+        .help-box::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .help-box-green {
+            border-color: rgba(46, 204, 113, 0.5);
+        }
+        .help-box h3 {
+            font-family: 'Forum', serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .help-box p {
+            color: #e8dcc8;
+        }
+        /* Кнопка */
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b6f3a, #c9a961, #8b6f3a);
+            color: #1a0f08;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            border: 1px solid #c9a961;
+            margin: 15px 0;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(201, 169, 97, 0.6);
+            transform: translateY(-2px);
+        }
+        /* Инструкция */
+        .instruction {
+            background: rgba(30, 18, 10, 0.8);
+            padding: 20px;
+            border-radius: 2px;
+            margin: 20px 0;
+            text-align: left;
+            border: 1px solid rgba(46, 204, 113, 0.4);
+            position: relative;
+        }
+        .instruction::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(46, 204, 113, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .instruction p {
+            font-family: 'Forum', serif;
+            color: #2ecc71;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .instruction ol {
+            margin-left: 20px;
+            line-height: 2;
+            color: #e8dcc8;
+        }
+        .instruction li {
+            padding: 3px 0;
+        }
+        .instruction strong {
+            color: #e8c977;
+        }
+        /* Подвал */
+        .footer {
+            background: rgba(5, 3, 2, 0.9);
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 97, 0.4);
+        }
+        .footer strong { font-family: 'Forum', serif; color: #e8c977; letter-spacing: 2px; }
+        .footer p { color: #c9a961; font-family: 'Old Standard TT', serif; }
+        .footer a { color: #e8c977; text-decoration: none; transition: color 0.2s; }
+        .footer a:hover { color: #fff; }
+        /* Ссылка назад */
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #e8c977;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { text-shadow: 0 0 10px rgba(232, 201, 119, 0.5); }
+        @media (max-width: 768px) {
+            .nav { flex-direction: column; align-items: center; }
+            .page-title { font-size: 1.8rem; }
+            .page-title::before,
+            .page-title::after { margin: 0 8px; font-size: 0.9rem; }
+            .help-box { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
         <div class="nav">
-            <div class="logo">МАСТЕР В БРАТСКЕ</div>
+            <div class="logo">МАСТЕР В БРАТСКЕ <span>Виталий</span></div>
             <div class="nav-links">
                 <a href="index.html">Главная</a>
                 <a href="history.html">Моя история</a>
@@ -41,12 +213,12 @@
         </div>
     </div>
 
-    <h1>🤝 Поддержать мастера</h1>
-    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">Самая лучшая помощь для меня — это ваш заказ. Так я могу заработать своим трудом и продолжить строить дом для семьи.</p>
+    <h1 class="page-title">🤝 Поддержать мастера</h1>
+    <p class="sub-title">Самая лучшая помощь для меня — это ваш заказ. Так я могу заработать своим трудом и продолжить строить дом для семьи.</p>
 
     <!-- Блок: заказ работы -->
     <div class="help-box">
-        <h3 style="color: #e67e22;">🔧 Закажите у меня работу</h3>
+        <h3 style="color: #e8c977;">🔧 Закажите у меня работу</h3>
         <p style="margin: 20px 0;">Сварка, ремонт, стройка в Братске. Работаю ответственно, цены обсуждаемы.</p>
         <a href="master.html" class="btn-primary">Перейти к услугам мастера →</a>
         <p style="margin-top:20px;">или позвоните по телефону: <strong>8 929 439-04-44</strong></p>
@@ -57,21 +229,21 @@
         <h3 style="color: #2ecc71;">💳 Поддержать рублём</h3>
         <p style="margin: 20px 0;">Каждый перевод — это кирпичик в стене моего дома, который я строю для семьи. Ваша помощь даёт мне силы двигаться вперёд и делать своё дело с любовью.</p>
         
-        <div style="background: #1a1a1a; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: left; border: 1px solid #2ecc71;">
-            <p style="font-weight: bold; color: #2ecc71;">Как перевести:</p>
-            <ol style="margin-left: 20px; line-height: 2;">
+        <div class="instruction">
+            <p>Как перевести:</p>
+            <ol>
                 <li>В приложении вашего банка выберите <strong>«Перевод по номеру телефона»</strong> (СБП).</li>
                 <li>Введите номер <strong>8 929 439-04-44</strong>.</li>
                 <li>В списке банков выберите <strong>«ЮMoney»</strong> (или «YooMoney»).</li>
             </ol>
         </div>
-        <p style="font-size: 0.9rem; color: #aaa;">Ваше участие приближает меня к цели — завершить стройку и подарить семье уютный дом.</p>
+        <p style="font-size: 0.9rem; color: #c9a961;">Ваше участие приближает меня к цели — завершить стройку и подарить семье уютный дом.</p>
     </div>
 
-    <p style="text-align: center; margin-top: 30px;">Спасибо каждому, кто доверяет мне свою работу и поддерживает. Вы даёте мне силы двигаться вперёд и строить дом для семьи. 💪</p>
+    <p style="text-align: center; margin-top: 30px; color: #e8c977;">Спасибо каждому, кто доверяет мне свою работу и поддерживает. Вы даёте мне силы двигаться вперёд и строить дом для семьи. 💪</p>
 
     <div style="text-align: center; margin-top: 30px;">
-        <a href="index.html" style="color: #e67e22;">← На главную</a>
+        <a href="index.html" class="back-link">← На главную</a>
     </div>
 </div>
 <footer class="footer">
