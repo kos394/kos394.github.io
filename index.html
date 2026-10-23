@@ -33,7 +33,6 @@
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* ===== СКОШЕННЫЕ КНОПКИ (только ключевые CTA) ===== */
         .btn-slab {
             position: relative;
             display: inline-block;
@@ -77,7 +76,6 @@
             box-shadow: 2px 2px 0 #e0d8c8;
         }
 
-        /* Шапка */
         .header {
             border-bottom: 2px solid #e0d8c8;
             padding: 22px 0;
@@ -126,7 +124,6 @@
         .nav-links a:hover { color: #d35400; }
         .nav-links a.nav-thought { color: #b84600; border-bottom: 1px dotted #b84600; }
 
-        /* Герой */
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -162,7 +159,6 @@
         .hero-img-block img { max-width: 100%; border-radius: 2px; display: block; margin: 0 auto; }
         .hero-img-block p { margin-top: 10px; color: #d35400; font-style: italic; }
 
-        /* Заголовки секций */
         .section-title {
             font-family: 'Forum', serif;
             color: #d35400;
@@ -182,7 +178,6 @@
             vertical-align: middle;
         }
 
-        /* История */
         .story-block {
             background: #fff;
             padding: 45px 30px;
@@ -197,7 +192,6 @@
         .story-item { flex: 1; min-width: 150px; }
         .story-item .number { font-family: 'Forum', serif; font-size: 2.8rem; color: #d35400; }
 
-        /* Две колонки */
         .two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; }
         .card {
             background: #fff;
@@ -210,7 +204,6 @@
         .card a { color: #d35400; text-decoration: none; font-family: 'Forum', serif; letter-spacing: 1px; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
         .card a:hover { border-bottom-color: #d35400; }
 
-        /* Цены с иконками */
         .master-prices {
             display: flex;
             justify-content: space-between;
@@ -228,7 +221,6 @@
         .price .label { font-size: 0.95rem; }
         .price .num { display: block; font-family: 'Forum', serif; font-size: 2rem; color: #d35400; margin-top: 4px; }
 
-        /* Блоки */
         .about-block, .trust-block, .social-block, .thought-block, .how-block, .faq-block {
             background: #fff;
             padding: 35px;
@@ -240,13 +232,11 @@
         .about-block p { font-size: 1.1rem; color: #4a3b2a; }
         .trust-block p, .social-block p, .thought-block p { color: #4a3b2a; }
 
-        /* Галерея работ */
         .works-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
         .work-item { background: #f5f0e6; border: 1px solid #e0d8c8; border-radius: 4px; overflow: hidden; }
         .work-item img { width: 100%; height: 170px; object-fit: cover; display: block; }
         .work-item p { margin: 10px 12px; font-size: 0.92rem; color: #4a3b2a; text-align: center; line-height: 1.4; }
 
-        /* Как я работаю */
         .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 26px; counter-reset: step; }
         .how-step {
             background: #f5f0e6;
@@ -273,7 +263,6 @@
         .how-step h4 { font-family: 'Forum', serif; font-size: 1.1rem; color: #2c1e16; margin-bottom: 6px; letter-spacing: 0.5px; font-weight: 400; }
         .how-step p { font-size: 0.9rem; color: #4a3b2a; line-height: 1.45; }
 
-        /* FAQ */
         .faq-list { margin-top: 20px; }
         .faq-item {
             background: #f5f0e6;
@@ -308,7 +297,6 @@
         .faq-item summary:hover { background: #efe6d4; }
         .faq-item .faq-answer { padding: 0 20px 18px; color: #4a3b2a; font-size: 1rem; line-height: 1.65; }
 
-        /* От мысли к делу */
         .thought-block {
             text-align: center;
             border-left: none;
@@ -324,7 +312,6 @@
         }
         .thought-block p { max-width: 640px; margin: 0 auto 22px; font-size: 1.05rem; }
 
-        /* Соцсети */
         .social-links { display: flex; gap: 14px; flex-wrap: wrap; margin: 22px 0; }
         .social-links a {
             display: inline-block;
@@ -341,7 +328,6 @@
         }
         .social-links a:hover { background: #d35400; color: #fff; border-color: #d35400; }
 
-        /* Подвал */
         .footer {
             background: #fff;
             padding: 50px 0 30px;
@@ -373,7 +359,6 @@
         .share-ok { background: #EE8208; }
         .share-buttons a:hover { opacity: 0.88; }
 
-        /* Адаптив */
         @media (max-width: 980px) { .how-steps { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 900px) { .works-gallery { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
@@ -422,7 +407,6 @@
 
 <main class="container">
 
-    <!-- ГЕРОЙ -->
     <div class="hero">
         <div>
             <h1>Стройка, ремонт, сварка в Братске</h1>
@@ -441,7 +425,6 @@
         </div>
     </div>
 
-    <!-- ИСТОРИЯ -->
     <div class="story-block">
         <h2 class="section-title">Моя история</h2>
         <p>Я начал заниматься ремонтами и стройкой более 10 лет назад. Сначала для себя, потом для знакомых, а теперь — для людей. За это время я освоил сварку, столярку, отделку, установку окон и дверей. Работаю руками, головой и совестью. Моя главная цель — чтобы результат радовал, а не разочаровывал.</p>
@@ -453,7 +436,6 @@
         </div>
     </div>
 
-    <!-- ДВЕ КОЛОНКИ -->
     <div class="two-columns">
         <div class="card">
             <h3>📖 Моя история</h3>
@@ -467,7 +449,6 @@
         </div>
     </div>
 
-    <!-- ЦЕНЫ -->
     <div class="master-prices">
         <div class="price">
             <span class="icon">🚙</span>
@@ -490,7 +471,6 @@
         <p>👨‍🔧 Меня зовут Виталий. Более 10 лет в ремонте и строительстве. Работаю руками, отвечаю за результат. Без пустых обещаний.</p>
     </div>
 
-    <!-- КАК Я РАБОТАЮ -->
     <div class="how-block">
         <h2 class="section-title">Как я работаю</h2>
         <p style="text-align:center; color:#4a3b2a;">Пять шагов — от звонка до сдачи. Без сюрпризов и «доплат на месте».</p>
@@ -503,27 +483,61 @@
         </div>
     </div>
 
-    <!-- ДОВЕРИЕ + ГАЛЕРЕЯ -->
     <div class="trust-block">
         <h2 class="section-title">Почему мне можно доверять</h2>
         <p>Я строю дом для своей семьи — жены и двоих детей. Поэтому каждый заказ я делаю так, как если бы делал для себя. Мне важно, чтобы было надёжно, аккуратно и без сюрпризов.</p>
         <div class="works-gallery">
             <div class="work-item">
-                <img src="foto/press.jpg" alt="Сварка: калитка и ворота" onerror="this.src='https://placehold.co/600x400/f5f0e6/2c1e16?text=Сварка';">
-                <p>Сварка: калитка и ворота</p>
+                <img src="foto/balkon.jpg" alt="Балкон">
+                <p>Балкон</p>
             </div>
             <div class="work-item">
-                <img src="foto/krysha-1.jpg" alt="Стройка: каркас и крыша" onerror="this.src='https://placehold.co/600x400/f5f0e6/2c1e16?text=Стройка';">
-                <p>Стройка: каркас и крыша</p>
+                <img src="foto/dveri.jpg" alt="Двери">
+                <p>Двери</p>
             </div>
             <div class="work-item">
-                <img src="foto/lesnica.jpg" alt="Ремонт: отделка и лестница" onerror="this.src='https://placehold.co/600x400/f5f0e6/2c1e16?text=Отделка';">
-                <p>Ремонт: отделка и лестница</p>
+                <img src="foto/garazh.jpg" alt="Гараж, ворота">
+                <p>Гараж, ворота</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/gebsokarton.jpg" alt="Гипсокартон">
+                <p>Гипсокартон</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/lamenat.jpg" alt="Ламинат">
+                <p>Ламинат</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/lesnica.jpg" alt="Лестница">
+                <p>Лестница</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/predbannik.jpg" alt="Предбанник">
+                <p>Предбанник</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/press.jpg" alt="Сварка, пресс">
+                <p>Сварка, пресс</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/pristroika.jpg" alt="Пристройка">
+                <p>Пристройка</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/stroyka.jpg" alt="Стройка">
+                <p>Стройка</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/stroyka-2.jpg" alt="Стройка 2">
+                <p>Стройка 2</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/krysha-5.jpg" alt="Крыша">
+                <p>Крыша</p>
             </div>
         </div>
     </div>
 
-    <!-- ЧАСТЫЕ ВОПРОСЫ -->
     <div class="faq-block">
         <h2 class="section-title">Частые вопросы</h2>
         <div class="faq-list">
@@ -550,7 +564,6 @@
         </div>
     </div>
 
-    <!-- КАНАЛЫ -->
     <div class="social-block">
         <h2 class="section-title">Мои каналы, где видна моя работа</h2>
         <div class="social-links">
@@ -561,14 +574,12 @@
         </div>
     </div>
 
-    <!-- ОТ МЫСЛИ К ДЕЛУ -->
     <div class="thought-block">
         <h2>От мысли к делу</h2>
         <p>Как я начинал, через что прошёл и почему руки — это капитал. Честная история мастера, без курсов и волшебных таблеток.</p>
         <a href="ot-mysli-k-delu/" class="btn-slab">Читать историю →</a>
     </div>
 
-    <!-- CTA -->
     <div class="footer-cta">
         <p style="color:#4a3b2a; margin-bottom: 14px;">Нужен мастер — позвоните или напишите.</p>
         <a href="tel:89294390444" class="btn-slab">Позвонить →</a>
