@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мастер в Братске | Сварка, ремонт, стройка</title>
-    <meta name="description" content="Мастер в Братске. Сварка, ремонт, стройка. Опыт более 10 лет. Честный подход к делу.">
+    <title>Мастер в Братске | Стройка, ремонт, сварка</title>
+    <meta name="description" content="Мастер в Братске. Стройка, ремонт, сварка. Опыт более 10 лет. Честный подход к делу.">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Yandex.Metrika counter -->
@@ -23,109 +23,112 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Old Standard TT', serif;
-            background: 
-                radial-gradient(ellipse at top, #2a1810 0%, #1a0f08 50%, #0d0705 100%),
-                #0d0705;
-            color: #f0e0c8;
+            background: #f5f0e6;
+            color: #2c1e16;
             line-height: 1.7;
             min-height: 100vh;
-            background-attachment: fixed;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== СКОШЕННЫЕ КНОПКИ (только ключевые CTA) ===== */
+        .btn-slab {
+            position: relative;
+            display: inline-block;
+            padding: 13px 34px;
+            background: #d35400;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Forum', serif;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            box-shadow: 5px 5px 0 #7a2f00;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s;
+            z-index: 1;
         }
+        .btn-slab::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            clip-path: inherit;
+            background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 45%);
+            pointer-events: none;
+        }
+        .btn-slab:hover {
+            background: #b84600;
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0 #7a2f00;
+        }
+        .btn-slab:active { transform: translate(5px, 5px); box-shadow: 0 0 0 #7a2f00; }
+        .btn-slab-outline {
+            background: #fff;
+            color: #2c1e16;
+            box-shadow: 5px 5px 0 #e0d8c8;
+            border: 1px solid #e0d8c8;
+        }
+        .btn-slab-outline:hover {
+            background: #f5f0e6;
+            color: #d35400;
+            box-shadow: 2px 2px 0 #e0d8c8;
+        }
+
         /* Шапка */
         .header {
-            border-bottom: 1px solid rgba(201, 169, 97, 0.4);
-            padding: 20px 0;
+            border-bottom: 2px solid #e0d8c8;
+            padding: 22px 0;
             margin-bottom: 30px;
-            background: rgba(13, 7, 5, 0.7);
-            backdrop-filter: blur(5px);
+            background: rgba(245, 240, 230, 0.95);
         }
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+        .nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo-area { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+
+        /* ЛОГО — крупнее */
         .logo {
             font-family: 'Forum', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: #e8c977;
-            letter-spacing: 3px;
-            text-shadow: 0 0 15px rgba(232, 201, 119, 0.3);
+            font-size: 2.15rem;
+            color: #d35400;
+            letter-spacing: 2.5px;
+            line-height: 1.1;
         }
         .logo span {
-            color: #c9a961;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            display: block;
+            color: #7a5a2a;
+            font-size: 1.15rem;
+            letter-spacing: 1.5px;
             font-family: 'Marck Script', cursive;
+            margin-top: 2px;
         }
+
         .header-phone {
             font-size: 1.2rem;
-            font-weight: 400;
-            color: #e8c977;
-            background: rgba(30, 18, 10, 0.8);
-            padding: 5px 18px;
+            font-weight: 700;
+            color: #2c1e16;
+            background: #fff;
+            padding: 6px 20px;
             border-radius: 30px;
-            border: 1px solid rgba(201, 169, 97, 0.5);
-            font-family: 'Old Standard TT', serif;
+            border: 1px solid #e0d8c8;
         }
-        .header-phone a {
-            color: #e8c977;
-            text-decoration: none;
-        }
-        .btn-call {
-            background: linear-gradient(135deg, #8b6f3a, #c9a961, #8b6f3a);
-            color: #1a0f08;
-            padding: 8px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-family: 'Forum', serif;
-            font-weight: 400;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            display: inline-block;
-            border: 1px solid #c9a961;
-        }
-        .btn-call:hover {
-            box-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+        .header-phone a { color: #2c1e16; text-decoration: none; }
+        .btn-call { padding: 18px 46px; font-size: 1.1rem; letter-spacing: 2px; box-shadow: 7px 7px 0 #7a2f00; }
+        .btn-call:hover { box-shadow: 3px 3px 0 #7a2f00; }
+
+        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
         .nav-links a {
-            color: #e8dcc8;
+            color: #4a3b2a;
             text-decoration: none;
             font-family: 'Forum', serif;
             font-size: 0.95rem;
             letter-spacing: 1px;
             transition: color 0.2s;
         }
-        .nav-links a:hover {
-            color: #e8c977;
-            text-shadow: 0 0 10px rgba(232, 201, 119, 0.5);
-        }
+        .nav-links a:hover { color: #d35400; }
+        .nav-links a.nav-thought { color: #b84600; border-bottom: 1px dotted #b84600; }
+
         /* Герой */
         .hero {
             display: grid;
@@ -138,379 +141,261 @@
             font-family: 'Forum', serif;
             font-size: 2.8rem;
             line-height: 1.2;
-            color: #e8c977;
-            letter-spacing: 2px;
-            text-shadow: 0 0 25px rgba(232, 201, 119, 0.3);
+            color: #2c1e16;
+            letter-spacing: 1px;
             font-weight: 400;
         }
         .hero .highlight {
-            color: #c9a961;
-            border-left: 4px solid #c9a961;
+            color: #d35400;
+            border-left: 4px solid #d35400;
             padding-left: 20px;
             margin: 20px 0;
             font-size: 1.2rem;
             font-style: italic;
         }
-        .btn-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #8b6f3a, #c9a961, #8b6f3a);
-            color: #1a0f08;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-family: 'Forum', serif;
-            font-weight: 400;
-            letter-spacing: 2px;
-            display: inline-block;
-            border-radius: 2px;
-            border: 1px solid #c9a961;
-            transition: all 0.3s;
-        }
-        .btn-primary:hover {
-            box-shadow: 0 0 30px rgba(201, 169, 97, 0.6);
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            background: rgba(30, 18, 10, 0.8);
-            color: #e8c977;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-family: 'Forum', serif;
-            font-weight: 400;
-            letter-spacing: 2px;
-            border: 1px solid rgba(201, 169, 97, 0.6);
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        .btn-secondary:hover {
-            background: rgba(201, 169, 97, 0.15);
-            box-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
-        }
-        /* Блок фото */
+        .btn-group { display: flex; gap: 18px; flex-wrap: wrap; margin: 34px 0 10px; }
         .hero-img-block {
-            background: rgba(30, 18, 10, 0.6);
+            background: #fff;
             padding: 20px;
             text-align: center;
-            border-left: 4px solid #c9a961;
+            border-left: 4px solid #d35400;
             border-radius: 0 4px 4px 0;
-            position: relative;
-            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .hero-img-block::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(201, 169, 97, 0.15);
-            border-radius: 2px;
-            pointer-events: none;
+        .hero-img-block img { max-width: 100%; border-radius: 2px; display: block; margin: 0 auto; }
+        .hero-img-block p { margin-top: 10px; color: #d35400; font-style: italic; }
+
+        /* Заголовки секций */
+        .section-title {
+            font-family: 'Forum', serif;
+            color: #d35400;
+            font-size: 2.1rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-weight: 400;
+            text-align: center;
         }
-        .hero-img-block img {
-            max-width: 100%;
-            border-radius: 2px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            display: block;
-            margin: 0 auto;
+        .section-title::before,
+        .section-title::after {
+            content: '❦';
+            color: #d35400;
+            margin: 0 14px;
+            opacity: 0.5;
+            font-size: 1.05rem;
+            vertical-align: middle;
         }
-        .hero-img-block p {
-            margin-top: 10px;
-            color: #c9a961;
-            font-style: italic;
-        }
-        /* Блок истории */
+
+        /* История */
         .story-block {
-            background: rgba(30, 18, 10, 0.6);
+            background: #fff;
             padding: 45px 30px;
             margin: 60px 0;
             text-align: center;
-            border: 1px solid rgba(201, 169, 97, 0.3);
+            border: 1px solid #e0d8c8;
             border-radius: 4px;
-            position: relative;
-            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
-        .story-block::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(201, 169, 97, 0.15);
-            border-radius: 2px;
-            pointer-events: none;
-        }
-        .story-block h2 {
-            font-family: 'Forum', serif;
-            color: #e8c977;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-            font-weight: 400;
-        }
-        .story-block h2::before,
-        .story-block h2::after {
-            content: '❦';
-            color: #c9a961;
-            margin: 0 15px;
-            opacity: 0.6;
-            font-size: 1.2rem;
-        }
-        .story-block p {
-            max-width: 800px;
-            margin: 10px auto;
-            font-size: 1.1rem;
-            color: #e8dcc8;
-        }
-        .story-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 35px;
-        }
-        .story-item {
-            flex: 1;
-            min-width: 150px;
-        }
-        .story-item .number {
-            font-family: 'Forum', serif;
-            font-size: 2.8rem;
-            font-weight: 400;
-            color: #e8c977;
-            text-shadow: 0 0 20px rgba(232, 201, 119, 0.3);
-        }
+        .story-block p { max-width: 800px; margin: 10px auto; font-size: 1.1rem; color: #4a3b2a; }
+        .story-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-top: 35px; }
+        .story-item { flex: 1; min-width: 150px; }
+        .story-item .number { font-family: 'Forum', serif; font-size: 2.8rem; color: #d35400; }
+
         /* Две колонки */
-        .two-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin: 40px 0;
-        }
+        .two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; }
         .card {
-            background: rgba(30, 18, 10, 0.6);
+            background: #fff;
             padding: 35px;
-            border-left: 4px solid #c9a961;
+            border-left: 4px solid #d35400;
             border-radius: 0 4px 4px 0;
-            backdrop-filter: blur(5px);
-            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
-        .card::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(201, 169, 97, 0.15);
-            border-radius: 2px;
-            pointer-events: none;
-        }
-        .card h3 {
-            font-family: 'Forum', serif;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #e8c977;
-            letter-spacing: 2px;
-            font-weight: 400;
-        }
-        .card a {
-            color: #c9a961;
-            text-decoration: none;
-            font-family: 'Forum', serif;
-            letter-spacing: 1px;
-            transition: color 0.2s;
-        }
-        .card a:hover {
-            color: #e8c977;
-            text-shadow: 0 0 10px rgba(232, 201, 119, 0.5);
-        }
-        /* Цены */
+        .card h3 { font-family: 'Forum', serif; font-size: 1.8rem; margin-bottom: 15px; color: #2c1e16; letter-spacing: 1px; font-weight: 400; }
+        .card a { color: #d35400; text-decoration: none; font-family: 'Forum', serif; letter-spacing: 1px; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+        .card a:hover { border-bottom-color: #d35400; }
+
+        /* Цены с иконками */
         .master-prices {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
-            background: rgba(30, 18, 10, 0.6);
+            background: #fff;
             padding: 35px;
             margin: 30px 0;
             border-radius: 4px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            backdrop-filter: blur(5px);
-            position: relative;
+            border: 1px solid #e0d8c8;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
-        .master-prices::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(201, 169, 97, 0.15);
-            border-radius: 2px;
-            pointer-events: none;
-        }
-        .price {
-            text-align: center;
-            flex: 1;
-            color: #e8dcc8;
-            font-family: 'Old Standard TT', serif;
-        }
-        .price .num {
-            font-family: 'Forum', serif;
-            font-size: 2rem;
-            color: #e8c977;
-            font-weight: 400;
-            text-shadow: 0 0 15px rgba(232, 201, 119, 0.3);
-        }
-        /* Блоки about, trust, social */
-        .about-block, .trust-block, .social-block {
-            background: rgba(30, 18, 10, 0.6);
+        .price { text-align: center; flex: 1; min-width: 180px; color: #4a3b2a; }
+        .price .icon { display: block; font-size: 1.7rem; margin-bottom: 6px; line-height: 1; }
+        .price .label { font-size: 0.95rem; }
+        .price .num { display: block; font-family: 'Forum', serif; font-size: 2rem; color: #d35400; margin-top: 4px; }
+
+        /* Блоки */
+        .about-block, .trust-block, .social-block, .thought-block, .how-block, .faq-block {
+            background: #fff;
             padding: 35px;
             margin: 40px 0;
-            border-left: 4px solid #c9a961;
+            border-left: 4px solid #d35400;
             border-radius: 0 4px 4px 0;
-            backdrop-filter: blur(5px);
-            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
-        .about-block::before,
-        .trust-block::before,
-        .social-block::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(201, 169, 97, 0.15);
-            border-radius: 2px;
-            pointer-events: none;
+        .about-block p { font-size: 1.1rem; color: #4a3b2a; }
+        .trust-block p, .social-block p, .thought-block p { color: #4a3b2a; }
+
+        /* Галерея работ */
+        .works-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+        .work-item { background: #f5f0e6; border: 1px solid #e0d8c8; border-radius: 4px; overflow: hidden; }
+        .work-item img { width: 100%; height: 170px; object-fit: cover; display: block; }
+        .work-item p { margin: 10px 12px; font-size: 0.92rem; color: #4a3b2a; text-align: center; line-height: 1.4; }
+
+        /* Как я работаю */
+        .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 26px; counter-reset: step; }
+        .how-step {
+            background: #f5f0e6;
+            border: 1px solid #e0d8c8;
+            border-radius: 4px;
+            padding: 22px 16px 18px;
+            text-align: center;
         }
-        .about-block p {
-            font-size: 1.1rem;
-            color: #e8dcc8;
-        }
-        .trust-block h2, .social-block h2 {
+        .how-step::before {
+            counter-increment: step;
+            content: counter(step);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: #d35400;
+            color: #fff;
             font-family: 'Forum', serif;
-            color: #e8c977;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            box-shadow: 2px 2px 0 #7a2f00;
+        }
+        .how-step h4 { font-family: 'Forum', serif; font-size: 1.1rem; color: #2c1e16; margin-bottom: 6px; letter-spacing: 0.5px; font-weight: 400; }
+        .how-step p { font-size: 0.9rem; color: #4a3b2a; line-height: 1.45; }
+
+        /* FAQ */
+        .faq-list { margin-top: 20px; }
+        .faq-item {
+            background: #f5f0e6;
+            border: 1px solid #e0d8c8;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 16px 46px 16px 20px;
+            font-family: 'Forum', serif;
+            font-size: 1.05rem;
+            color: #2c1e16;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: background 0.2s;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 18px; top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Forum', serif;
+            font-size: 1.4rem;
+            color: #d35400;
+            transition: transform 0.2s;
+        }
+        .faq-item[open] summary::after { content: '−'; }
+        .faq-item summary:hover { background: #efe6d4; }
+        .faq-item .faq-answer { padding: 0 20px 18px; color: #4a3b2a; font-size: 1rem; line-height: 1.65; }
+
+        /* От мысли к делу */
+        .thought-block {
+            text-align: center;
+            border-left: none;
+            border: 2px solid #d35400;
+            background: linear-gradient(180deg, #fff 0%, #fbeee0 100%);
+        }
+        .thought-block h2 {
+            font-family: 'Marck Script', cursive;
+            font-size: 2.2rem;
+            color: #b84600;
+            margin-bottom: 10px;
             font-weight: 400;
-            font-size: 1.8rem;
         }
-        .trust-block h2::before,
-        .trust-block h2::after,
-        .social-block h2::before,
-        .social-block h2::after {
-            content: '❦';
-            color: #c9a961;
-            margin: 0 12px;
-            opacity: 0.6;
-            font-size: 1rem;
-        }
-        .trust-block p, .social-block p {
-            color: #e8dcc8;
-        }
+        .thought-block p { max-width: 640px; margin: 0 auto 22px; font-size: 1.05rem; }
+
         /* Соцсети */
-        .social-links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
+        .social-links { display: flex; gap: 14px; flex-wrap: wrap; margin: 22px 0; }
         .social-links a {
-            background: rgba(30, 18, 10, 0.8);
-            padding: 10px 22px;
-            border-radius: 2px;
-            color: #e8c977;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f5f0e6;
+            color: #2c1e16;
             text-decoration: none;
-            border: 1px solid rgba(201, 169, 97, 0.5);
+            border: 1px solid #e0d8c8;
+            border-radius: 3px;
             font-family: 'Forum', serif;
             letter-spacing: 1px;
-            transition: all 0.3s;
+            font-size: 0.9rem;
+            transition: all 0.2s;
         }
-        .social-links a:hover {
-            background: rgba(201, 169, 97, 0.2);
-            box-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
-        }
+        .social-links a:hover { background: #d35400; color: #fff; border-color: #d35400; }
+
         /* Подвал */
         .footer {
-            background: rgba(5, 3, 2, 0.9);
+            background: #fff;
             padding: 50px 0 30px;
             margin-top: 80px;
             text-align: center;
-            border-top: 1px solid rgba(201, 169, 97, 0.4);
+            border-top: 2px solid #e0d8c8;
         }
-        .footer strong {
-            font-family: 'Forum', serif;
-            color: #e8c977;
-            letter-spacing: 2px;
-        }
-        .footer p {
-            color: #c9a961;
-            font-family: 'Old Standard TT', serif;
-        }
-        .footer a {
-            color: #e8c977;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer a:hover {
-            color: #fff;
-        }
-        /* Кнопки поделиться */
-        .share-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
+        .footer strong { font-family: 'Forum', serif; color: #d35400; letter-spacing: 1px; font-size: 1.25rem; }
+        .footer p { color: #4a3b2a; }
+        .footer a { color: #d35400; text-decoration: none; }
+        .footer a:hover { color: #b84600; }
+
+        .footer-cta { text-align: center; margin: 30px 0 10px; }
+        .footer-cta .btn-slab { margin: 6px; }
+
+        .share-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 22px 0; }
         .share-buttons a {
-            padding: 10px 25px;
-            border-radius: 2px;
-            color: #1a0f08;
+            display: inline-block;
+            padding: 11px 26px;
+            color: #fff;
             text-decoration: none;
             font-family: 'Forum', serif;
             letter-spacing: 1px;
-            transition: all 0.3s;
+            font-size: 0.9rem;
+            border-radius: 3px;
+            transition: opacity 0.2s;
         }
-        .share-vk { 
-            background: linear-gradient(135deg, #8b6f3a, #c9a961); 
-            border: 1px solid #c9a961;
-        }
-        .share-ok { 
-            background: linear-gradient(135deg, #8b6f3a, #c9a961); 
-            border: 1px solid #c9a961;
-        }
-        .share-buttons a:hover {
-            box-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
-        }
+        .share-vk { background: #0077FF; }
+        .share-ok { background: #EE8208; }
+        .share-buttons a:hover { opacity: 0.88; }
+
         /* Адаптив */
+        @media (max-width: 980px) { .how-steps { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 900px) { .works-gallery { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
-            .hero, .two-columns {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .nav {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .logo-area {
-                justify-content: center;
-            }
-            .nav-links {
-                justify-content: center;
-            }
-            .header-phone {
-                font-size: 1rem;
-            }
-            .story-grid {
-                flex-direction: column;
-            }
-            .logo {
-                font-size: 1.4rem;
-            }
-            .story-block h2 {
-                font-size: 1.6rem;
-            }
-            .story-block h2::before,
-            .story-block h2::after {
-                margin: 0 8px;
-                font-size: 0.9rem;
-            }
+            .hero, .two-columns { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .nav { flex-direction: column; align-items: stretch; }
+            .logo-area { justify-content: center; }
+            .nav-links { justify-content: center; }
+            .header-phone { font-size: 1rem; }
+            .story-grid { flex-direction: column; }
+            .logo { font-size: 1.7rem; }
+            .logo span { font-size: 1rem; }
+            .section-title { font-size: 1.6rem; }
+            .btn-slab { padding: 12px 26px; font-size: 0.85rem; }
+            .btn-group { gap: 14px; }
+            .btn-call { padding: 14px 32px; font-size: 0.95rem; }
+            .works-gallery { grid-template-columns: 1fr; }
+            .how-steps { grid-template-columns: 1fr; }
+            .footer strong { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -522,7 +407,7 @@
             <div class="logo-area">
                 <div class="logo">МАСТЕР В БРАТСКЕ <span>Виталий</span></div>
                 <div class="header-phone">📞 <a href="tel:89294390444">8 929 439-04-44</a></div>
-                <a href="tel:89294390444" class="btn-call">Позвонить</a>
+                <a href="tel:89294390444" class="btn-slab btn-call">Позвонить</a>
             </div>
             <div class="nav-links">
                 <a href="index.html">Главная</a>
@@ -532,53 +417,46 @@
                 <a href="donate.html">Помочь</a>
                 <a href="contacts.html">Контакты</a>
                 <a href="reviews.html">Отзывы</a>
+                <a href="ot-mysli-k-delu/" class="nav-thought">От мысли к делу</a>
             </div>
         </div>
     </div>
 </div>
 
 <main class="container">
+
+    <!-- ГЕРОЙ -->
     <div class="hero">
         <div>
-            <h1>Сварка, ремонт, стройка в Братске</h1>
+            <h1>Стройка, ремонт, сварка в Братске</h1>
             <div class="highlight">
                 Более 10 лет опыта. Работаю руками, отвечаю за результат.
             </div>
             <div class="btn-group">
-                <a href="history.html" class="btn-primary">Моя история →</a>
-                <a href="master.html" class="btn-secondary">Нанять мастера →</a>
-                <a href="donate.html" class="btn-secondary">Поддержать →</a>
+                <a href="tel:89294390444" class="btn-slab">Позвонить →</a>
+                <a href="master.html" class="btn-slab btn-slab-outline">Нанять мастера →</a>
+                <a href="history.html" class="btn-slab btn-slab-outline">Моя история →</a>
             </div>
         </div>
         <div class="hero-img-block">
-            <img src="foto/vitaliy.jpg" alt="Виталий за работой" onerror="this.src='https://placehold.co/600x400/1a0f08/e8c977?text=Фото+Виталия';">
+            <img src="foto/vitaliy.jpg" alt="Виталий за работой" onerror="this.src='https://placehold.co/600x400/fff/2c1e16?text=Фото+Виталия';">
             <p>📞 Нужен мастер? Звоните, приеду, посмотрим, замерим — договоримся.</p>
         </div>
     </div>
 
+    <!-- ИСТОРИЯ -->
     <div class="story-block">
-        <h2>🧑‍🔧 Моя история</h2>
+        <h2 class="section-title">Моя история</h2>
         <p>Я начал заниматься ремонтами и стройкой более 10 лет назад. Сначала для себя, потом для знакомых, а теперь — для людей. За это время я освоил сварку, столярку, отделку, установку окон и дверей. Работаю руками, головой и совестью. Моя главная цель — чтобы результат радовал, а не разочаровывал.</p>
         <div class="story-grid">
-            <div class="story-item">
-                <div class="number">10+</div>
-                <div>лет опыта</div>
-            </div>
-            <div class="story-item">
-                <div class="number">50+</div>
-                <div>выполненных проектов</div>
-            </div>
-            <div class="story-item">
-                <div class="number">100%</div>
-                <div>ответственность</div>
-            </div>
-            <div class="story-item">
-                <div class="number">🛠️</div>
-                <div>руками и душой</div>
-            </div>
+            <div class="story-item"><div class="number">10+</div><div>лет опыта</div></div>
+            <div class="story-item"><div class="number">50+</div><div>выполненных проектов</div></div>
+            <div class="story-item"><div class="number">100%</div><div>ответственность</div></div>
+            <div class="story-item"><div class="number">🛠️</div><div>руками и душой</div></div>
         </div>
     </div>
 
+    <!-- ДВЕ КОЛОНКИ -->
     <div class="two-columns">
         <div class="card">
             <h3>📖 Моя история</h3>
@@ -587,45 +465,123 @@
         </div>
         <div class="card">
             <h3>🔧 Что я умею</h3>
-            <p>Сварка, ремонт, стройка, столярка. Посмотрите, что я уже сделал.</p>
+            <p>Стройка, ремонт, сварка, столярка. Посмотрите, что я уже сделал.</p>
             <a href="master.html">→ Заказать услуги мастера</a>
         </div>
     </div>
 
+    <!-- ЦЕНЫ -->
     <div class="master-prices">
-        <div class="price">Выезд по Братску (центр + правый берег)<br><span class="num">500 ₽</span></div>
-        <div class="price">Сварка (калитки, заборы, ворота)<br><span class="num">от 1000 ₽</span></div>
-        <div class="price">Ремонт и стройка<br><span class="num">цена обсуждается при осмотре</span></div>
+        <div class="price">
+            <span class="icon">🚙</span>
+            <span class="label">Выезд по Братску (центр + правый берег)</span>
+            <span class="num">500 ₽</span>
+        </div>
+        <div class="price">
+            <span class="icon">🔧</span>
+            <span class="label">Сварка (калитки, заборы, ворота)</span>
+            <span class="num">от 1000 ₽</span>
+        </div>
+        <div class="price">
+            <span class="icon">🏗️</span>
+            <span class="label">Стройка и ремонт</span>
+            <span class="num">цена при осмотре</span>
+        </div>
     </div>
 
     <div class="about-block">
-        <p style="font-size: 1.1rem;">👨‍🔧 Меня зовут Виталий. Более 10 лет в ремонте и строительстве. Работаю руками, отвечаю за результат. Без пустых обещаний.</p>
+        <p>👨‍🔧 Меня зовут Виталий. Более 10 лет в ремонте и строительстве. Работаю руками, отвечаю за результат. Без пустых обещаний.</p>
     </div>
 
+    <!-- КАК Я РАБОТАЮ -->
+    <div class="how-block">
+        <h2 class="section-title">Как я работаю</h2>
+        <p style="text-align:center; color:#4a3b2a;">Пять шагов — от звонка до сдачи. Без сюрпризов и «доплат на месте».</p>
+        <div class="how-steps">
+            <div class="how-step"><h4>Звонок</h4><p>Обсуждаем задачу по телефону, отвечаю на вопросы.</p></div>
+            <div class="how-step"><h4>Выезд</h4><p>Приезжаю, смотрю объект, замеряю.</p></div>
+            <div class="how-step"><h4>Смета</h4><p>Называю цену и сроки. Без «потом уточним».</p></div>
+            <div class="how-step"><h4>Работа</h4><p>Делаю по договорённости. Предоплата — после начала работ.</p></div>
+            <div class="how-step"><h4>Сдача</h4><p>Показываю результат, убираю за собой. Принимаете работу.</p></div>
+        </div>
+    </div>
+
+    <!-- ДОВЕРИЕ + ГАЛЕРЕЯ -->
     <div class="trust-block">
-        <h2>💛 Почему мне можно доверять</h2>
+        <h2 class="section-title">Почему мне можно доверять</h2>
         <p>Я строю дом для своей семьи — жены и двоих детей. Поэтому каждый заказ я делаю так, как если бы делал для себя. Мне важно, чтобы было надёжно, аккуратно и без сюрпризов.</p>
+        <div class="works-gallery">
+            <div class="work-item">
+                <img src="foto/work-1.jpg" alt="Пример работы: сварка" onerror="this.src='https://placehold.co/600x400/f5f0e6/2c1e16?text=Работа+1';">
+                <p>Сварка: калитка и ворота</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/work-2.jpg" alt="Пример работы: стройка" onerror="this.src='https://placehold.co/600x400/f5f0e6/2c1e16?text=Работа+2';">
+                <p>Стройка: каркас и крыша</p>
+            </div>
+            <div class="work-item">
+                <img src="foto/work-3.jpg" alt="Пример работы: ремонт" onerror="this.src='https://placehold.co/600x400/f5f0e6/2c1e16?text=Работа+3';">
+                <p>Ремонт: отделка внутри</p>
+            </div>
+        </div>
     </div>
 
+    <!-- ЧАСТЫЕ ВОПРОСЫ -->
+    <div class="faq-block">
+        <h2 class="section-title">Частые вопросы</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Нужна ли предоплата?</summary>
+                <div class="faq-answer">Предоплата — после начала работ. Сначала я приезжаю, смотрю объект, называю цену и сроки. Только когда мы договорились и работа началась — обсуждаем предоплату на материалы. Без предоплаты «в никуда».</div>
+            </details>
+            <details class="faq-item">
+                <summary>Материалы чьи — мои или ваши?</summary>
+                <div class="faq-answer">Можно и так, и так. Если материалы мои — я закупаю и привожу, всё честно по чекам. Если ваши — работаю с тем, что есть, и заранее говорю, чего не хватает.</div>
+            </details>
+            <details class="faq-item">
+                <summary>А если результат не понравится?</summary>
+                <div class="faq-answer">Показываю результат до того, как вы платите. Если что-то не так — переделываю по договорённости. Мне важно, чтобы вы приняли работу, а не просто «смирились».</div>
+            </details>
+            <details class="faq-item">
+                <summary>Вы работаете один или с бригадой?</summary>
+                <div class="faq-answer">Сейчас работаю сам. Беру небольшие объёмы, чтобы держать качество. Если объект большой — обсуждаем отдельно, могу подключить проверенных людей.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Как быстро можете приехать?</summary>
+                <div class="faq-answer">По Братску (центр и правый берег) — обычно в течение 1–2 дней. Если срочно — звоните, постараюсь подстроиться. Выезд — 500 ₽.</div>
+            </details>
+        </div>
+    </div>
+
+    <!-- КАНАЛЫ -->
     <div class="social-block">
-        <h2>📺 Мои каналы, где видна моя работа</h2>
+        <h2 class="section-title">Мои каналы, где видна моя работа</h2>
         <div class="social-links">
             <a href="https://rutube.ru/channel/76892899/" target="_blank">📺 Rutube (стройка)</a>
             <a href="https://youtube.com/channel/UCwVlTWIXslcEpjM8pGA8lNA" target="_blank">🎬 YouTube (ремонт авто)</a>
             <a href="https://vk.com/siberian_build" target="_blank">📱 ВКонтакте (строю сам)</a>
             <a href="https://ok.ru/remont.kvartirofisovgarazhey" target="_blank">📱 Одноклассники (ВАШ МАСТЕР)</a>
         </div>
-
-                        <div style="text-align: center; margin-top: 30px;">
-            <a href="/ot-mysli-k-delu/" style="display: inline-block; background: linear-gradient(135deg, #8b6f3a, #c9a961, #8b6f3a); color: #1a0f08; padding: 15px 40px; text-decoration: none; font-family: 'Forum', serif; font-size: 1.15rem; letter-spacing: 2px; border: 1px solid #c9a961; border-radius: 2px; font-weight: bold; box-shadow: 0 0 20px rgba(201, 169, 97, 0.3);">📖 От мысли к делу →</a>
-        </div>
     </div>
 
-    <div style="text-align:center; margin: 40px 0;">
-        <p style="color: #c9a961; margin-bottom: 15px; font-family: 'Forum', serif; letter-spacing: 2px;">📢 Поделиться сайтом с друзьями:</p>
-        <div class="share-buttons">
-            <a href="https://vk.com/share.php?url=https://master-bratsk.ru/" target="_blank" class="share-vk">ВКонтакте</a>
-            <a href="https://connect.ok.ru/offer?url=https://master-bratsk.ru/" target="_blank" class="share-ok">Одноклассники</a>
+    <!-- ОТ МЫСЛИ К ДЕЛУ -->
+    <div class="thought-block">
+        <h2>От мысли к делу</h2>
+        <p>Как я начинал, через что прошёл и почему руки — это капитал. Честная история мастера, без курсов и волшебных таблеток.</p>
+        <a href="ot-mysli-k-delu/" class="btn-slab">Читать историю →</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="footer-cta">
+        <p style="color:#4a3b2a; margin-bottom: 14px;">Нужен мастер — позвоните или напишите.</p>
+        <a href="tel:89294390444" class="btn-slab">Позвонить →</a>
+        <a href="https://t.me/vitalyan2906" target="_blank" class="btn-slab btn-slab-outline">Написать в Telegram →</a>
+        <div style="margin-top: 26px;">
+            <p style="color: #d35400; margin-bottom: 12px; font-family: 'Forum', serif; letter-spacing: 1px;">📢 Поделиться сайтом с друзьями:</p>
+            <div class="share-buttons">
+                <a href="https://vk.com/share.php?url=https://master-bratsk.ru/" target="_blank" class="share-vk">ВКонтакте</a>
+                <a href="https://connect.ok.ru/offer?url=https://master-bratsk.ru/" target="_blank" class="share-ok">Одноклассники</a>
+            </div>
         </div>
     </div>
 </main>
